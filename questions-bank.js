@@ -1,4 +1,4 @@
-// Première extension nationale de la banque : questions originales avec sources et métadonnées.
+// Banque nationale de questions pédagogiques originales, non officielles.
 window.BANK_QUESTIONS = [
   {
     "id": "b001",
@@ -799,68 +799,66 @@ window.BANK_QUESTIONS = [
     "status": "demo",
     "subthemeId": "installation-residence",
     "difficulty": "intermediaire"
-  }
-,
-[
+  },
   {
     "id": "b041",
     "themeId": "principes",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel texte juridique affirme que la France est une République indivisible, laïque, démocratique et sociale ?",
-    "correct": [
+    "prompt": "Quel texte juridique affirme que la France est une République indivisible, laïque, démocratique et sociale ?",
+    "choices": [
       "La Constitution",
       "Le règlement intérieur d'une mairie",
       "Le Code de la route",
       "Le budget de l'État"
     ],
-    "explanation": 0,
-    "takeaway": "L'article premier de la Constitution définit les caractéristiques fondamentales de la République française.",
+    "correct": 0,
+    "explanation": "L'article premier de la Constitution définit les caractéristiques fondamentales de la République française.",
+    "takeaway": "La Constitution décrit les principes fondamentaux de la République.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La Constitution décrit les principes fondamentaux de la République.",
+    "sourceUrl": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
     "status": "demo",
-    "subthemeId": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
-    "difficulty": "symboles"
+    "subthemeId": "symboles",
+    "difficulty": "facile"
   },
   {
     "id": "b042",
     "themeId": "principes",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel principe implique que la loi s'applique de la même manière à toutes les personnes placées dans une situation comparable ?",
-    "correct": [
+    "prompt": "Quel principe implique que la loi s'applique de la même manière à toutes les personnes placées dans une situation comparable ?",
+    "choices": [
       "L'égalité devant la loi",
       "Le privilège héréditaire",
       "La préférence locale",
       "La décision arbitraire"
     ],
-    "explanation": 0,
-    "takeaway": "L'égalité devant la loi est un principe fondamental de la République.",
+    "correct": 0,
+    "explanation": "L'égalité devant la loi est un principe fondamental de la République.",
+    "takeaway": "L'égalité devant la loi est un principe républicain.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "L'égalité devant la loi est un principe républicain.",
+    "sourceUrl": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
     "status": "demo",
-    "subthemeId": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
-    "difficulty": "laicite"
+    "subthemeId": "laicite",
+    "difficulty": "facile"
   },
   {
     "id": "b043",
     "themeId": "principes",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "La laïcité impose-t-elle aux citoyens d'être sans religion ?",
-    "correct": [
+    "prompt": "La laïcité impose-t-elle aux citoyens d'être sans religion ?",
+    "choices": [
       "Oui, toute religion est interdite",
       "Non, la liberté de conscience est protégée",
       "Oui, sauf pendant les fêtes",
       "Seulement aux personnes majeures"
     ],
-    "explanation": 1,
-    "takeaway": "La laïcité garantit la liberté de conscience et la neutralité de l'État ; elle n'interdit pas aux citoyens d'avoir une religion.",
+    "correct": 1,
+    "explanation": "La laïcité garantit la liberté de conscience et la neutralité de l'État ; elle n'interdit pas aux citoyens d'avoir une religion.",
+    "takeaway": "La laïcité ne signifie pas l'interdiction des religions.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La laïcité ne signifie pas l'interdiction des religions.",
+    "sourceUrl": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006069165/",
     "status": "demo",
-    "subthemeId": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006069165/",
-    "difficulty": "laicite"
+    "subthemeId": "laicite",
+    "difficulty": "facile"
   },
   {
     "id": "b044",
@@ -886,21 +884,21 @@ window.BANK_QUESTIONS = [
     "id": "b045",
     "themeId": "principes",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quelle fête nationale est célébrée le 14 juillet ?",
-    "correct": [
+    "prompt": "Quelle fête nationale est célébrée le 14 juillet ?",
+    "choices": [
       "La fête nationale française",
       "L'armistice de 1918",
       "La fin de la Seconde Guerre mondiale",
       "La fête de l'Europe"
     ],
-    "explanation": 0,
-    "takeaway": "Le 14 juillet est la fête nationale française.",
+    "correct": 0,
+    "explanation": "Le 14 juillet est la fête nationale française.",
+    "takeaway": "Le 14 juillet est la fête nationale.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Le 14 juillet est la fête nationale.",
+    "sourceUrl": "https://www.elysee.fr/la-presidence/le-14-juillet",
     "status": "demo",
-    "subthemeId": "https://www.elysee.fr/la-presidence/le-14-juillet",
-    "difficulty": "symboles"
+    "subthemeId": "symboles",
+    "difficulty": "facile"
   },
   {
     "id": "b046",
@@ -926,221 +924,221 @@ window.BANK_QUESTIONS = [
     "id": "b047",
     "themeId": "principes",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel principe permet aux citoyens d'exprimer des opinions politiques différentes ?",
-    "correct": [
+    "prompt": "Quel principe permet aux citoyens d'exprimer des opinions politiques différentes ?",
+    "choices": [
       "La liberté d'expression dans le cadre de la loi",
       "L'obligation d'avoir une opinion identique",
       "La suppression du débat public",
       "L'interdiction de critiquer les élus"
     ],
-    "explanation": 0,
-    "takeaway": "La liberté d'expression permet le débat démocratique sous réserve des limites prévues par la loi.",
+    "correct": 0,
+    "explanation": "La liberté d'expression permet le débat démocratique sous réserve des limites prévues par la loi.",
+    "takeaway": "Le débat public est protégé par la liberté d'expression.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Le débat public est protégé par la liberté d'expression.",
+    "sourceUrl": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
     "status": "demo",
-    "subthemeId": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
-    "difficulty": "laicite"
+    "subthemeId": "laicite",
+    "difficulty": "facile"
   },
   {
     "id": "b048",
     "themeId": "principes",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel est le rôle du bonnet phrygien dans l'imaginaire républicain français ?",
-    "correct": [
+    "prompt": "Quel est le rôle du bonnet phrygien dans l'imaginaire républicain français ?",
+    "choices": [
       "Un symbole associé à la liberté",
       "Le symbole officiel de la justice européenne",
       "Un document d'identité",
       "Un symbole de la monarchie absolue"
     ],
-    "explanation": 0,
-    "takeaway": "Le bonnet phrygien est un symbole historique de liberté et de la République.",
+    "correct": 0,
+    "explanation": "Le bonnet phrygien est un symbole historique de liberté et de la République.",
+    "takeaway": "Le bonnet phrygien évoque la liberté.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Le bonnet phrygien évoque la liberté.",
+    "sourceUrl": "https://www.elysee.fr/",
     "status": "demo",
-    "subthemeId": "https://www.elysee.fr/",
-    "difficulty": "symboles"
+    "subthemeId": "symboles",
+    "difficulty": "facile"
   },
   {
     "id": "b049",
     "themeId": "institutions",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Qui promulgue les lois en France ?",
-    "correct": [
+    "prompt": "Qui promulgue les lois en France ?",
+    "choices": [
       "Le président de la République",
       "Le maire de chaque commune",
       "Le président du Sénat seul",
       "Le préfet de département"
     ],
-    "explanation": 0,
-    "takeaway": "Le président de la République promulgue les lois dans les conditions prévues par la Constitution.",
+    "correct": 0,
+    "explanation": "Le président de la République promulgue les lois dans les conditions prévues par la Constitution.",
+    "takeaway": "Le président de la République promulgue les lois.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Le président de la République promulgue les lois.",
+    "sourceUrl": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
     "status": "demo",
-    "subthemeId": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
-    "difficulty": "organisation"
+    "subthemeId": "organisation",
+    "difficulty": "facile"
   },
   {
     "id": "b050",
     "themeId": "institutions",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel est le rôle général du Conseil d'État ?",
-    "correct": [
+    "prompt": "Quel est le rôle général du Conseil d'État ?",
+    "choices": [
       "Conseiller le Gouvernement et être la juridiction suprême de l'ordre administratif",
       "Organiser les élections européennes",
       "Diriger les communes",
       "Voter le budget de l'Union européenne"
     ],
-    "explanation": 0,
-    "takeaway": "Le Conseil d'État exerce des fonctions consultatives et juridictionnelles dans l'ordre administratif.",
+    "correct": 0,
+    "explanation": "Le Conseil d'État exerce des fonctions consultatives et juridictionnelles dans l'ordre administratif.",
+    "takeaway": "Le Conseil d'État conseille et juge dans l'ordre administratif.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Le Conseil d'État conseille et juge dans l'ordre administratif.",
+    "sourceUrl": "https://www.conseil-etat.fr/",
     "status": "demo",
-    "subthemeId": "https://www.conseil-etat.fr/",
-    "difficulty": "organisation"
+    "subthemeId": "organisation",
+    "difficulty": "facile"
   },
   {
     "id": "b051",
     "themeId": "institutions",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel document fonde l'organisation des pouvoirs de la Ve République ?",
-    "correct": [
+    "prompt": "Quel document fonde l'organisation des pouvoirs de la Ve République ?",
+    "choices": [
       "La Constitution de 1958",
       "La Déclaration de 1789 uniquement",
       "Le Code de la route",
       "Le traité de Versailles"
     ],
-    "explanation": 0,
-    "takeaway": "La Constitution de 1958 organise les institutions de la Ve République.",
+    "correct": 0,
+    "explanation": "La Constitution de 1958 organise les institutions de la Ve République.",
+    "takeaway": "La Ve République repose sur la Constitution de 1958.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La Ve République repose sur la Constitution de 1958.",
+    "sourceUrl": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
     "status": "demo",
-    "subthemeId": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
-    "difficulty": "organisation"
+    "subthemeId": "organisation",
+    "difficulty": "facile"
   },
   {
     "id": "b052",
     "themeId": "institutions",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel niveau de collectivité territoriale est notamment administré par un conseil régional ?",
-    "correct": [
+    "prompt": "Quel niveau de collectivité territoriale est notamment administré par un conseil régional ?",
+    "choices": [
       "La région",
       "La commune",
       "Le quartier",
       "Le canton uniquement"
     ],
-    "explanation": 0,
-    "takeaway": "Le conseil régional délibère sur les compétences attribuées à la région.",
+    "correct": 0,
+    "explanation": "Le conseil régional délibère sur les compétences attribuées à la région.",
+    "takeaway": "Le conseil régional agit à l'échelle régionale.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Le conseil régional agit à l'échelle régionale.",
+    "sourceUrl": "https://www.vie-publique.fr/fiches/19605-que-sont-les-collectivites-territoriales",
     "status": "demo",
-    "subthemeId": "https://www.vie-publique.fr/fiches/19605-que-sont-les-collectivites-territoriales",
-    "difficulty": "organisation"
+    "subthemeId": "organisation",
+    "difficulty": "facile"
   },
   {
     "id": "b053",
     "themeId": "institutions",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel est le rôle principal de la Cour de cassation ?",
-    "correct": [
+    "prompt": "Quel est le rôle principal de la Cour de cassation ?",
+    "choices": [
       "Veiller à la bonne application du droit par les juridictions judiciaires",
       "Réécrire les lois votées par le Parlement",
       "Diriger la police municipale",
       "Organiser les élections présidentielles"
     ],
-    "explanation": 0,
-    "takeaway": "La Cour de cassation est la juridiction suprême de l'ordre judiciaire et contrôle l'application du droit.",
+    "correct": 0,
+    "explanation": "La Cour de cassation est la juridiction suprême de l'ordre judiciaire et contrôle l'application du droit.",
+    "takeaway": "La Cour de cassation appartient à l'ordre judiciaire.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La Cour de cassation appartient à l'ordre judiciaire.",
+    "sourceUrl": "https://www.courdecassation.fr/",
     "status": "demo",
-    "subthemeId": "https://www.courdecassation.fr/",
-    "difficulty": "organisation"
+    "subthemeId": "organisation",
+    "difficulty": "facile"
   },
   {
     "id": "b054",
     "themeId": "institutions",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quelle institution représente les citoyens au niveau de l'Union européenne et participe à l'adoption des lois européennes ?",
-    "correct": [
+    "prompt": "Quelle institution représente les citoyens au niveau de l'Union européenne et participe à l'adoption des lois européennes ?",
+    "choices": [
       "Le Parlement européen",
       "La mairie de Paris",
       "Le Conseil constitutionnel français",
       "La préfecture"
     ],
-    "explanation": 0,
-    "takeaway": "Le Parlement européen est élu directement et participe, avec le Conseil de l'Union européenne, à l'adoption de nombreux textes européens.",
+    "correct": 0,
+    "explanation": "Le Parlement européen est élu directement et participe, avec le Conseil de l'Union européenne, à l'adoption de nombreux textes européens.",
+    "takeaway": "Le Parlement européen participe à la législation de l'Union.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Le Parlement européen participe à la législation de l'Union.",
+    "sourceUrl": "https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-parliament_fr",
     "status": "demo",
-    "subthemeId": "https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-parliament_fr",
-    "difficulty": "union-europeenne"
+    "subthemeId": "union-europeenne",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b055",
     "themeId": "droits",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Que protège le droit au respect de la vie privée ?",
-    "correct": [
+    "prompt": "Que protège le droit au respect de la vie privée ?",
+    "choices": [
       "Certaines informations personnelles et la vie personnelle contre les atteintes illégales",
       "Le droit de publier les secrets de tous",
       "L'interdiction de toute enquête judiciaire",
       "Le droit d'ignorer toute décision de justice"
     ],
-    "explanation": 0,
-    "takeaway": "Le respect de la vie privée est protégé par le droit, avec des limites et exceptions prévues par la loi.",
+    "correct": 0,
+    "explanation": "Le respect de la vie privée est protégé par le droit, avec des limites et exceptions prévues par la loi.",
+    "takeaway": "La vie privée est protégée par la loi.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La vie privée est protégée par la loi.",
+    "sourceUrl": "https://www.service-public.fr/particuliers/vosdroits/F32103",
     "status": "demo",
-    "subthemeId": "https://www.service-public.fr/particuliers/vosdroits/F32103",
-    "difficulty": "droits-fondamentaux"
+    "subthemeId": "droits-fondamentaux",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b056",
     "themeId": "droits",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel principe signifie que chacun a droit à un procès équitable ?",
-    "correct": [
+    "prompt": "Quel principe signifie que chacun a droit à un procès équitable ?",
+    "choices": [
       "Les garanties de justice et les droits de la défense",
       "La condamnation automatique",
       "L'interdiction de se faire assister",
       "Le jugement par les réseaux sociaux"
     ],
-    "explanation": 0,
-    "takeaway": "Les garanties du procès équitable comprennent notamment les droits de la défense et l'accès à un tribunal indépendant et impartial.",
+    "correct": 0,
+    "explanation": "Les garanties du procès équitable comprennent notamment les droits de la défense et l'accès à un tribunal indépendant et impartial.",
+    "takeaway": "Une personne a droit à une justice équitable.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Une personne a droit à une justice équitable.",
+    "sourceUrl": "https://www.justice.fr/",
     "status": "demo",
-    "subthemeId": "https://www.justice.fr/",
-    "difficulty": "droits-fondamentaux"
+    "subthemeId": "droits-fondamentaux",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b057",
     "themeId": "droits",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quelle règle générale s'applique aux contrats légalement formés ?",
-    "correct": [
+    "prompt": "Quelle règle générale s'applique aux contrats légalement formés ?",
+    "choices": [
       "Ils doivent être exécutés de bonne foi",
       "Ils peuvent toujours être ignorés sans conséquence",
       "Ils remplacent toutes les lois",
       "Ils sont valables uniquement oralement"
     ],
-    "explanation": 0,
-    "takeaway": "Le Code civil prévoit notamment que les contrats légalement formés s'imposent aux parties et doivent être exécutés de bonne foi.",
+    "correct": 0,
+    "explanation": "Le Code civil prévoit notamment que les contrats légalement formés s'imposent aux parties et doivent être exécutés de bonne foi.",
+    "takeaway": "Lis et respecte les engagements contractuels.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Lis et respecte les engagements contractuels.",
+    "sourceUrl": "https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006070721/",
     "status": "demo",
-    "subthemeId": "https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006070721/",
-    "difficulty": "devoirs"
+    "subthemeId": "devoirs",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b058",
@@ -1166,21 +1164,21 @@ window.BANK_QUESTIONS = [
     "id": "b059",
     "themeId": "droits",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel est le but général du droit du travail ?",
-    "correct": [
+    "prompt": "Quel est le but général du droit du travail ?",
+    "choices": [
       "Encadrer les relations de travail et protéger les droits et obligations des parties",
       "Supprimer tous les contrats de travail",
       "Remplacer le droit pénal",
       "Fixer les horaires de toutes les activités privées"
     ],
-    "explanation": 0,
-    "takeaway": "Le droit du travail fixe des règles encadrant les relations entre salariés et employeurs.",
+    "correct": 0,
+    "explanation": "Le droit du travail fixe des règles encadrant les relations entre salariés et employeurs.",
+    "takeaway": "Le droit du travail encadre la relation employeur-salarié.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Le droit du travail encadre la relation employeur-salarié.",
+    "sourceUrl": "https://code.travail.gouv.fr/",
     "status": "demo",
-    "subthemeId": "https://code.travail.gouv.fr/",
-    "difficulty": "devoirs"
+    "subthemeId": "devoirs",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b060",
@@ -1206,41 +1204,41 @@ window.BANK_QUESTIONS = [
     "id": "b061",
     "themeId": "droits",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "À quoi sert la protection sociale ?",
-    "correct": [
+    "prompt": "À quoi sert la protection sociale ?",
+    "choices": [
       "À couvrir certains risques de la vie comme la maladie, la vieillesse ou les accidents du travail",
       "À remplacer tous les revenus pour toute personne sans condition",
       "À supprimer les obligations fiscales",
       "À financer uniquement les loisirs"
     ],
-    "explanation": 0,
-    "takeaway": "La protection sociale regroupe des dispositifs couvrant différents risques sociaux selon les règles applicables.",
+    "correct": 0,
+    "explanation": "La protection sociale regroupe des dispositifs couvrant différents risques sociaux selon les règles applicables.",
+    "takeaway": "La protection sociale couvre différents risques de la vie.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La protection sociale couvre différents risques de la vie.",
+    "sourceUrl": "https://www.vie-publique.fr/fiches/24110-quest-ce-que-la-protection-sociale",
     "status": "demo",
-    "subthemeId": "https://www.vie-publique.fr/fiches/24110-quest-ce-que-la-protection-sociale",
-    "difficulty": "devoirs"
+    "subthemeId": "devoirs",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b062",
     "themeId": "droits",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel principe garantit que les personnes peuvent pratiquer une religion ou ne pas en pratiquer, dans le cadre de la loi ?",
-    "correct": [
+    "prompt": "Quel principe garantit que les personnes peuvent pratiquer une religion ou ne pas en pratiquer, dans le cadre de la loi ?",
+    "choices": [
       "La liberté de conscience",
       "La préférence de l'État pour une religion",
       "L'obligation de croyance",
       "La suppression des libertés"
     ],
-    "explanation": 0,
-    "takeaway": "La liberté de conscience protège la liberté de religion et de conviction.",
+    "correct": 0,
+    "explanation": "La liberté de conscience protège la liberté de religion et de conviction.",
+    "takeaway": "Chacun est libre de ses convictions.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Chacun est libre de ses convictions.",
+    "sourceUrl": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006069165/",
     "status": "demo",
-    "subthemeId": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006069165/",
-    "difficulty": "droits-fondamentaux"
+    "subthemeId": "droits-fondamentaux",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b063",
@@ -1266,181 +1264,181 @@ window.BANK_QUESTIONS = [
     "id": "b064",
     "themeId": "droits",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel principe implique que les décisions de justice doivent être rendues par une juridiction indépendante ?",
-    "correct": [
+    "prompt": "Quel principe implique que les décisions de justice doivent être rendues par une juridiction indépendante ?",
+    "choices": [
       "L'indépendance de la justice",
       "La préférence politique des juges",
       "Le vote des spectateurs",
       "La décision des réseaux sociaux"
     ],
-    "explanation": 0,
-    "takeaway": "L'indépendance de la justice est une garantie essentielle de l'État de droit.",
+    "correct": 0,
+    "explanation": "L'indépendance de la justice est une garantie essentielle de l'État de droit.",
+    "takeaway": "La justice doit être indépendante.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La justice doit être indépendante.",
+    "sourceUrl": "https://www.justice.fr/",
     "status": "demo",
-    "subthemeId": "https://www.justice.fr/",
-    "difficulty": "droits-fondamentaux"
+    "subthemeId": "droits-fondamentaux",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b065",
     "themeId": "droits",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Que signifie le devoir de contribuer aux charges publiques selon ses moyens et les règles fiscales ?",
-    "correct": [
+    "prompt": "Que signifie le devoir de contribuer aux charges publiques selon ses moyens et les règles fiscales ?",
+    "choices": [
       "Participer au financement collectif par les impôts et contributions dus",
       "Payer uniquement si l'on utilise chaque service public",
       "Choisir librement les impôts à respecter",
       "Remplacer les impôts par des dons facultatifs"
     ],
-    "explanation": 0,
-    "takeaway": "Les impôts et contributions obligatoires participent au financement des charges publiques.",
+    "correct": 0,
+    "explanation": "Les impôts et contributions obligatoires participent au financement des charges publiques.",
+    "takeaway": "Les charges publiques sont financées notamment par les impôts.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Les charges publiques sont financées notamment par les impôts.",
+    "sourceUrl": "https://www.impots.gouv.fr/",
     "status": "demo",
-    "subthemeId": "https://www.impots.gouv.fr/",
-    "difficulty": "devoirs"
+    "subthemeId": "devoirs",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b066",
     "themeId": "histoire",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel événement marque symboliquement la prise de la Bastille ?",
-    "correct": [
+    "prompt": "Quel événement marque symboliquement la prise de la Bastille ?",
+    "choices": [
       "Le 14 juillet 1789",
       "Le 11 novembre 1918",
       "Le 8 mai 1945",
       "Le 1er janvier 1958"
     ],
-    "explanation": 0,
-    "takeaway": "La prise de la Bastille le 14 juillet 1789 est un événement majeur de la Révolution française.",
+    "correct": 0,
+    "explanation": "La prise de la Bastille le 14 juillet 1789 est un événement majeur de la Révolution française.",
+    "takeaway": "La Bastille est prise le 14 juillet 1789.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La Bastille est prise le 14 juillet 1789.",
+    "sourceUrl": "https://www.elysee.fr/la-presidence/la-revolution-francaise",
     "status": "demo",
-    "subthemeId": "https://www.elysee.fr/la-presidence/la-revolution-francaise",
-    "difficulty": "periodes-personnages"
+    "subthemeId": "periodes-personnages",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b067",
     "themeId": "histoire",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "En quelle année la loi de séparation des Églises et de l'État est-elle adoptée ?",
-    "correct": [
+    "prompt": "En quelle année la loi de séparation des Églises et de l'État est-elle adoptée ?",
+    "choices": [
       "1789",
       "1848",
       "1905",
       "1958"
     ],
-    "explanation": 2,
-    "takeaway": "La loi du 9 décembre 1905 est un texte majeur de la séparation des Églises et de l'État.",
+    "correct": 2,
+    "explanation": "La loi du 9 décembre 1905 est un texte majeur de la séparation des Églises et de l'État.",
+    "takeaway": "La loi de séparation date de 1905.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La loi de séparation date de 1905.",
+    "sourceUrl": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006070169/",
     "status": "demo",
-    "subthemeId": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006070169/",
-    "difficulty": "periodes-personnages"
+    "subthemeId": "periodes-personnages",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b068",
     "themeId": "histoire",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Qui a lancé l'appel du 18 juin 1940 depuis Londres ?",
-    "correct": [
+    "prompt": "Qui a lancé l'appel du 18 juin 1940 depuis Londres ?",
+    "choices": [
       "Charles de Gaulle",
       "Jean Moulin",
       "Victor Hugo",
       "Georges Clemenceau"
     ],
-    "explanation": 0,
-    "takeaway": "Charles de Gaulle lance l'appel du 18 juin 1940, appelant à poursuivre le combat contre l'Allemagne nazie.",
+    "correct": 0,
+    "explanation": "Charles de Gaulle lance l'appel du 18 juin 1940, appelant à poursuivre le combat contre l'Allemagne nazie.",
+    "takeaway": "L'appel du 18 juin est associé à Charles de Gaulle.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "L'appel du 18 juin est associé à Charles de Gaulle.",
+    "sourceUrl": "https://www.charles-de-gaulle.org/",
     "status": "demo",
-    "subthemeId": "https://www.charles-de-gaulle.org/",
-    "difficulty": "periodes-personnages"
+    "subthemeId": "periodes-personnages",
+    "difficulty": "avance"
   },
   {
     "id": "b069",
     "themeId": "histoire",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel fleuve traverse Lyon avant de rejoindre la Saône ?",
-    "correct": [
+    "prompt": "Quel fleuve traverse Lyon avant de rejoindre la Saône ?",
+    "choices": [
       "Le Rhône",
       "La Loire",
       "La Seine",
       "La Garonne"
     ],
-    "explanation": 0,
-    "takeaway": "Le Rhône traverse Lyon et rejoint la Saône dans la ville.",
+    "correct": 0,
+    "explanation": "Le Rhône traverse Lyon et rejoint la Saône dans la ville.",
+    "takeaway": "Le Rhône et la Saône se rejoignent à Lyon.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Le Rhône et la Saône se rejoignent à Lyon.",
+    "sourceUrl": "https://www.geoportail.gouv.fr/",
     "status": "demo",
-    "subthemeId": "https://www.geoportail.gouv.fr/",
-    "difficulty": "geographie"
+    "subthemeId": "geographie",
+    "difficulty": "avance"
   },
   {
     "id": "b070",
     "themeId": "histoire",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quelle île méditerranéenne est une région française ?",
-    "correct": [
+    "prompt": "Quelle île méditerranéenne est une région française ?",
+    "choices": [
       "La Corse",
       "La Sardaigne",
       "La Sicile",
       "Malte"
     ],
-    "explanation": 0,
-    "takeaway": "La Corse est une île et une région française de la Méditerranée.",
+    "correct": 0,
+    "explanation": "La Corse est une île et une région française de la Méditerranée.",
+    "takeaway": "La Corse est une région française insulaire.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La Corse est une région française insulaire.",
+    "sourceUrl": "https://www.vie-publique.fr/",
     "status": "demo",
-    "subthemeId": "https://www.vie-publique.fr/",
-    "difficulty": "geographie"
+    "subthemeId": "geographie",
+    "difficulty": "avance"
   },
   {
     "id": "b071",
     "themeId": "histoire",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel monument se trouve à proximité du Champ-de-Mars à Paris ?",
-    "correct": [
+    "prompt": "Quel monument se trouve à proximité du Champ-de-Mars à Paris ?",
+    "choices": [
       "La tour Eiffel",
       "Le château de Chambord",
       "Le pont du Gard",
       "Le Mont-Saint-Michel"
     ],
-    "explanation": 0,
-    "takeaway": "La tour Eiffel se trouve à Paris, près du Champ-de-Mars.",
+    "correct": 0,
+    "explanation": "La tour Eiffel se trouve à Paris, près du Champ-de-Mars.",
+    "takeaway": "La tour Eiffel est située près du Champ-de-Mars.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La tour Eiffel est située près du Champ-de-Mars.",
+    "sourceUrl": "https://www.toureiffel.paris/",
     "status": "demo",
-    "subthemeId": "https://www.toureiffel.paris/",
-    "difficulty": "patrimoine"
+    "subthemeId": "patrimoine",
+    "difficulty": "avance"
   },
   {
     "id": "b072",
     "themeId": "histoire",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel site historique normand est célèbre pour son abbaye médiévale ?",
-    "correct": [
+    "prompt": "Quel site historique normand est célèbre pour son abbaye médiévale ?",
+    "choices": [
       "Le Mont-Saint-Michel",
       "Le palais des Papes à Avignon",
       "Le château de Versailles",
       "Le pont du Gard"
     ],
-    "explanation": 0,
-    "takeaway": "Le Mont-Saint-Michel est connu pour son abbaye et son patrimoine historique.",
+    "correct": 0,
+    "explanation": "Le Mont-Saint-Michel est connu pour son abbaye et son patrimoine historique.",
+    "takeaway": "Le Mont-Saint-Michel est un site patrimonial majeur.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Le Mont-Saint-Michel est un site patrimonial majeur.",
+    "sourceUrl": "https://www.ot-montsaintmichel.com/",
     "status": "demo",
-    "subthemeId": "https://www.ot-montsaintmichel.com/",
-    "difficulty": "patrimoine"
+    "subthemeId": "patrimoine",
+    "difficulty": "avance"
   },
   {
     "id": "b073",
@@ -1466,61 +1464,61 @@ window.BANK_QUESTIONS = [
     "id": "b074",
     "themeId": "societe",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel organisme peut accompagner les familles pour certaines prestations familiales ?",
-    "correct": [
+    "prompt": "Quel organisme peut accompagner les familles pour certaines prestations familiales ?",
+    "choices": [
       "La caisse d'allocations familiales (CAF)",
       "Le Conseil constitutionnel",
       "Le Sénat",
       "Le musée du Louvre"
     ],
-    "explanation": 0,
-    "takeaway": "La CAF gère plusieurs prestations familiales et aides, selon les conditions applicables.",
+    "correct": 0,
+    "explanation": "La CAF gère plusieurs prestations familiales et aides, selon les conditions applicables.",
+    "takeaway": "La CAF accompagne les familles pour certaines prestations.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La CAF accompagne les familles pour certaines prestations.",
+    "sourceUrl": "https://www.caf.fr/",
     "status": "demo",
-    "subthemeId": "https://www.caf.fr/",
-    "difficulty": "installation-residence"
+    "subthemeId": "installation-residence",
+    "difficulty": "avance"
   },
   {
     "id": "b075",
     "themeId": "societe",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel service peut aider à trouver un médecin et à comprendre les démarches de santé ?",
-    "correct": [
+    "prompt": "Quel service peut aider à trouver un médecin et à comprendre les démarches de santé ?",
+    "choices": [
       "L'Assurance maladie et ses services officiels",
       "Le conseil municipal pour toutes les questions médicales",
       "Le Parlement européen",
       "La préfecture pour chaque consultation"
     ],
-    "explanation": 0,
-    "takeaway": "L'Assurance maladie fournit des informations sur les droits, les remboursements et les démarches de santé.",
+    "correct": 0,
+    "explanation": "L'Assurance maladie fournit des informations sur les droits, les remboursements et les démarches de santé.",
+    "takeaway": "Pour la santé, consulte les services officiels de l'Assurance maladie.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Pour la santé, consulte les services officiels de l'Assurance maladie.",
+    "sourceUrl": "https://www.ameli.fr/",
     "status": "demo",
-    "subthemeId": "https://www.ameli.fr/",
-    "difficulty": "sante"
+    "subthemeId": "sante",
+    "difficulty": "avance"
   },
   {
     "id": "b076",
     "themeId": "societe",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel est le rôle général de l'inspection du travail ?",
-    "correct": [
+    "prompt": "Quel est le rôle général de l'inspection du travail ?",
+    "choices": [
       "Contrôler l'application du droit du travail et informer sur les règles relevant de ses compétences",
       "Délivrer les cartes d'identité",
       "Organiser les élections législatives",
       "Remplacer les tribunaux"
     ],
-    "explanation": 0,
-    "takeaway": "L'inspection du travail veille notamment à l'application du droit du travail dans son champ de compétence.",
+    "correct": 0,
+    "explanation": "L'inspection du travail veille notamment à l'application du droit du travail dans son champ de compétence.",
+    "takeaway": "L'inspection du travail intervient sur les règles du travail.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "L'inspection du travail intervient sur les règles du travail.",
+    "sourceUrl": "https://travail-emploi.gouv.fr/",
     "status": "demo",
-    "subthemeId": "https://travail-emploi.gouv.fr/",
-    "difficulty": "travail"
+    "subthemeId": "travail",
+    "difficulty": "avance"
   },
   {
     "id": "b077",
@@ -1546,21 +1544,21 @@ window.BANK_QUESTIONS = [
     "id": "b078",
     "themeId": "societe",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel principe s'applique à l'autorité parentale ?",
-    "correct": [
+    "prompt": "Quel principe s'applique à l'autorité parentale ?",
+    "choices": [
       "Elle doit être exercée dans l'intérêt de l'enfant et dans le respect de ses droits",
       "Elle permet de porter atteinte aux droits de l'enfant",
       "Elle supprime toute obligation scolaire",
       "Elle est exercée par l'école à la place des parents"
     ],
-    "explanation": 0,
-    "takeaway": "L'autorité parentale est un ensemble de droits et devoirs exercés dans l'intérêt de l'enfant.",
+    "correct": 0,
+    "explanation": "L'autorité parentale est un ensemble de droits et devoirs exercés dans l'intérêt de l'enfant.",
+    "takeaway": "L'intérêt de l'enfant est central dans l'autorité parentale.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "L'intérêt de l'enfant est central dans l'autorité parentale.",
+    "sourceUrl": "https://www.service-public.fr/particuliers/vosdroits/F3132",
     "status": "demo",
-    "subthemeId": "https://www.service-public.fr/particuliers/vosdroits/F3132",
-    "difficulty": "autorite-parentale-education"
+    "subthemeId": "autorite-parentale-education",
+    "difficulty": "avance"
   },
   {
     "id": "b079",
@@ -1586,21 +1584,20 @@ window.BANK_QUESTIONS = [
     "id": "b080",
     "themeId": "societe",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quel service public local est souvent un premier interlocuteur pour les démarches communales ?",
-    "correct": [
+    "prompt": "Quel service public local est souvent un premier interlocuteur pour les démarches communales ?",
+    "choices": [
       "La mairie",
       "La Cour de cassation",
       "Le Parlement européen",
       "Le Conseil constitutionnel"
     ],
-    "explanation": 0,
-    "takeaway": "La mairie renseigne sur de nombreuses démarches locales, même si certains services relèvent d'autres administrations.",
+    "correct": 0,
+    "explanation": "La mairie renseigne sur de nombreuses démarches locales, même si certains services relèvent d'autres administrations.",
+    "takeaway": "Pour une démarche communale, la mairie est souvent un bon point de départ.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Pour une démarche communale, la mairie est souvent un bon point de départ.",
+    "sourceUrl": "https://www.service-public.fr/particuliers/vosdroits/N47",
     "status": "demo",
-    "subthemeId": "https://www.service-public.fr/particuliers/vosdroits/N47",
-    "difficulty": "installation-residence"
+    "subthemeId": "installation-residence",
+    "difficulty": "avance"
   }
-]
 ];
