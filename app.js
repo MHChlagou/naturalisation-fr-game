@@ -52,7 +52,7 @@ const LEGACY_TOPICS = [
  {title:"Ma vie en France",desc:"Décrire des éléments concrets de ta vie quotidienne : logement, études, travail, famille ou relations sociales.",question:"Qu'est-ce qui te relie aujourd'hui à la vie quotidienne en France ?"},
  {title:"Participation à la société",desc:"Réfléchir à la participation locale, au voisinage, aux associations et aux activités collectives.",question:"Comment participes-tu, ou aimerais-tu participer, à la vie de ta commune ou de ton quartier ?"},
  {title:"Mes projets et mon engagement",desc:"Parler de tes projets de manière réaliste et personnelle, sans supposer qu'une seule réponse est attendue.",question:"Quels sont tes projets pour les prochaines années et comment souhaites-tu contribuer à la société française ?"}
-];;
+];
 const STORAGE_KEY="cap-citoyen-progress-v1";
 const defaultState=()=>({answers:{},bookmarks:[],sessions:[],themeSeen:[],history:[]});
 let state=loadState(), currentSession=null, selectedChoice=null, deferredInstall=null, activeQuestion=null, reviewMode=false, examTimerInterval=null;
