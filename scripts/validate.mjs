@@ -57,9 +57,13 @@ for (const lesson of lessons) assert.ok(lesson.title && lesson.summary && lesson
 const extraQuestions = vm.runInNewContext(extraSource.slice(extraSource.indexOf("["), extraSource.lastIndexOf(";")));
 questions.push(...extraQuestions);
 const questionSubthemes = extractObject("QUESTION_SUBTHEMES", "QUESTIONS.forEach");
-questions.forEach(question => { question.subthemeId = questionSubthemes[question.id]; });
+const questionDifficulties = extractObject("QUESTION_DIFFICULTIES", "QUESTIONS.forEach");
+questions.forEach(question => { question.subthemeId = questionSubthemes[question.id]; question.difficulty = questionDifficulties[question.id]; });
 assert.equal(themes.length, 5, "The prototype should include the five learning themes.");
 assert.equal(questions.length, 40, "The practice exam bank must contain 40 questions.");
+assert.equal(Object.values(questionDifficulties).filter(level => level === "facile").length, 13, "There must be 13 easy questions.");
+assert.equal(Object.values(questionDifficulties).filter(level => level === "intermediaire").length, 14, "There must be 14 intermediate questions.");
+assert.equal(Object.values(questionDifficulties).filter(level => level === "avance").length, 13, "There must be 13 advanced questions.");
 assert.ok(questions.every(q => q.status && q.status !== "draft" && q.status !== "needs-review"), "Draft or unreviewed questions must not be published as ready content.");
 assert.match(app, /Exercices pédagogiques originaux, non officiels/, "The app must disclose that answers are educational and unofficial.");
 assert.match(app, /const SOURCE_URLS = \{/, "Each demo question must have a traceable source URL.");
