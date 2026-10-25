@@ -1,4 +1,4 @@
-# Naturalisation FR Game — Product plan
+# Naturalisation FR Game - Product plan
 
 > A locally usable, responsive learning game to prepare for French naturalisation: legacy assimilation-interview preparation and the post-1 January 2026 civic-exam pathway. This is a learning aid, not legal advice or an official government service.
 
@@ -23,18 +23,18 @@ As verified on 25 October 2026 against official Ministry of the Interior pages:
 - The official distribution specified in the 10 October 2025 order is 11 / 6 / 11 / 8 / 4 questions across the five themes.
 
 Official sources:
-1. Ministry of the Interior — civic examination for naturalisation/reintegration, published 10 June 2026: https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/lexamen-civique-pour-demande-de-naturalisation-ou-de-reintegration-dans-nationalite-francaise.html
-2. Ministry of the Interior — official knowledge questions, published 12 January 2026: https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/questions-de-connaissance-pour-lexamen-civique-nationalite-francaise.html
-3. Ministry of the Interior — access to French nationality procedures: https://www.immigration.interieur.gouv.fr/devenir-francais/procedures-dacces-a-nationalite-francaise
-4. Légifrance — Decree no. 2025-648 of 15 July 2025: https://www.legifrance.gouv.fr/eli/decret/2025/7/15/2025-648/jo/texte
-5. Légifrance — Order of 10 October 2025 on the programme and exam arrangements: https://www.legifrance.gouv.fr/loda/id/JORFTEXT000052381620
+1. Ministry of the Interior - civic examination for naturalisation/reintegration, published 10 June 2026: https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/lexamen-civique-pour-demande-de-naturalisation-ou-de-reintegration-dans-nationalite-francaise.html
+2. Ministry of the Interior - official knowledge questions, published 12 January 2026: https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/questions-de-connaissance-pour-lexamen-civique-nationalite-francaise.html
+3. Ministry of the Interior - access to French nationality procedures: https://www.immigration.interieur.gouv.fr/devenir-francais/procedures-dacces-a-nationalite-francaise
+4. Légifrance - Decree no. 2025-648 of 15 July 2025: https://www.legifrance.gouv.fr/eli/decret/2025/7/15/2025-648/jo/texte
+5. Légifrance - Order of 10 October 2025 on the programme and exam arrangements: https://www.legifrance.gouv.fr/loda/id/JORFTEXT000052381620
 
-Important wording: do not describe the new framework as a change introduced in April/May 2026. Official sources say its main civic-exam requirements took effect on 1 January 2026. If “old method” is supported, label it “ancienne formule — entraînement à l’entretien d’assimilation (historique / pour comprendre le format antérieur)” and show a prominent notice that requirements depend on the person's procedure and date. Do not suggest that old-format preparation replaces the current civic exam.
+Important wording: do not describe the new framework as a change introduced in April/May 2026. Official sources say its main civic-exam requirements took effect on 1 January 2026. If “old method” is supported, label it “ancienne formule - entraînement à l’entretien d’assimilation (historique / pour comprendre le format antérieur)” and show a prominent notice that requirements depend on the person's procedure and date. Do not suggest that old-format preparation replaces the current civic exam.
 
 ## 3. Target users and journeys
 
 ### First visit
-1. Select a pathway: “Examen civique (dispositif 2026)” or “Entretien d’assimilation — ancienne formule”.
+1. Select a pathway: “Examen civique (dispositif 2026)” or “Entretien d’assimilation - ancienne formule”.
 2. Choose learning mode: guided lessons, themed quiz, review mistakes, or mock exam.
 3. Optional onboarding to choose language level / daily goal (do not require account).
 4. Start immediately; no login, server, or network dependency.
@@ -109,23 +109,23 @@ Persist locally:
 
 ## 5. Information architecture / screens
 
-1. Welcome / pathway selector — clear distinction between 2026 exam and legacy interview practice.
-2. Home dashboard — continue, daily practice, themes, mock exam, review mistakes; progress at a glance.
-3. Theme explorer — theme cards, mastery percentage, number of available lessons/questions.
-4. Lesson player — guide + explanation card + example + takeaway + quick check.
-5. Quiz player — question, choices, feedback, guide state, bookmark, uncertain-answer action, progress.
-6. Explanation panel — factual answer, plain explanation, example, memory tip, source note.
-7. Results — score, progress by theme, accuracy trend, weak areas, recommended next steps.
-8. Mistake notebook — filters, spaced review, explanation and source.
-9. Mock exam setup — mode, rules, timer and accessibility options.
-10. Mock exam results — pass-threshold comparison, per-theme analysis, answer review.
-11. Progress / statistics — history, time, knowledge vs situational breakdown, export/import.
-12. Settings / about — reduced motion, sound toggle if introduced, text size, data export/import/reset, sources, privacy and legal disclaimer.
-13. Content/source information — distinction between official public questions, paraphrases and original exercises, review dates and errata.
+1. Welcome / pathway selector - clear distinction between 2026 exam and legacy interview practice.
+2. Home dashboard - continue, daily practice, themes, mock exam, review mistakes; progress at a glance.
+3. Theme explorer - theme cards, mastery percentage, number of available lessons/questions.
+4. Lesson player - guide + explanation card + example + takeaway + quick check.
+5. Quiz player - question, choices, feedback, guide state, bookmark, uncertain-answer action, progress.
+6. Explanation panel - factual answer, plain explanation, example, memory tip, source note.
+7. Results - score, progress by theme, accuracy trend, weak areas, recommended next steps.
+8. Mistake notebook - filters, spaced review, explanation and source.
+9. Mock exam setup - mode, rules, timer and accessibility options.
+10. Mock exam results - pass-threshold comparison, per-theme analysis, answer review.
+11. Progress / statistics - history, time, knowledge vs situational breakdown, export/import.
+12. Settings / about - reduced motion, sound toggle if introduced, text size, data export/import/reset, sources, privacy and legal disclaimer.
+13. Content/source information - distinction between official public questions, paraphrases and original exercises, review dates and errata.
 
 ## 6. Visual design direction
 
-Working product mood: “République en poche” — friendly, polished educational game, not a government portal.
+Working product mood: “République en poche” - friendly, polished educational game, not a government portal.
 - Warm off-white background, deep navy text, blue as primary, red/blue/cream accents in moderation, one lively secondary accent.
 - Bold editorial headings, generous whitespace, rounded cards, crisp progress rings/bars, friendly illustration.
 - Avoid an overly childish look: designed for adults preparing an important administrative milestone.
@@ -186,34 +186,34 @@ Domain model:
 
 ## 10. Delivery roadmap
 
-### Phase 0 — Validate scope and official content (first)
+### Phase 0 - Validate scope and official content (first)
 - Download/inspect current official exam information booklet, official question list, current citizen's booklet and applicable reference.
 - Clarify content licensing/reuse before verbatim republication.
 - Define what the legacy pathway means; keep it educational and separate from current requirements.
 - Create the question/lesson schema and review checklist.
 - Deliver: approved source register, content taxonomy, small reviewed sample.
 
-### Phase 1 — UX prototype and design system
+### Phase 1 - UX prototype and design system
 - Build responsive welcome, dashboard, theme cards, quiz player and guide character.
 - Validate adult-friendly visual style on phone and desktop.
 - Deliver: clickable prototype and accessible design tokens.
 
-### Phase 2 — Core offline learning MVP
+### Phase 2 - Core offline learning MVP
 - Implement themed lessons, quiz engine, explanations, bookmarks, mistake review.
 - Add IndexedDB persistence, progress dashboard, export/import.
 - Deliver: usable learning PWA with bundled starter content.
 
-### Phase 3 — Realistic mock examination
+### Phase 3 - Realistic mock examination
 - Implement 40-question distribution, countdown, pause/finish rules, results breakdown.
 - Add a validated bank sufficient to generate practice sets without repetition problems.
 - Deliver: complete simulated examination and actionable remediation plan.
 
-### Phase 4 — Legacy interview practice
+### Phase 4 - Legacy interview practice
 - Add topic cards, reflection prompts, example answer structures, scenario practice.
 - Ensure personal examples are framed as examples only.
 - Deliver: separate legacy learning path.
 
-### Phase 5 — Quality, release and ongoing content maintenance
+### Phase 5 - Quality, release and ongoing content maintenance
 - Cross-browser/mobile/keyboard/offline tests, performance audit, privacy review.
 - Add content version, source review date, release notes and a simple correction workflow.
 - Deploy static files to GitHub Pages or another static host; verify PWA and deep-link behaviour.
