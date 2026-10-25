@@ -24,6 +24,7 @@
       <button class="nav-item active" data-view="home"><span>⌂</span> Accueil</button>
       <button class="nav-item" data-view="themes"><span>▦</span> Les thèmes</button>
       <button class="nav-item" data-view="practice"><span>✳</span> Entraînement</button>
+      <button class="nav-item" data-view="revisions"><span>☆</span> Mes révisions</button>
       <button class="nav-item" data-view="exam"><span>◷</span> Examen blanc</button>
       <button class="nav-item" data-view="progress"><span>↗</span> Ma progression</button>
       <div class="sidebar-note"><span class="note-icon">✦</span><strong>Un petit pas chaque jour.</strong><p>Tu avances à ton rythme. Chaque réponse t'apprend quelque chose.</p></div>
@@ -90,6 +91,11 @@
         <div class="section-heading"><div><span class="eyebrow">TES POINTS FORTS ET TES DÉFIS</span><h2>Maîtrise par thème</h2></div></div><div id="progress-breakdown" class="breakdown-list"></div>
         <div class="data-actions"><div><h3>Tes données restent sur ton appareil</h3><p>Exporte ta progression pour la sauvegarder ou réimporte un fichier JSON.</p></div><div class="data-buttons"><button id="export-data" class="button button-secondary">Exporter mes données</button><label class="button button-secondary file-button">Importer<input id="import-data" type="file" accept="application/json" hidden></label><button id="reset-data" class="button button-danger">Réinitialiser</button></div></div>
       </section>
+      <section id="view-revisions" class="view hidden">
+        <div class="page-intro"><span class="eyebrow">APPRENDRE DE SES RÉPONSES</span><h1>Mon carnet de révision<span class="title-period">.</span></h1><p>Retrouve tes favoris et les questions à retravailler. Tu peux lancer une session ciblée quand tu veux.</p></div>
+        <div class="revision-summary"><article><span class="revision-count" id="revision-bookmark-count">0</span><div><strong>Questions favorites</strong><p>Celles que tu as gardées pour plus tard.</p></div><button class="button button-secondary" data-review-start="bookmarks" id="review-bookmarks-button">Réviser mes favoris</button></article><article><span class="revision-count" id="revision-error-count">0</span><div><strong>Questions à revoir</strong><p>Les questions dont ta dernière réponse était incorrecte.</p></div><button class="button button-secondary" data-review-start="errors" id="review-errors-button">Revoir mes erreurs</button></article></div>
+        <div class="section-heading"><div><span class="eyebrow">TES QUESTIONS ENREGISTRÉES</span><h2>À reprendre à ton rythme</h2></div></div><div id="revision-list" class="revision-list"></div>
+      </section>
       <section id="view-legacy" class="view hidden">
         <div class="page-intro"><span class="eyebrow">PARCOURS HISTORIQUE ET PÉDAGOGIQUE</span><h1>Préparer son entretien<span class="title-period">.</span></h1><p>Réfléchis à ton parcours, à tes motivations et à ta compréhension de la vie en France.</p></div>
         <div class="notice notice-warm"><span class="notice-icon">!</span><div><strong>Important : parcours historique</strong><p>L'entretien d'assimilation et l'examen civique sont deux évaluations distinctes. Ce parcours sert à réfléchir et à s'entraîner ; il ne remplace pas les conditions applicables à ton dossier.</p></div></div>
@@ -98,7 +104,7 @@
       <footer class="mobile-footer"><span>Cap Citoyen</span><span>Apprendre · Comprendre · Avancer</span></footer>
     </main>
   </div>
-  <nav class="mobile-nav" aria-label="Navigation mobile"><button class="active" data-view="home"><span>⌂</span>Accueil</button><button data-view="themes"><span>▦</span>Thèmes</button><button data-view="exam"><span>◷</span>Examen</button><button data-view="progress"><span>↗</span>Bilan</button></nav>
+  <nav class="mobile-nav" aria-label="Navigation mobile"><button class="active" data-view="home"><span>⌂</span>Accueil</button><button data-view="themes"><span>▦</span>Thèmes</button><button data-view="revisions"><span>☆</span>Réviser</button><button data-view="exam"><span>◷</span>Examen</button><button data-view="progress"><span>↗</span>Bilan</button></nav>
   <script src="./app.js" defer></script>
 </body>
 </html>
