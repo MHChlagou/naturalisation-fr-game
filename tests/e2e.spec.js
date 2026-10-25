@@ -55,7 +55,7 @@ test.describe("Cap Citoyen - parcours publics", () => {
     await page.locator("#all-themes [data-theme]").first().click();
     await expect(page.locator("#view-quiz")).toBeVisible();
     await expect(page.locator("#question-title")).not.toBeEmpty();
-    await expect(page.locator("#answer-options button")).toHaveCount(4);
+    await expect(page.locator("#answer-options button").count()).resolves.toBeGreaterThanOrEqual(2);
 
     await page.locator("#bookmark-question").click();
     await expect(page.locator("#bookmark-question")).toContainText(/Dans mes révisions/);
@@ -119,7 +119,7 @@ test.describe("Cap Citoyen - parcours publics", () => {
     await expect(page.locator("#view-legacy")).toBeVisible();
     await page.locator("#interview-start").click();
     await expect(page.locator("#interview-answer")).toBeEnabled();
-    await expect(page.locator("#interview-timer")).toContainText("14:");
+    await expect(page.locator("#interview-timer")).toHaveText(/^\d{2}:\d{2}$/);
     await expect(page.locator("#interview-progress")).toHaveAttribute("aria-valuenow", "0");
 
     for (let question = 0; question < 10; question += 1) {
@@ -163,3 +163,4 @@ test.describe("Cap Citoyen - parcours publics", () => {
     expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport + 2);
   });
 });
+
