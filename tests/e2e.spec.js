@@ -92,6 +92,7 @@ test.describe("Cap Citoyen - parcours publics", () => {
 
   test("examen blanc complet de 40 questions et résultats", async ({ page }) => {
     page.on("dialog", dialog => dialog.accept());
+    await page.locator('[data-view="exam"]').click();
     await page.locator("#start-exam").click();
     await expect(page.locator("#view-quiz")).toBeVisible();
     await expect(page.locator("#quiz-mode")).toContainText("SIMULATION D'EXAMEN");
@@ -140,7 +141,12 @@ test.describe("Cap Citoyen - parcours publics", () => {
   });
 
   test("export et réinitialisation des données locales", async ({ page }) => {
+    await page.locator('[data-view="themes"]').click();
+    await page.locator("#all-themes [data-theme]").first().click();
+    await page.locator("#answer-options button").first().click();
+    await page.locator("#submit-answer").click();
     await page.locator('[data-view="progress"]').click();
+    await expect(page.locator("#progress-answered")).toHaveText("1");
     const downloadPromise = page.waitForEvent("download");
     await page.locator("#export-data").click();
     const download = await downloadPromise;
