@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import fs from "node:fs";
 
 const baseURL = process.env.SITE_URL || "http://127.0.0.1:4173/";
 test.setTimeout(45_000);
@@ -192,7 +193,7 @@ test.describe("Cap Citoyen - parcours publics", () => {
     const download = await downloadPromise;
     const downloadPath = await download.path();
     expect(download.suggestedFilename()).toMatch(/\.json$/);
-    const saved = JSON.parse(require("node:fs").readFileSync(downloadPath, "utf8"));
+    const saved = JSON.parse(fs.readFileSync(downloadPath, "utf8"));
 
     page.on("dialog", dialog => dialog.accept());
     await page.locator("#reset-data").click();
