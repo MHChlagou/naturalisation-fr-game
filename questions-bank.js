@@ -1446,21 +1446,21 @@ window.BANK_QUESTIONS = [
     "id": "b073",
     "themeId": "histoire",
     "kind": "knowledge",
-    "prompt": "knowledge",
-    "choices": "Quelle ville est associée à la déclaration des droits de l'homme et du citoyen de 1789 ?",
-    "correct": [
-      "La Révolution et les assemblées révolutionnaires de France",
-      "La fondation de l'Union européenne",
-      "La fin de la Première Guerre mondiale",
-      "La construction de la tour Eiffel"
+    "prompt": "À quel événement historique est associée l'adoption de la Déclaration des droits de l'homme et du citoyen de 1789 ?",
+    "choices": [
+      "La Révolution française",
+      "La guerre de Cent Ans",
+      "La Révolution industrielle",
+      "La fondation de la Cinquième République"
     ],
-    "explanation": 0,
-    "takeaway": "La Déclaration des droits de l'homme et du citoyen est adoptée en 1789 pendant la Révolution française.",
-    "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "La DDHC est adoptée en 1789.",
+    "correct": 0,
+    "explanation": "La Déclaration des droits de l'homme et du citoyen a été adoptée en août 1789, au début de la Révolution française.",
+    "takeaway": "La DDHC de 1789 est un texte fondateur de la Révolution française.",
+    "source": "Exercice pédagogique original - texte de référence",
+    "sourceUrl": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
     "status": "demo",
-    "subthemeId": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
-    "difficulty": "periodes-personnages"
+    "subthemeId": "periodes-personnages",
+    "difficulty": "facile"
   },
   {
     "id": "b074",
