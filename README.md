@@ -7,10 +7,11 @@ A responsive, offline-first educational game for people preparing for French nat
 ## Product planning
 - [Product plan](docs/PRODUCT_PLAN.md)
 - [Implementation backlog](docs/BACKLOG.md)
+- [Official content validation audit](docs/CONTENT_VALIDATION.md)
 
 ## Current prototype
 - Responsive French interface with home, theme browser, quiz, results and progress views.
-- Small demonstration question bank with explanations and provenance labels.
+- Small demonstration question bank with explanations and provenance labels; content is not yet fully reviewed.
 - Local progress, bookmarks, per-theme stats, JSON export/import/reset.
 - Local SVG guide illustration.
 - PWA manifest and service worker for app-shell caching.
@@ -43,6 +44,9 @@ GitHub Pages can take a few minutes to publish after a successful workflow run.
 - Every factual question must be reviewed against current official sources, and content reuse/licensing checked before public release.
 
 ## Official references
+- [Livret du citoyen — version de juillet 2026](https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html)
+- [Arrêté du 3 juillet 2026 approuvant le livret du citoyen](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000054426889)
+- [Service-Public — examen civique pour la naturalisation](https://www.service-public.gouv.fr/particuliers/vosdroits/F39426)
 - [Civic exam for naturalisation/reintegration](https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/lexamen-civique-pour-demande-de-naturalisation-ou-de-reintegration-dans-nationalite-francaise.html)
 - [Official knowledge-question list](https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/questions-de-connaissance-pour-lexamen-civique-nationalite-francaise.html)
 - [Access to French nationality procedures](https://www.immigration.interieur.gouv.fr/devenir-francais/procedures-dacces-a-nationalite-francaise)
