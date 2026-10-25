@@ -36,6 +36,9 @@ const themes = extractArray("THEMES", "const QUESTIONS =");
 const questions = extractArray("QUESTIONS", "const LEGACY_TOPICS =");
 assert.equal(themes.length, 5, "The prototype should include the five learning themes.");
 assert.ok(questions.length >= 10, "The demonstration bank should have at least 10 questions.");
+assert.match(app, /const SOURCE_URLS = \{/, "Each demo question must have a traceable source URL.");
+assert.match(html, /1er janvier 2026/, "The UI must explain the correct transition date.");
+assert.match(html, /juillet 2026 n.est pas la date de bascule/, "The UI must distinguish the new booklet from the exam transition date.");
 
 const themeIds = new Set(themes.map((theme) => theme.id));
 const questionIds = new Set();
@@ -47,6 +50,7 @@ for (const question of questions) {
   assert.ok(Array.isArray(question.choices) && question.choices.length >= 2, `Question ${question.id} needs answer choices.`);
   assert.ok(Number.isInteger(question.correct) && question.correct >= 0 && question.correct < question.choices.length, `Invalid correct answer index on ${question.id}`);
   assert.ok(question.explanation && question.takeaway && question.source, `Question ${question.id} needs explanation, takeaway and provenance.`);
+  assert.match(app, new RegExp(`${question.id}:\\s*"https?://`), `Question ${question.id} needs a direct source URL.`);
 }
 for (const theme of themes) assert.ok(questions.some((question) => question.themeId === theme.id), `Theme ${theme.id} has no question.`);
 
