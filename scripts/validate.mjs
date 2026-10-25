@@ -20,6 +20,7 @@ assert.match(app, /function startReviewSet\(mode\)/, "The revision notebook must
 assert.match(html, /manifest\.webmanifest/, "The PWA manifest must be linked.");
 assert.match(app, /navigator\.serviceWorker\.register\("\.\/sw\.js"\)/, "The service worker must be registered by the app.");
 assert.ok(fs.existsSync(new URL("../assets/guide.svg", import.meta.url)), "Guide SVG must exist.");
+assert.ok(fs.existsSync(new URL("../assets/guide-thinking.svg", import.meta.url)), "Thinking guide SVG must exist.");
 assert.ok(fs.existsSync(new URL("../manifest.webmanifest", import.meta.url)), "PWA manifest must exist.");
 assert.ok(fs.existsSync(new URL("../sw.js", import.meta.url)), "Service worker must exist.");
 
@@ -57,6 +58,8 @@ assert.match(html, /id="application-date"/, "The procedure selector must request
 assert.match(app, /date<"2026-01-01"/, "The procedure selector must distinguish pre-2026 applications.");
 assert.match(read("../sw.js"), /questions-extra\.js/, "The offline cache must include the expanded question bank.");
 assert.match(app, /function startExamTimer\(\)/, "The timed exam must have a countdown.");
+assert.match(app, /guide-thinking\.svg/, "The guide should use a thinking expression before the answer.");
+assert.match(read("../sw.js"), /guide-thinking\.svg/, "The thinking guide must be cached offline.");
 assert.match(html, /juillet 2026 n.est pas la date de bascule/, "The UI must distinguish the new booklet from the exam transition date.");
 
 const themeIds = new Set(themes.map((theme) => theme.id));
