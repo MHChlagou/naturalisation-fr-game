@@ -23,6 +23,7 @@
       <p class="nav-label">TON ESPACE</p>
       <button class="nav-item active" data-view="home"><span>⌂</span> Accueil</button>
       <button class="nav-item" data-view="themes"><span>▦</span> Les thèmes</button>
+      <button class="nav-item" data-view="lessons"><span>▤</span> Mini-leçons</button>
       <button class="nav-item" data-view="practice"><span>✳</span> Entraînement</button>
       <button class="nav-item" data-view="revisions"><span>☆</span> Mes révisions</button>
       <button class="nav-item" data-view="exam"><span>◷</span> Examen blanc</button>
@@ -61,10 +62,15 @@
         <p class="disclaimer">Cap Citoyen est un outil pédagogique indépendant, non affilié à l'administration française. Vérifie toujours les règles applicables à ta situation auprès des sources officielles.</p>
       </section>
       <section id="view-themes" class="view hidden">
-        <div class="page-intro"><span class="eyebrow">APPRENDRE PAS À PAS</span><h1>Les thèmes à connaître<span class="title-period">.</span></h1><p>Choisis un thème, réponds aux questions et découvre les explications de Camille.</p></div>
+        <div class="page-intro"><span class="eyebrow">APPRENDRE PAS À PAS</span><h1>Les thèmes à connaître<span class="title-period">.</span></h1><p>Choisis un thème, réponds aux questions et découvre les explications de Camille.</p><button class="button button-secondary" data-go="lessons">Lire les mini-leçons →</button></div>
         <div class="mode-banner"><span class="mode-icon">⚑</span><div><strong>Examen civique — dispositif 2026</strong><p>40 questions · 45 minutes maximum · seuil de réussite : 32/40</p></div><span class="mode-badge">PARCOURS ACTUEL</span></div>
         <div id="all-themes" class="theme-grid theme-grid-large"></div>
         <div class="legacy-banner"><div><span class="eyebrow">AUTRE PARCOURS</span><h2>Préparer l'entretien d'assimilation</h2><p>Recommandé en particulier pour les demandes déposées avant le 1er janvier 2026 : prépare ton entretien d'assimilation avec des sujets de réflexion et des réponses personnelles. Vérifie toujours les exigences de ton dossier auprès de la préfecture.</p></div><button class="button button-secondary" data-go="legacy">Voir les sujets →</button></div>
+      </section>
+      <section id="view-lessons" class="view hidden">
+        <div class="page-intro"><span class="eyebrow">COMPRENDRE AVANT DE S'ENTRAÎNER</span><h1>Les mini-leçons<span class="title-period">.</span></h1><p>Des rappels courts pour comprendre les notions essentielles avant de répondre aux questions. Les sources officielles sont proposées pour approfondir.</p></div>
+        <div class="lesson-guide"><img src="./assets/guide-thinking.svg" alt="" /><p><strong>Camille te conseille :</strong> lis une leçon, reformule l'idée avec tes propres mots, puis lance un quiz sur le thème.</p></div>
+        <div id="lesson-grid" class="lesson-grid"></div>
       </section>
       <section id="view-quiz" class="view hidden">
         <div class="quiz-topline"><button id="exit-quiz" class="back-button">← Quitter la session</button><span id="quiz-mode" class="mode-badge">ENTRAÎNEMENT</span><span id="exam-timer" class="mode-badge hidden" role="timer" aria-live="off">45:00</span></div>
