@@ -41,6 +41,11 @@
           <div class="hero-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><img src="./assets/guide.svg" alt="Camille, ton guide pédagogique" class="guide-hero"><div class="speech-card"><span class="speech-spark">✦</span><span>Salut ! On apprend ensemble ?</span></div><span class="float-star star-a">✳</span><span class="float-star star-b">✦</span></div>
         </div>
         <div class="notice"><span class="notice-icon">i</span><div><strong>Choisis selon la date de dépôt de ton dossier</strong><p>Pour les demandes de naturalisation déposées à compter du 1er janvier 2026, l'examen civique est exigé. Pour un dossier déposé avant cette date, commence par le parcours d'entretien d'assimilation et vérifie les règles applicables auprès de ta préfecture. La mise à jour du Livret du citoyen en juillet 2026 n'est pas la date de bascule de l'examen. <a href="https://www.legifrance.gouv.fr/eli/decret/2025/7/15/2025-648/jo/texte" target="_blank" rel="noopener noreferrer">Lire le décret officiel</a>.</p></div></div>
+        <div class="procedure-picker">
+          <div><span class="eyebrow">TON DOSSIER</span><h3>Quel parcours préparer ?</h3><p>Indique la date de dépôt de ta demande de naturalisation. Cette orientation est pédagogique et ne remplace pas la confirmation de ta préfecture.</p></div>
+          <div class="procedure-controls"><label for="application-date">Date de dépôt</label><input id="application-date" type="date" aria-describedby="procedure-help"><button id="choose-procedure" class="button button-secondary" type="button">Identifier mon parcours →</button></div>
+          <p id="procedure-help" class="procedure-help" aria-live="polite">Avant le 1er janvier 2026 : parcours entretien d'assimilation. À compter du 1er janvier 2026 : parcours examen civique, en plus des autres étapes applicables.</p>
+        </div>
         <div class="section-heading"><div><span class="eyebrow">TON TABLEAU DE BORD</span><h2>Ta progression, en un coup d'œil</h2></div><button class="text-button" data-go="progress">Voir le bilan <span>→</span></button></div>
         <div class="stats-grid">
           <article class="stat-card"><span class="stat-icon icon-blue">✓</span><span class="stat-label">Questions répondues</span><strong id="stat-answered">0</strong><span class="stat-foot">Chaque essai compte</span></article>
