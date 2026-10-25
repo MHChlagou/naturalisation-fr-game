@@ -11,6 +11,11 @@ assert.match(html, /name="viewport"/, "The page must have a responsive viewport.
 assert.match(html, /id="main"/, "The page must have a main landmark.");
 assert.match(html, /id="answer-options"/, "The quiz answer container must exist.");
 assert.match(html, /id="answer-feedback"/, "The feedback container must exist.");
+assert.match(html, /id="view-revisions"/, "The revision notebook view must exist.");
+assert.match(html, /data-review-start="bookmarks"/, "The notebook must offer bookmark review.");
+assert.match(html, /data-review-start="errors"/, "The notebook must offer error review.");
+assert.match(app, /function renderReviewNotebook\(\)/, "The revision notebook must render saved questions.");
+assert.match(app, /function startReviewSet\(mode\)/, "The revision notebook must start filtered sessions.");
 assert.match(html, /manifest\.webmanifest/, "The PWA manifest must be linked.");
 assert.match(app, /navigator\.serviceWorker\.register\("\.\/sw\.js"\)/, "The service worker must be registered by the app.");
 assert.ok(fs.existsSync(new URL("../assets/guide.svg", import.meta.url)), "Guide SVG must exist.");
