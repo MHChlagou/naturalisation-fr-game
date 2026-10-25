@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Ajouter une analyse sémantique facultative des réponses d'entretien, sans exposer de clé fournisseur dans l'application GitHub Pages. Cette architecture est une proposition documentée, pas un backend déjà déployé.
+Ajouter une analyse sémantique facultative des réponses d'entretien, sans exposer de clé fournisseur dans l'application GitHub Pages. Cette architecture est documentée et un premier scaffold API existe dans `backend/`. Il n'est pas déployé et la configuration du fournisseur ainsi que le durcissement de production restent à faire.
 
 ## Architecture
 
