@@ -27,9 +27,9 @@
 - [ ] Add mistake notebook and targeted review.
 
 ## Epic 3 — Mock exam
-- [ ] Implement 40-question session and official theme allocation.
-- [ ] Implement maximum 45-minute timer and accessible time announcements.
-- [ ] Implement 32/40 pass-threshold calculation.
+- [x] Add 40-question original practice session with official theme allocations and 12 original situation exercises.
+- [x] Implement a 45-minute countdown and treat unanswered questions as incorrect when time expires.
+- [x] Score the 40-question simulation against the 32/40 reference threshold; results remain explicitly educational, not an official attestation.
 - [ ] Ensure randomization preserves answer IDs and correctness.
 - [ ] Show results with score, percentage, time, per-theme breakdown and recommended next revision.
 - [ ] Label every result as a simulation, not an official result.
