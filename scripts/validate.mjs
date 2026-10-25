@@ -105,7 +105,7 @@ for (const question of questions) {
   assert.ok(typeof question.prompt === "string" && question.prompt.trim().length >= 15, `Question ${question.id} needs a meaningful prompt string.`);
   assert.ok(Array.isArray(question.choices) && question.choices.length >= 2, `Question ${question.id} needs answer choices.`);
   assert.ok(question.choices.every(choice => typeof choice === "string" && choice.trim().length > 0), `Question ${question.id} must have non-empty string choices.`);
-  const normalizedChoices = question.choices.map(choice => choice.trim().toLocaleLowerCase("fr").replace(/\\s+/g, " "));
+  const normalizedChoices = question.choices.map(choice => choice.trim().toLocaleLowerCase("fr").replace(/\s+/g, " "));
   assert.equal(new Set(normalizedChoices).size, normalizedChoices.length, `Question ${question.id} contains duplicate choices.`);
   assert.ok(Number.isInteger(question.correct) && question.correct >= 0 && question.correct < question.choices.length, `Invalid correct answer index on ${question.id}`);
   assert.ok(typeof question.explanation === "string" && question.explanation.trim().length > 0 && typeof question.takeaway === "string" && question.takeaway.trim().length > 0 && typeof question.source === "string" && question.source.trim().length > 0, `Question ${question.id} needs explanation, takeaway and provenance.`);
@@ -113,6 +113,12 @@ for (const question of questions) {
   if (question.sourceUrl) assert.ok(question.sourceUrl.startsWith("https://"), `Question ${question.id} needs a direct HTTPS source URL.`);
   else assert.ok(app.includes(`${question.id}:"https://`), `Question ${question.id} needs a direct source map entry.`);
 }
+const normalizedPrompts = questions.map(question => question.prompt.trim().toLocaleLowerCase("fr").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").replace(/[^\\p{L}\\p{N}]+/gu, " ").trim());
+assert.equal(new Set(normalizedPrompts).size, normalizedPrompts.length, "Question prompts must be unique after normalization.");
+const declarationQuestion = questions.find(question => question.id === "b073");
+assert.ok(declarationQuestion, "Question b073 about the 1789 Declaration must remain in the bank.");
+assert.match(declarationQuestion.prompt, /événement historique/i, "Question b073 must ask about the historical event, not a city.");
+assert.equal(declarationQuestion.choices[declarationQuestion.correct], "La Révolution française", "Question b073 must identify the French Revolution as the answer.");
 for (const theme of themes) {
   const count = [...examQuestions, ...extraQuestions].filter((question) => question.themeId === theme.id).length;
   assert.equal(count, theme.allocation, `Theme ${theme.id} must have exactly ${theme.allocation} questions.`);
