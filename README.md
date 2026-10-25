@@ -11,8 +11,8 @@ A responsive, offline-first educational game for people preparing for French nat
 
 ## Current prototype
 - Responsive French interface with home, theme browser, quiz, results and progress views.
-- 40-question original practice bank with explanations, direct source links and theme allocations matching the exam structure; content remains educational and needs an independent editorial review.
-- Local progress, bookmarks, per-theme stats, JSON export/import/reset.
+- 40-question original practice bank with direct source links, official theme/subtheme allocations and easy/intermediate/advanced practice filters; content remains educational and needs an independent editorial review.
+- Local progress, bookmarks, uncertain-question review queue, mistake review, per-theme stats and JSON export/import/reset.
 - Local SVG guide illustration with question feedback and coaching messages.
 - PWA manifest and service worker for app-shell caching.
 - Date-based procedure selector and 10 assimilation-interview reflection topics with a non-prescriptive answer framework.
