@@ -18,7 +18,9 @@
 - [x] Add tailored coaching tips and practice follow-up questions for all 10 assimilation-interview topics.
 - [x] Add a 15-minute interview timer, question progress indicator, per-question time and checklist summary.
 - [x] Document a privacy-first FastAPI architecture for optional AI feedback.
-- [ ] Implement and deploy the FastAPI coaching API after selecting hosting and an LLM provider.
+- [x] Create the initial FastAPI API scaffold, request/response schemas, provider adapter, container recipe and API tests.
+- [ ] Run the backend test suite in CI and harden the service for production.
+- [ ] Deploy the FastAPI coaching API after selecting hosting and an LLM provider.
 - [x] Create the local SVG guide character with smiling and thinking expressions.
 - [x] Build the guide speech bubble, question view, explanations and source links.
 - [x] Add keyboard focus styles, semantic structure and reduced-motion support.
