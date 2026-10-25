@@ -57,7 +57,7 @@
       </section>
       <section id="view-themes" class="view hidden">
         <div class="page-intro"><span class="eyebrow">APPRENDRE PAS À PAS</span><h1>Les thèmes à connaître<span class="title-period">.</span></h1><p>Choisis un thème, réponds aux questions et découvre les explications de Camille.</p></div>
-        <div class="mode-banner"><span class="mode-icon">⚑</span><div><strong>Examen civique — dispositif 2026</strong><p>40 questions · 45 minutes maximum · seuil indicatif de réussite : 32/40</p></div><span class="mode-badge">PARCOURS ACTUEL</span></div>
+        <div class="mode-banner"><span class="mode-icon">⚑</span><div><strong>Examen civique — dispositif 2026</strong><p>40 questions · 45 minutes maximum · seuil de réussite : 32/40</p></div><span class="mode-badge">PARCOURS ACTUEL</span></div>
         <div id="all-themes" class="theme-grid theme-grid-large"></div>
         <div class="legacy-banner"><div><span class="eyebrow">AUTRE PARCOURS</span><h2>Préparer l'entretien d'assimilation</h2><p>Recommandé en particulier pour les demandes déposées avant le 1er janvier 2026 : prépare ton entretien d'assimilation avec des sujets de réflexion et des réponses personnelles. Vérifie toujours les exigences de ton dossier auprès de la préfecture.</p></div><button class="button button-secondary" data-go="legacy">Voir les sujets →</button></div>
       </section>
@@ -76,8 +76,8 @@
       </section>
       <section id="view-exam" class="view hidden">
         <div class="page-intro"><span class="eyebrow">ENTRAÎNEMENT EN CONDITIONS SIMULÉES</span><h1>Le défi civique<span class="title-period">.</span></h1><p>Teste tes connaissances avec une session de démonstration. Le résultat n'est pas une attestation officielle.</p></div>
-        <div class="exam-card"><div class="exam-illustration"><img src="./assets/guide.svg" alt="" class="guide-exam"></div><div class="exam-details"><span class="mode-badge">SIMULATION 2026</span><h2>Prêt à relever le défi ?</h2><p>La banque actuelle est un échantillon de démonstration. Cette session courte permet de tester le parcours et les corrections ; elle ne simule pas encore les 40 questions ni le chronomètre officiel.</p><div class="exam-facts"><span><strong>13</strong> questions démo</span><span><strong>Sans chrono</strong> pour l'instant</span><span><strong>Feedback</strong> détaillé</span></div><button id="start-exam" class="button button-primary">Tester la session démo →</button></div></div>
-        <div class="notice notice-warm"><span class="notice-icon">!</span><div><strong>À savoir</strong><p>Limite de cette version : la banque contient un petit nombre de questions de démonstration, sans chronomètre. Le format 40 questions / 45 minutes et son seuil ne seront activés qu'après validation d'un corpus suffisant.</p></div></div>
+        <div class="exam-card"><div class="exam-illustration"><img src="./assets/guide.svg" alt="" class="guide-exam"></div><div class="exam-details"><span class="mode-badge">SIMULATION 2026</span><h2>Prêt à relever le défi ?</h2><p>La banque actuelle est un échantillon de démonstration. Cette session utilise 40 questions pédagogiques originales, réparties par thème, avec un chronomètre de 45 minutes. Les questions de mise en situation sont des exercices originaux et non des questions officielles divulguées.</p><div class="exam-facts"><span><strong>40</strong> questions</span><span><strong>45 min</strong> maximum</span><span><strong>32/40</strong> pour réussir</span></div><button id="start-exam" class="button button-primary">Commencer l'examen blanc →</button></div></div>
+        <div class="notice notice-warm"><span class="notice-icon">!</span><div><strong>À savoir</strong><p>Cette simulation pédagogique n'est pas une attestation officielle. Les questions ont été rédigées pour l'entraînement ; elles ne reproduisent pas un corrigé officiel, qui n'est pas publié pour la liste des questions de connaissance.</p></div></div>
       </section>
       <section id="view-results" class="view hidden">
         <div class="results-header"><span class="eyebrow">SESSION TERMINÉE</span><h1 id="result-title">Bien joué, tu as terminé !</h1><p id="result-description">Voici ton bilan détaillé.</p></div>
@@ -105,6 +105,7 @@
     </main>
   </div>
   <nav class="mobile-nav" aria-label="Navigation mobile"><button class="active" data-view="home"><span>⌂</span>Accueil</button><button data-view="themes"><span>▦</span>Thèmes</button><button data-view="revisions"><span>☆</span>Réviser</button><button data-view="exam"><span>◷</span>Examen</button><button data-view="progress"><span>↗</span>Bilan</button></nav>
+  <script src="./questions-extra.js" defer></script>
   <script src="./app.js" defer></script>
 </body>
 </html>
