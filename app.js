@@ -23,6 +23,14 @@ const QUESTIONS = [
 ];
 QUESTIONS.push(...(window.EXTRA_QUESTIONS || []));
 
+const QUESTION_SUBTHEMES = {
+ p1:"symboles",p2:"laicite",p3:"situations",p4:"symboles",p5:"situations",p6:"situations",p7:"situations",p8:"situations",p9:"situations",p10:"symboles",p11:"laicite",
+ i1:"organisation",i2:"organisation",i3:"democratie",i4:"democratie",i5:"democratie",i6:"union-europeenne",
+ d1:"droits-fondamentaux",d2:"devoirs",d3:"situations",d4:"droits-fondamentaux",d5:"devoirs",d6:"devoirs",d7:"situations",d8:"situations",d9:"situations",d10:"situations",d11:"situations",
+ h1:"periodes-personnages",h2:"geographie",h3:"periodes-personnages",h4:"periodes-personnages",h5:"geographie",h6:"geographie",h7:"patrimoine",h8:"patrimoine",
+ s1:"installation-residence",s2:"autorite-parentale-education",s3:"sante",s4:"travail"
+};
+QUESTIONS.forEach(q => { q.subthemeId = QUESTION_SUBTHEMES[q.id]; });
 const SOURCE_URLS = {
  p1:"https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
  p2:"https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/",
