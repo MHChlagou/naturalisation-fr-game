@@ -24,7 +24,7 @@
 - [x] Add bookmarks, theme selection, mistake notebook and targeted revision.
 - [x] Add five source-linked mini-lessons, one for each theme.
 - [x] Add an explicit uncertain-answer marker and dedicated revision queue.
-- [ ] Add difficulty filters and a difficulty label for each question.
+- [x] Add difficulty labels and filter theme practice by level.
 
 ## Epic 3 — Mock exam
 - [x] Add a 40-question original practice session matching the five theme allocations and official subtheme counts.
