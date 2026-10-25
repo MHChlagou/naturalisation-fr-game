@@ -64,7 +64,7 @@ const questionDifficulties = extractObject("QUESTION_DIFFICULTIES", "QUESTIONS.f
 questions.forEach(question => { question.subthemeId = questionSubthemes[question.id] || question.subthemeId; question.difficulty = questionDifficulties[question.id] || question.difficulty; });
 assert.equal(themes.length, 5, "The prototype should include the five learning themes.");
 assert.equal(examQuestions.length + extraQuestions.length, 40, "The original exam blueprint must contain 40 questions.");
-assert.equal(questions.length, 80, "The expanded national practice bank must contain 80 questions.");
+assert.equal(questions.length, 120, "The expanded national practice bank must contain 120 questions.");
 assert.equal(Object.values(questionDifficulties).filter(level => level === "facile").length, 13, "There must be 13 easy questions.");
 assert.equal(Object.values(questionDifficulties).filter(level => level === "intermediaire").length, 14, "There must be 14 intermediate questions.");
 assert.equal(Object.values(questionDifficulties).filter(level => level === "avance").length, 13, "There must be 13 advanced questions.");
