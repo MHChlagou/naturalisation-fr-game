@@ -21,7 +21,13 @@ Fournisseur LLM via clé conservée côté serveur
 
 Le mode local actuel doit rester utilisable sans compte, sans réseau et sans appel à un modèle. L'IA doit être une option distincte, clairement identifiée.
 
-## API proposée
+## API scaffold
+
+The initial implementation lives in `backend/app/` and provides `GET /health` and `POST /api/v1/interview/feedback`. It validates request and response schemas, rejects unknown input fields, uses an explicit CORS origin list, limits request frequency per process, and calls an OpenAI-compatible Chat Completions endpoint only when server-side `LLM_API_KEY` and `LLM_MODEL` are configured. Without those settings, feedback returns HTTP 503. Setup and current limitations are documented in [backend/README.md](../backend/README.md).
+
+The current rate limiter is process-local and can be bypassed by distributing requests across replicas. Add shared rate limiting at the gateway or with Redis before production. Configure trusted proxy handling deliberately; do not trust arbitrary forwarded IP headers.
+
+## API contract
 
 ### `POST /api/v1/interview/feedback`
 
@@ -87,6 +93,6 @@ Le modèle doit distinguer les faits vérifiables des motivations personnelles. 
 
 - [x] Parcours local avec timer et bilan détaillé.
 - [x] Architecture cible documentée.
-- [ ] Implémenter l'API FastAPI et ses tests.
-- [ ] Choisir l'hébergeur et le fournisseur de modèle.
+- [x] Créer un premier scaffold FastAPI, un adaptateur fournisseur compatible OpenAI et des tests d'API (à exécuter dans l'environnement du dépôt).
+- [ ] Choisir et valider l'hébergeur et le fournisseur de modèle.
 - [ ] Ajouter l'option IA côté interface après déploiement et tests de confidentialité.
