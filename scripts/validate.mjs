@@ -6,6 +6,7 @@ const read = (path) => fs.readFileSync(new URL(path, import.meta.url), "utf8");
 const html = read("../index.html");
 const app = read("../app.js");
 const extraSource = read("../questions-extra.js");
+const bankSource = read("../questions-bank.js");
 
 assert.match(html, /<html lang="fr">/, "The page must declare French language.");
 assert.match(html, /name="viewport"/, "The page must have a responsive viewport.");
@@ -51,16 +52,19 @@ function extractObject(name, nextMarker) {
 
 const themes = extractArray("THEMES", "const QUESTIONS =");
 const questions = extractArray("QUESTIONS", "QUESTIONS.push");
+const examQuestions = [...questions];
 const lessons = extractArray("LESSONS", "const STORAGE_KEY");
 assert.equal(lessons.length, 5, "There must be one mini-lesson per theme.");
 for (const lesson of lessons) assert.ok(lesson.title && lesson.summary && lesson.points.length >= 3 && lesson.sourceUrl.startsWith("https://"), `Lesson ${lesson.id} needs content and a source.`);
 const extraQuestions = vm.runInNewContext(extraSource.slice(extraSource.indexOf("["), extraSource.lastIndexOf(";")));
-questions.push(...extraQuestions);
+const bankQuestions = vm.runInNewContext(bankSource.slice(bankSource.indexOf("["), bankSource.lastIndexOf(";")));
+questions.push(...extraQuestions, ...bankQuestions);
 const questionSubthemes = extractObject("QUESTION_SUBTHEMES", "QUESTIONS.forEach");
 const questionDifficulties = extractObject("QUESTION_DIFFICULTIES", "QUESTIONS.forEach");
-questions.forEach(question => { question.subthemeId = questionSubthemes[question.id]; question.difficulty = questionDifficulties[question.id]; });
+questions.forEach(question => { question.subthemeId = questionSubthemes[question.id] || question.subthemeId; question.difficulty = questionDifficulties[question.id] || question.difficulty; });
 assert.equal(themes.length, 5, "The prototype should include the five learning themes.");
-assert.equal(questions.length, 40, "The practice exam bank must contain 40 questions.");
+assert.equal(examQuestions.length + extraQuestions.length, 40, "The original exam blueprint must contain 40 questions.");
+assert.equal(questions.length, 80, "The expanded national practice bank must contain 80 questions.");
 assert.equal(Object.values(questionDifficulties).filter(level => level === "facile").length, 13, "There must be 13 easy questions.");
 assert.equal(Object.values(questionDifficulties).filter(level => level === "intermediaire").length, 14, "There must be 14 intermediate questions.");
 assert.equal(Object.values(questionDifficulties).filter(level => level === "avance").length, 13, "There must be 13 advanced questions.");
@@ -68,12 +72,14 @@ assert.ok(questions.every(q => q.status && q.status !== "draft" && q.status !== 
 assert.match(app, /Exercices pédagogiques originaux, non officiels/, "The app must disclose that answers are educational and unofficial.");
 assert.match(app, /const SOURCE_URLS = \{/, "Each demo question must have a traceable source URL.");
 assert.match(html, /1er janvier 2026/, "The UI must explain the correct transition date.");
-assert.match(html, /questions-extra\.js/, "The expanded question bank must be loaded before the app.");
+assert.match(html, /questions-extra\.js/, "The original extra questions must load before the app.");
+assert.match(html, /questions-bank\.js/, "The expanded question bank must load before the app.");
 assert.match(html, /class="official-resources"/, "Both learning paths must link to official resources.");
 assert.match(html, /questions-de-connaissance-pour-lexamen-civique-nationalite-francaise\.html/, "The official knowledge-question list must be linked.");
 assert.match(html, /id="application-date"/, "The procedure selector must request the application filing date.");
 assert.match(app, /date<"2026-01-01"/, "The procedure selector must distinguish pre-2026 applications.");
-assert.match(read("../sw.js"), /questions-extra\.js/, "The offline cache must include the expanded question bank.");
+assert.match(read("../sw.js"), /questions-extra\.js/, "The offline cache must include the original extra questions.");
+assert.match(read("../sw.js"), /questions-bank\.js/, "The offline cache must include the expanded national bank.");
 assert.match(app, /function startExamTimer\(\)/, "The timed exam must have a countdown.");
 assert.match(app, /guide-thinking\.svg/, "The guide should use a thinking expression before the answer.");
 assert.match(read("../sw.js"), /guide-thinking\.svg/, "The thinking guide must be cached offline.");
@@ -89,18 +95,19 @@ for (const question of questions) {
   assert.ok(Array.isArray(question.choices) && question.choices.length >= 2, `Question ${question.id} needs answer choices.`);
   assert.ok(Number.isInteger(question.correct) && question.correct >= 0 && question.correct < question.choices.length, `Invalid correct answer index on ${question.id}`);
   assert.ok(question.explanation && question.takeaway && question.source, `Question ${question.id} needs explanation, takeaway and provenance.`);
-  assert.ok(questionSubthemes[question.id], `Question ${question.id} needs an official-programme subtheme.`);
+  assert.ok(question.subthemeId, `Question ${question.id} needs an official-programme subtheme.`);
   if (question.sourceUrl) assert.ok(question.sourceUrl.startsWith("https://"), `Question ${question.id} needs a direct HTTPS source URL.`);
   else assert.ok(app.includes(`${question.id}:"https://`), `Question ${question.id} needs a direct source map entry.`);
 }
 for (const theme of themes) {
-  const count = questions.filter((question) => question.themeId === theme.id).length;
+  const count = [...examQuestions, ...extraQuestions].filter((question) => question.themeId === theme.id).length;
   assert.equal(count, theme.allocation, `Theme ${theme.id} must have exactly ${theme.allocation} questions.`);
 }
-const situationalByTheme = Object.fromEntries(themes.map(theme => [theme.id, questions.filter(q => q.themeId === theme.id && q.kind === "situation").length]));
+const blueprintQuestions = [...examQuestions, ...extraQuestions];
+const situationalByTheme = Object.fromEntries(themes.map(theme => [theme.id, blueprintQuestions.filter(q => q.themeId === theme.id && q.kind === "situation").length]));
 assert.equal(situationalByTheme.principes, 6, "The principles theme must contain 6 original situation exercises.");
 assert.equal(situationalByTheme.droits, 6, "The rights and duties theme must contain 6 original situation exercises.");
-assert.equal(questions.filter(q => q.kind === "situation").length, 12, "There must be 12 situation exercises in total.");
+assert.equal(blueprintQuestions.filter(q => q.kind === "situation").length, 12, "There must be 12 situation exercises in total.");
 const expectedSubthemes = {
   principes: { symboles: 3, laicite: 2, situations: 6 },
   institutions: { democratie: 3, organisation: 2, "union-europeenne": 1 },
@@ -110,7 +117,7 @@ const expectedSubthemes = {
 };
 for (const [themeId, subthemes] of Object.entries(expectedSubthemes)) {
   for (const [subthemeId, expectedCount] of Object.entries(subthemes)) {
-    const actual = questions.filter(q => q.themeId === themeId && questionSubthemes[q.id] === subthemeId).length;
+    const actual = blueprintQuestions.filter(q => q.themeId === themeId && (questionSubthemes[q.id] || q.subthemeId) === subthemeId).length;
     assert.equal(actual, expectedCount, `Subtheme ${themeId}/${subthemeId} must have ${expectedCount} questions.`);
   }
 }
@@ -124,4 +131,4 @@ assert.equal(manifest.lang, "fr-FR");
 assert.equal(manifest.start_url, "./");
 assert.equal(manifest.display, "standalone");
 
-console.log(`Validation OK: ${themes.length} themes, ${questions.length} demonstration questions, PWA assets and page structure.`);
+console.log(`Validation OK: ${themes.length} themes, ${questions.length} bank questions (${blueprintQuestions.length} in the exam blueprint), PWA assets and page structure.`);
