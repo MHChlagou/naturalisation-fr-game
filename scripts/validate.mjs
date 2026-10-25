@@ -15,6 +15,11 @@ assert.match(html, /id="answer-options"/, "The quiz answer container must exist.
 assert.match(html, /id="answer-feedback"/, "The feedback container must exist.");
 assert.match(html, /id="view-revisions"/, "The revision notebook view must exist.");
 assert.match(html, /id="view-lessons"/, "The mini-lessons view must exist.");
+assert.match(html, /id="view-practice"/, "The adaptive practice view must exist.");
+assert.match(html, /id="start-adaptive"/, "The adaptive practice button must exist.");
+assert.match(app, /function startAdaptiveQuiz\(\)/, "Adaptive practice must prioritize user needs.");
+assert.match(app, /function renderAdaptiveOverview\(\)/, "Adaptive practice must show theme priorities.");
+assert.match(html, /data-view="practice"/, "Navigation must link to adaptive practice.");
 assert.match(html, /data-view="lessons"/, "The sidebar must navigate to mini-lessons.");
 assert.match(html, /id="revision-uncertain-count"/, "The notebook must count uncertain questions.");
 assert.match(html, /data-review-start="uncertain"/, "The notebook must support uncertain-question review.");
