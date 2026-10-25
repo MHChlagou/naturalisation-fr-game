@@ -113,7 +113,7 @@ for (const question of questions) {
   if (question.sourceUrl) assert.ok(question.sourceUrl.startsWith("https://"), `Question ${question.id} needs a direct HTTPS source URL.`);
   else assert.ok(app.includes(`${question.id}:"https://`), `Question ${question.id} needs a direct source map entry.`);
 }
-const normalizedPrompts = questions.map(question => question.prompt.trim().toLocaleLowerCase("fr").normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").replace(/[^\\p{L}\\p{N}]+/gu, " ").trim());
+const normalizedPrompts = questions.map(question => question.prompt.trim().toLocaleLowerCase("fr").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^\p{L}\p{N}]+/gu, " ").trim());
 assert.equal(new Set(normalizedPrompts).size, normalizedPrompts.length, "Question prompts must be unique after normalization.");
 const declarationQuestion = questions.find(question => question.id === "b073");
 assert.ok(declarationQuestion, "Question b073 about the 1789 Declaration must remain in the bank.");
