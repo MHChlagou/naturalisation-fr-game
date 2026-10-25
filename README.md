@@ -7,10 +7,11 @@ A responsive, offline-first educational game for people preparing for French nat
 ## Product planning
 - [Product plan](docs/PRODUCT_PLAN.md)
 - [Implementation backlog](docs/BACKLOG.md)
+- [Official content validation audit](docs/CONTENT_VALIDATION.md)
 
 ## Current prototype
 - Responsive French interface with home, theme browser, quiz, results and progress views.
-- Small demonstration question bank with explanations and provenance labels.
+- 40-question original practice bank with explanations, direct source links and theme allocations matching the exam structure; content remains educational and needs an independent editorial review.
 - Local progress, bookmarks, per-theme stats, JSON export/import/reset.
 - Local SVG guide illustration.
 - PWA manifest and service worker for app-shell caching.
@@ -36,13 +37,20 @@ To enable publishing for this repository:
 
 GitHub Pages can take a few minutes to publish after a successful workflow run.
 
+## Transition rule to display to learners
+
+The transition date for the new civic-exam requirement is **1 January 2026**, not July 2026. Under Article 11 of Decree No. 2025-648 of 15 July 2025, the relevant new provisions apply to naturalisation/reintegration applications filed from that date. Applicants with a file filed before 1 January 2026 should be directed to the assimilation-interview preparation path and advised to confirm the applicable rules with their prefecture. The July 2026 update is the new *Livret du citoyen*, not the exam transition date. See the [decree's official text](https://www.legifrance.gouv.fr/eli/decret/2025/7/15/2025-648/jo/texte).
+
 ## Important prototype limitations
-- The question bank is a small demonstration set, not a complete or fully reviewed official content bank.
-- The exam page currently runs a short demo session; the full 40-question exam, official question allocation and 45-minute timer are not implemented yet.
-- Demo results must not be interpreted as an official pass/fail result.
+- The 40-question bank is a complete-sized educational practice set, not an official question bank. The official list publishes knowledge-question stems without answers; situational questions are not publicly disclosed.
+- The exam page runs a 40-question, 45-minute educational simulation using original practice questions. It is not an official question bank or attestation.
+- Results are educational and must not be interpreted as an official pass/fail result or certificate.
 - Every factual question must be reviewed against current official sources, and content reuse/licensing checked before public release.
 
 ## Official references
+- [Livret du citoyen — version de juillet 2026](https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html)
+- [Arrêté du 3 juillet 2026 approuvant le livret du citoyen](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000054426889)
+- [Service-Public — examen civique pour la naturalisation](https://www.service-public.gouv.fr/particuliers/vosdroits/F39426)
 - [Civic exam for naturalisation/reintegration](https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/lexamen-civique-pour-demande-de-naturalisation-ou-de-reintegration-dans-nationalite-francaise.html)
 - [Official knowledge-question list](https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/questions-de-connaissance-pour-lexamen-civique-nationalite-francaise.html)
 - [Access to French nationality procedures](https://www.immigration.interieur.gouv.fr/devenir-francais/procedures-dacces-a-nationalite-francaise)

@@ -1,12 +1,14 @@
 # Backlog — Naturalisation FR Game
 
 ## Epic 0 — Official content and accuracy
-- [ ] Download and inspect the current Ministry of the Interior civic-exam information booklet.
-- [ ] Download and inspect the official public knowledge-question list.
-- [ ] Register source URL, publisher, retrieval date, licence/reuse note, version and review owner.
-- [ ] Define content schema and source/provenance labels.
-- [ ] Establish review checklist and content release gate.
-- [ ] Draft the legacy interview pathway with a historical/contextual notice.
+- [x] Identify the current July 2026 Livret du citoyen and the July 2026 approval order; document sources and requirements in [CONTENT_VALIDATION.md](CONTENT_VALIDATION.md).
+- [x] Inspect the official public knowledge-question list and document its scope and limits.
+- [x] Record official sources, retrieval date, theme allocation and review checklist.
+- [x] Perform an initial question-by-question factual review of the 13 demo items; details and limitations are recorded in CONTENT_VALIDATION.md. A second independent editorial review is still required.
+- [x] Add source links to demo-question feedback; independent review status is still pending.
+- [ ] Check licensing/reuse before reproducing official wording.
+- [ ] Enforce content release gate in automated validation; draft questions must not be presented as validated.
+- [x] Add a legacy interview pathway notice and clarify the 1 January 2026 transition date; verify the applicable rule with the prefecture for individual files.
 
 ## Epic 1 — UX and design system
 - [ ] Create responsive design tokens, typography, colours, spacing and cards.
@@ -25,9 +27,9 @@
 - [ ] Add mistake notebook and targeted review.
 
 ## Epic 3 — Mock exam
-- [ ] Implement 40-question session and official theme allocation.
-- [ ] Implement maximum 45-minute timer and accessible time announcements.
-- [ ] Implement 32/40 pass-threshold calculation.
+- [x] Add 40-question original practice session with official theme allocations and 12 original situation exercises.
+- [x] Implement a 45-minute countdown and treat unanswered questions as incorrect when time expires.
+- [x] Score the 40-question simulation against the 32/40 reference threshold; results remain explicitly educational, not an official attestation.
 - [ ] Ensure randomization preserves answer IDs and correctness.
 - [ ] Show results with score, percentage, time, per-theme breakdown and recommended next revision.
 - [ ] Label every result as a simulation, not an official result.
