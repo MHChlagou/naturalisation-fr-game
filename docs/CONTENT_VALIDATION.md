@@ -110,7 +110,7 @@ Vérification factuelle initiale effectuée le 25 octobre 2026. Cette vérificat
 | h1 | Fête nationale | Réponse correcte : 14 juillet. L'explication mentionne les repères historiques associés. | Loi du 6 juillet 1880 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000877021/ |
 | h2 | Capitale de la France | Réponse correcte : Paris. Les distracteurs proposés sont incorrects. | DGEF, Livret du citoyen, version juillet 2026 : https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html |
 | s1 | Déménagement et courrier | Réponse pratique raisonnable, mais ce n'est pas une règle générale d'assimilation et la formulation est plus proche d'un conseil de vie quotidienne. Exercice original, non officiel. | Service-Public — changement d'adresse : https://www.service-public.fr/particuliers/vosdroits/F14128 |
-| s2 | Numéro d'urgence européen | Réponse correcte : 112. | Commission européenne : https://digital-strategy.ec.europa.eu/en/policies/112 |
+| s2 | Autorité parentale | Réponse générale : l'autorité parentale est en principe exercée par les parents, dans le cadre légal et sous réserve des situations particulières. | Code civil, art. 371-1 : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049164413 |
 
 ### Questions ajoutées dans la banque de 40
 
