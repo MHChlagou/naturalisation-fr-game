@@ -863,22 +863,22 @@ window.BANK_QUESTIONS = [
   {
     "id": "b044",
     "themeId": "principes",
-    "kind": "knowledge",
-    "prompt": "situation",
-    "choices": "À l'école publique, un parent demande que son enfant soit dispensé d'un enseignement obligatoire uniquement parce qu'il n'aime pas le sujet. Quel réflexe est adapté ?",
-    "correct": [
+    "kind": "situation",
+    "prompt": "À l'école publique, un parent demande que son enfant soit dispensé d'un enseignement obligatoire uniquement parce qu'il n'aime pas le sujet. Quel réflexe est adapté ?",
+    "choices": [
       "Vérifier les règles scolaires applicables avec l'établissement",
       "Décider seul que l'enfant ne suivra plus aucun cours",
       "Demander à l'enfant de quitter l'école",
       "Ignorer toutes les communications de l'école"
     ],
-    "explanation": 0,
-    "takeaway": "La scolarité et les enseignements obligatoires sont encadrés par la loi ; les questions particulières doivent être examinées avec l'établissement.",
+    "correct": 0,
+    "explanation": "La scolarité et les enseignements obligatoires sont encadrés par la loi ; les questions particulières doivent être examinées avec l'établissement.",
+    "takeaway": "Échange avec l'école et vérifie les règles officielles.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Échange avec l'école et vérifie les règles officielles.",
+    "sourceUrl": "https://www.education.gouv.fr/",
     "status": "demo",
-    "subthemeId": "https://www.education.gouv.fr/",
-    "difficulty": "situations"
+    "subthemeId": "situations",
+    "difficulty": "facile"
   },
   {
     "id": "b045",
@@ -903,22 +903,22 @@ window.BANK_QUESTIONS = [
   {
     "id": "b046",
     "themeId": "principes",
-    "kind": "knowledge",
-    "prompt": "situation",
-    "choices": "Un collègue se moque de la religion d'un autre et veut l'exclure d'une activité professionnelle. Quelle attitude est la plus adaptée ?",
-    "correct": [
+    "kind": "situation",
+    "prompt": "Un collègue se moque de la religion d'un autre et veut l'exclure d'une activité professionnelle. Quelle attitude est la plus adaptée ?",
+    "choices": [
       "Refuser la discrimination et chercher un soutien approprié",
       "Participer pour éviter les conflits",
       "Publier les informations privées des collègues",
       "Considérer que la discrimination est toujours légale"
     ],
-    "explanation": 0,
-    "takeaway": "Les discriminations peuvent être interdites par la loi et doivent être prises au sérieux dans le cadre professionnel.",
+    "correct": 0,
+    "explanation": "Les discriminations peuvent être interdites par la loi et doivent être prises au sérieux dans le cadre professionnel.",
+    "takeaway": "Ne banalise pas les discriminations.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Ne banalise pas les discriminations.",
+    "sourceUrl": "https://www.defenseurdesdroits.fr/",
     "status": "demo",
-    "subthemeId": "https://www.defenseurdesdroits.fr/",
-    "difficulty": "situations"
+    "subthemeId": "situations",
+    "difficulty": "facile"
   },
   {
     "id": "b047",
@@ -1143,22 +1143,22 @@ window.BANK_QUESTIONS = [
   {
     "id": "b058",
     "themeId": "droits",
-    "kind": "knowledge",
-    "prompt": "situation",
-    "choices": "Tu trouves un portefeuille dans un lieu public. Quelle démarche est la plus appropriée ?",
-    "correct": [
+    "kind": "situation",
+    "prompt": "Tu trouves un portefeuille dans un lieu public. Quelle démarche est la plus appropriée ?",
+    "choices": [
       "Chercher à le remettre à son propriétaire ou le confier à un service compétent",
       "Garder l'argent et jeter les papiers",
       "Publier les coordonnées du propriétaire en ligne",
       "Vendre les objets qu'il contient"
     ],
-    "explanation": 0,
-    "takeaway": "Un objet trouvé ne devient pas automatiquement la propriété de la personne qui le trouve ; il faut rechercher une remise appropriée.",
+    "correct": 0,
+    "explanation": "Un objet trouvé ne devient pas automatiquement la propriété de la personne qui le trouve ; il faut rechercher une remise appropriée.",
+    "takeaway": "Essaie de restituer l'objet ou remets-le à un service compétent.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Essaie de restituer l'objet ou remets-le à un service compétent.",
+    "sourceUrl": "https://www.service-public.fr/",
     "status": "demo",
-    "subthemeId": "https://www.service-public.fr/",
-    "difficulty": "situations"
+    "subthemeId": "situations",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b059",
@@ -1183,22 +1183,22 @@ window.BANK_QUESTIONS = [
   {
     "id": "b060",
     "themeId": "droits",
-    "kind": "knowledge",
-    "prompt": "situation",
-    "choices": "Un témoin est convoqué par une juridiction. Quelle attitude est généralement attendue ?",
-    "correct": [
+    "kind": "situation",
+    "prompt": "Un témoin est convoqué par une juridiction. Quelle attitude est généralement attendue ?",
+    "choices": [
       "Lire la convocation et respecter les obligations légales applicables",
       "Ignorer automatiquement la convocation",
       "Publier le dossier de l'affaire sur internet",
       "Menacer les personnes impliquées"
     ],
-    "explanation": 0,
-    "takeaway": "Une convocation judiciaire doit être prise au sérieux ; les obligations exactes dépendent du rôle et du document reçu.",
+    "correct": 0,
+    "explanation": "Une convocation judiciaire doit être prise au sérieux ; les obligations exactes dépendent du rôle et du document reçu.",
+    "takeaway": "Lis la convocation et vérifie les obligations qu'elle indique.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Lis la convocation et vérifie les obligations qu'elle indique.",
+    "sourceUrl": "https://www.justice.fr/",
     "status": "demo",
-    "subthemeId": "https://www.justice.fr/",
-    "difficulty": "situations"
+    "subthemeId": "situations",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b061",
@@ -1243,22 +1243,22 @@ window.BANK_QUESTIONS = [
   {
     "id": "b063",
     "themeId": "droits",
-    "kind": "knowledge",
-    "prompt": "situation",
-    "choices": "Tu constates un danger immédiat dans un espace public. Que faut-il faire ?",
-    "correct": [
+    "kind": "situation",
+    "prompt": "Tu constates un danger immédiat dans un espace public. Que faut-il faire ?",
+    "choices": [
       "Alerter les secours ou les autorités compétentes si nécessaire",
       "Diffuser une rumeur sans vérifier",
       "T'interposer sans évaluer le risque",
       "Attendre que quelqu'un publie une vidéo"
     ],
-    "explanation": 0,
-    "takeaway": "Il faut alerter les services compétents et éviter de s'exposer inutilement au danger.",
+    "correct": 0,
+    "explanation": "Il faut alerter les services compétents et éviter de s'exposer inutilement au danger.",
+    "takeaway": "Alerte les services compétents en cas de danger.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Alerte les services compétents en cas de danger.",
+    "sourceUrl": "https://www.service-public.fr/",
     "status": "demo",
-    "subthemeId": "https://www.service-public.fr/",
-    "difficulty": "situations"
+    "subthemeId": "situations",
+    "difficulty": "intermediaire"
   },
   {
     "id": "b064",
@@ -1523,22 +1523,22 @@ window.BANK_QUESTIONS = [
   {
     "id": "b077",
     "themeId": "societe",
-    "kind": "knowledge",
-    "prompt": "situation",
-    "choices": "Tu déménages et changes d'adresse. Quelle démarche est raisonnable ?",
-    "correct": [
+    "kind": "situation",
+    "prompt": "Tu déménages et changes d'adresse. Quelle démarche est raisonnable ?",
+    "choices": [
       "Vérifier les organismes à prévenir et mettre à jour l'adresse auprès des services concernés",
       "Ne prévenir aucun organisme même si un courrier est attendu",
       "Publier tes documents d'identité en ligne",
       "Envoyer tes données à un inconnu"
     ],
-    "explanation": 0,
-    "takeaway": "Un changement d'adresse peut nécessiter plusieurs démarches selon la situation ; un service officiel permet d'identifier celles qui s'appliquent.",
+    "correct": 0,
+    "explanation": "Un changement d'adresse peut nécessiter plusieurs démarches selon la situation ; un service officiel permet d'identifier celles qui s'appliquent.",
+    "takeaway": "Vérifie les démarches officielles de changement d'adresse.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Vérifie les démarches officielles de changement d'adresse.",
+    "sourceUrl": "https://www.service-public.fr/particuliers/vosdroits/R11193",
     "status": "demo",
-    "subthemeId": "https://www.service-public.fr/particuliers/vosdroits/R11193",
-    "difficulty": "installation-residence"
+    "subthemeId": "installation-residence",
+    "difficulty": "avance"
   },
   {
     "id": "b078",
@@ -1563,22 +1563,22 @@ window.BANK_QUESTIONS = [
   {
     "id": "b079",
     "themeId": "societe",
-    "kind": "knowledge",
-    "prompt": "situation",
-    "choices": "Tu reçois un courrier administratif que tu ne comprends pas. Quelle est la meilleure démarche ?",
-    "correct": [
+    "kind": "situation",
+    "prompt": "Tu reçois un courrier administratif que tu ne comprends pas. Quelle est la meilleure démarche ?",
+    "choices": [
       "Lire les coordonnées officielles et demander une explication au service concerné",
       "Payer immédiatement une somme demandée par un inconnu",
       "Ignorer le courrier sans vérifier",
       "Publier le courrier complet avec tes données personnelles"
     ],
-    "explanation": 0,
-    "takeaway": "Il est utile de vérifier l'authenticité du courrier et de contacter le service via ses coordonnées officielles.",
+    "correct": 0,
+    "explanation": "Il est utile de vérifier l'authenticité du courrier et de contacter le service via ses coordonnées officielles.",
+    "takeaway": "Vérifie le courrier et contacte le service officiel.",
     "source": "Exercice pédagogique original - source institutionnelle",
-    "sourceUrl": "Vérifie le courrier et contacte le service officiel.",
+    "sourceUrl": "https://www.service-public.fr/",
     "status": "demo",
-    "subthemeId": "https://www.service-public.fr/",
-    "difficulty": "installation-residence"
+    "subthemeId": "installation-residence",
+    "difficulty": "avance"
   },
   {
     "id": "b080",
