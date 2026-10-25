@@ -56,6 +56,8 @@ assert.match(app, /Exercices pédagogiques originaux, non officiels/, "The app m
 assert.match(app, /const SOURCE_URLS = \{/, "Each demo question must have a traceable source URL.");
 assert.match(html, /1er janvier 2026/, "The UI must explain the correct transition date.");
 assert.match(html, /questions-extra\.js/, "The expanded question bank must be loaded before the app.");
+assert.match(html, /class="official-resources"/, "Both learning paths must link to official resources.");
+assert.match(html, /questions-de-connaissance-pour-lexamen-civique-nationalite-francaise\.html/, "The official knowledge-question list must be linked.");
 assert.match(html, /id="application-date"/, "The procedure selector must request the application filing date.");
 assert.match(app, /date<"2026-01-01"/, "The procedure selector must distinguish pre-2026 applications.");
 assert.match(read("../sw.js"), /questions-extra\.js/, "The offline cache must include the expanded question bank.");
