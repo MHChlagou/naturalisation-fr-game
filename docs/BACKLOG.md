@@ -44,8 +44,8 @@
 - [ ] Test offline after one successful load and after browser restart.
 
 ## Epic 5 — Legacy interview path
-- [ ] Add interview-topic cards and reflection prompts.
-- [ ] Show example answer structures without prescribing a single “correct” personal response.
+- [x] Expand the interview path to 10 reflection topics and personal prompts.
+- [x] Add a four-step answer framework that encourages sincere personal answers without prescribing a model response.
 - [ ] Add situation cards for rights, duties and republican values.
 - [ ] Add progress metrics without scoring personal identity or autobiographical disclosures.
 - [ ] Add a prominent note that the path does not replace requirements for the user's current procedure.
