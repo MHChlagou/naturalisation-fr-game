@@ -61,3 +61,11 @@
 - [ ] Run accessibility checks and manual keyboard/screen-reader pass.
 - [ ] Confirm GitHub Pages deployment and the final published experience.
 - [x] Document local run, validation and deployment instructions.
+
+## Quality correction
+
+- Repaired the second extension batch so all 80 bank questions are top-level records with the expected schema.
+- Corrected the malformed history question about the 1789 Declaration of the Rights of Man and of the Citizen.
+- Expanded the validator to reject malformed prompts, non-string or duplicate choices, and missing question text metadata.
+- Checked the bank programmatically: 80 bank questions, no malformed records, no duplicate IDs, and no duplicate prompts against the extra question set.
+- Editorial review of the complete bank and validation of every source link remain open tasks.
