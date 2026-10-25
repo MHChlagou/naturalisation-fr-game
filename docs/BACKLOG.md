@@ -4,11 +4,11 @@
 - [x] Identify the current July 2026 Livret du citoyen and the July 2026 approval order; document sources and requirements in [CONTENT_VALIDATION.md](CONTENT_VALIDATION.md).
 - [x] Inspect the official public knowledge-question list and document its scope and limits.
 - [x] Record official sources, retrieval date, theme allocation and review checklist.
-- [ ] Read and cross-check every question and answer against the current booklet and primary sources.
-- [ ] Add precise per-question source metadata and independent review status.
+- [x] Perform an initial question-by-question factual review of the 13 demo items; details and limitations are recorded in CONTENT_VALIDATION.md. A second independent editorial review is still required.
+- [x] Add source links to demo-question feedback; independent review status is still pending.
 - [ ] Check licensing/reuse before reproducing official wording.
 - [ ] Enforce content release gate in automated validation; draft questions must not be presented as validated.
-- [ ] Draft the legacy interview pathway with a historical/contextual notice.
+- [x] Add a legacy interview pathway notice and clarify the 1 January 2026 transition date; verify the applicable rule with the prefecture for individual files.
 
 ## Epic 1 — UX and design system
 - [ ] Create responsive design tokens, typography, colours, spacing and cards.
