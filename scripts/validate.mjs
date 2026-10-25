@@ -42,6 +42,9 @@ assert.equal(questions.length, 40, "The practice exam bank must contain 40 quest
 assert.match(app, /const SOURCE_URLS = \{/, "Each demo question must have a traceable source URL.");
 assert.match(html, /1er janvier 2026/, "The UI must explain the correct transition date.");
 assert.match(html, /questions-extra\.js/, "The expanded question bank must be loaded before the app.");
+assert.match(html, /id="application-date"/, "The procedure selector must request the application filing date.");
+assert.match(app, /date<"2026-01-01"/, "The procedure selector must distinguish pre-2026 applications.");
+assert.match(read("../sw.js"), /questions-extra\.js/, "The offline cache must include the expanded question bank.");
 assert.match(app, /function startExamTimer\(\)/, "The timed exam must have a countdown.");
 assert.match(html, /juillet 2026 n.est pas la date de bascule/, "The UI must distinguish the new booklet from the exam transition date.");
 
