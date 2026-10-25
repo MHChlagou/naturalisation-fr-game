@@ -55,7 +55,8 @@ for (const question of questions) {
   assert.ok(Array.isArray(question.choices) && question.choices.length >= 2, `Question ${question.id} needs answer choices.`);
   assert.ok(Number.isInteger(question.correct) && question.correct >= 0 && question.correct < question.choices.length, `Invalid correct answer index on ${question.id}`);
   assert.ok(question.explanation && question.takeaway && question.source, `Question ${question.id} needs explanation, takeaway and provenance.`);
-  assert.match(app, new RegExp(`${question.id}:\\s*"https?://`), `Question ${question.id} needs a direct source URL.`);
+  if (question.sourceUrl) assert.ok(question.sourceUrl.startsWith("https://"), `Question ${question.id} needs a direct HTTPS source URL.`);
+  else assert.ok(app.includes(`${question.id}:"https://`), `Question ${question.id} needs a direct source map entry.`);
 }
 for (const theme of themes) {
   const count = questions.filter((question) => question.themeId === theme.id).length;
@@ -66,8 +67,8 @@ assert.equal(situationalByTheme.principes, 6, "The principles theme must contain
 assert.equal(situationalByTheme.droits, 6, "The rights and duties theme must contain 6 original situation exercises.");
 assert.equal(questions.filter(q => q.kind === "situation").length, 12, "There must be 12 situation exercises in total.");
 for (const question of questions) {
-  if (question.sourceUrl) assert.match(question.sourceUrl, /^https?:\\/\\//, `Question ${question.id} must include a source URL.`);
-  else assert.match(app, new RegExp(`${question.id}:\\s*\\"https?://`), `Question ${question.id} must include a source map entry.`);
+  if (question.sourceUrl) assert.ok(question.sourceUrl.startsWith("https://"), `Question ${question.id} must include an HTTPS source URL.`);
+  else assert.ok(app.includes(`${question.id}:"https://`), `Question ${question.id} must include a source map entry.`);
 }
 
 const manifest = JSON.parse(read("../manifest.webmanifest"));
