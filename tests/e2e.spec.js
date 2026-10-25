@@ -55,7 +55,7 @@ test.describe("Cap Citoyen - parcours publics", () => {
     await page.locator("#all-themes [data-theme]").first().click();
     await expect(page.locator("#view-quiz")).toBeVisible();
     await expect(page.locator("#question-title")).not.toBeEmpty();
-    await expect(page.locator("#answer-options button").count()).resolves.toBeGreaterThanOrEqual(2);
+    expect(await page.locator("#answer-options button").count()).toBeGreaterThanOrEqual(2);
 
     await page.locator("#bookmark-question").click();
     await expect(page.locator("#bookmark-question")).toContainText(/Dans mes révisions/);
