@@ -84,7 +84,7 @@ window.BANK_QUESTIONS = [
     "id": "b005",
     "themeId": "principes",
     "kind": "knowledge",
-    "prompt": "Quelle est la devise de la République française ?",
+    "prompt": "Quels sont les trois termes de la devise française ?",
     "choices": [
       "Ordre et progrès",
       "Liberté, Égalité, Fraternité",
