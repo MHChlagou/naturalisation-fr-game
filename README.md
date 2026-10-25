@@ -16,11 +16,16 @@ A responsive, offline-first educational game for people preparing for French nat
 - Local progress, bookmarks, uncertain-question review queue, mistake review, per-theme stats and JSON export/import/reset.
 - Local SVG guide illustration with question feedback and coaching messages.
 - PWA manifest and service worker for app-shell caching.
-- Date-based procedure selector and 10 assimilation-interview reflection topics with question-specific coaching, follow-up prompts, a 15-minute timed practice mode, progress tracking and a detailed self-assessment report. A secure AI backend is documented but not yet deployed.
+- Date-based procedure selector and 10 assimilation-interview reflection topics with question-specific coaching, follow-up prompts, a 15-minute timed practice mode, progress tracking and a detailed self-assessment report.
+- Initial FastAPI backend scaffold in `backend/` for optional AI feedback, including Pydantic validation, bounded input, CORS allowlist, a basic process-local rate limiter, an OpenAI-compatible provider adapter, container setup and API tests. It is not deployed and returns HTTP 503 until provider settings are configured.
 - Automated static validation via node scripts/validate.mjs, including source metadata, 120-question uniqueness, exam blueprint theme/subtheme allocations and PWA cache checks.
 - GitHub Actions workflow to validate pull requests and deploy the static app to GitHub Pages after a push to main.
 
-## Run locally
+## Run the API locally
+
+See [backend setup and security notes](backend/README.md). The API is separate from GitHub Pages and must be hosted on a trusted HTTPS service before the frontend can call it. Configure `LLM_API_KEY`, `LLM_MODEL` and `LLM_BASE_URL` only in the server environment. Do not add secrets to this repository. The initial in-memory rate limiter is not sufficient as the only production control for multiple replicas.
+
+## Run the static app locally
 Serve the repository root with any local HTTP server, for example:
 
     python3 -m http.server 8080
