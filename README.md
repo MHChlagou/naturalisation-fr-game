@@ -15,7 +15,7 @@ A responsive, offline-first educational game for people preparing for French nat
 - Local progress, bookmarks, uncertain-question review queue, mistake review, per-theme stats and JSON export/import/reset.
 - Local SVG guide illustration with question feedback and coaching messages.
 - PWA manifest and service worker for app-shell caching.
-- Date-based procedure selector and 10 assimilation-interview reflection topics with a non-prescriptive answer framework.
+- Date-based procedure selector and 10 assimilation-interview reflection topics with question-specific coaching, follow-up prompts and a non-prescriptive answer framework.
 - Automated static validation via node scripts/validate.mjs, including source metadata, 120-question uniqueness, exam blueprint theme/subtheme allocations and PWA cache checks.
 - GitHub Actions workflow to validate pull requests and deploy the static app to GitHub Pages after a push to main.
 
