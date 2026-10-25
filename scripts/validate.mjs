@@ -61,13 +61,13 @@ function extractArray(name, nextMarker) {
   return vm.runInNewContext(expression);
 }
 
-function extractObject(name, nextMarker) {
+function extractObject(name) {
   const start = app.indexOf(`const ${name} =`);
   assert.notEqual(start, -1, `Missing ${name} object.`);
   const objectStart = app.indexOf("{", start);
-  const end = app.indexOf(nextMarker, objectStart);
-  assert.ok(objectStart >= 0 && end > objectStart, `Could not locate ${name} object.`);
-  return vm.runInNewContext("(" + app.slice(objectStart, app.lastIndexOf(";", end)) + ")");
+  const objectEnd = app.indexOf("};", objectStart);
+  assert.ok(objectStart >= 0 && objectEnd > objectStart, `Could not locate ${name} object.`);
+  return vm.runInNewContext("(" + app.slice(objectStart, objectEnd + 1) + ")");
 }
 
 const themes = extractArray("THEMES", "const QUESTIONS =");
@@ -79,8 +79,8 @@ for (const lesson of lessons) assert.ok(lesson.title && lesson.summary && lesson
 const extraQuestions = vm.runInNewContext(extraSource.slice(extraSource.indexOf("["), extraSource.lastIndexOf(";")));
 const bankQuestions = vm.runInNewContext(bankSource.slice(bankSource.indexOf("["), bankSource.lastIndexOf(";")));
 questions.push(...extraQuestions, ...bankQuestions);
-const questionSubthemes = extractObject("QUESTION_SUBTHEMES", "QUESTIONS.forEach");
-const questionDifficulties = extractObject("QUESTION_DIFFICULTIES", "QUESTIONS.forEach");
+const questionSubthemes = extractObject("QUESTION_SUBTHEMES");
+const questionDifficulties = extractObject("QUESTION_DIFFICULTIES");
 questions.forEach(question => { question.subthemeId = questionSubthemes[question.id] || question.subthemeId; question.difficulty = questionDifficulties[question.id] || question.difficulty; });
 assert.equal(themes.length, 5, "The prototype should include the five learning themes.");
 assert.equal(examQuestions.length + extraQuestions.length, 40, "The original exam blueprint must contain 40 questions.");
