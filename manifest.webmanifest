@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "Cap Citoyen — Préparation à la naturalisation",
+  "short_name": "Cap Citoyen",
+  "description": "Apprendre les principes de la République, s'entraîner et suivre sa progression hors ligne.",
+  "lang": "fr-FR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7f8fb",
+  "theme_color": "#152b49",
+  "icons": [
+    {"src":"./assets/guide.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
