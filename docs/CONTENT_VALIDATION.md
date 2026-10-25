@@ -80,16 +80,56 @@ Valeurs de statut proposées :
 - `reviewed` : contenu contrôlé, source traçable et corrigé revu ;
 - `retired` : contenu obsolète ou contesté.
 
-## 5. Séparation des parcours
+## 5. Règle transitoire : date de dépôt du dossier (point essentiel)
+
+**Ne pas utiliser juillet 2026 comme date de bascule de l'examen civique.** Il faut distinguer la date d'entrée en vigueur de l'examen et celle du nouveau Livret du citoyen.
+
+- Le décret n° 2025-648 du 15 juillet 2025 prévoit que les dispositions relatives à l'examen civique et au niveau de langue pour les demandes de naturalisation/réintégration s'appliquent aux demandes **déposées à compter du 1er janvier 2026** (article 11 et dispositions d'entrée en vigueur).
+- En conséquence, pour une demande de naturalisation déposée **avant le 1er janvier 2026**, le jeu doit orienter l'utilisateur vers le parcours historique de préparation à l'entretien d'assimilation et ne pas lui présenter l'examen civique comme une exigence introduite pour les dossiers déposés à partir de 2026. Il faut néanmoins lui conseiller de vérifier les demandes de pièces ou instructions de sa préfecture et les règles applicables à son dossier individuel.
+- Pour les demandes déposées **à compter du 1er janvier 2026**, le parcours doit présenter l'examen civique comme exigence applicable, en plus de la préparation à l'entretien d'assimilation lorsque celui-ci est prévu dans la procédure.
+- Le nouveau Livret du citoyen approuvé par arrêté du 3 juillet 2026 est en vigueur depuis le 17 juillet 2026. Cette mise à jour du livret **ne remplace pas** la date de bascule du 1er janvier 2026 pour l'examen civique.
+
+Sources primaires :
+- Décret n° 2025-648 du 15 juillet 2025, notamment article 11 : https://www.legifrance.gouv.fr/eli/decret/2025/7/15/2025-648/jo/texte
+- Procédures d'accès à la nationalité française (DGEF) : https://www.immigration.interieur.gouv.fr/devenir-francais/procedures-dacces-a-nationalite-francaise
+- Arrêté du 3 juillet 2026 approuvant le nouveau livret : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000054426889/
+
+Ne pas donner de conseil juridique catégorique pour un dossier individuel : afficher la date de dépôt, préciser que le jeu donne une orientation pédagogique et fournir les sources officielles.
+
+## 6. Vérification individuelle des 13 questions de démonstration
+
+Vérification factuelle initiale effectuée le 25 octobre 2026. Cette vérification porte sur la réponse, l'explication et les distracteurs de la petite banque existante ; elle ne transforme pas ces exercices en questions officielles et ne suffit pas à constituer un examen blanc réglementaire complet.
+
+| ID | Sujet | Résultat de vérification | Source de référence |
+|---|---|---|---|
+| p1 | Devise républicaine | Réponse correcte : « Liberté, Égalité, Fraternité ». Distracteurs non corrects comme devise officielle. | Constitution, art. 2 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| p2 | Laïcité dans les services publics | Réponse correcte sur la liberté de conscience et la neutralité de l'État/service public. Formulation simplifiée : la laïcité n'interdit pas toute expression religieuse à toute personne en toute circonstance. | Constitution, art. 1 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ ; Loi du 9 décembre 1905 : https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006070169/ |
+| p3 | Refus de service en raison de la religion | Réponse correcte : égalité de traitement et neutralité de l'agent public. Exercice original, non officiel. | Code général de la fonction publique, art. L121-2 : https://www.legifrance.gouv.fr/codes/id/LEGITEXT000044416551/ |
+| p4 | Langue de la République | Réponse correcte : français ; les langues régionales appartiennent au patrimoine de la France. | Constitution, art. 2 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| i1 | Vote de la loi | Réponse correcte : le Parlement. La formulation de l'explication distingue correctement proposition de loi/projet de loi et vote. | Constitution, art. 24 et 39 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| i2 | Durée du mandat présidentiel | Réponse correcte : cinq ans. | Constitution, art. 6 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| i3 | Inscription électorale | Réponse attendue acceptable comme première orientation : la mairie. Attention : les conditions de droit de vote et l'inscription varient selon la nationalité, l'élection et la situation. Exercice original, non officiel. | Service-Public — vérifier l'inscription électorale : https://www.service-public.fr/particuliers/vosdroits/N47 |
+| d1 | Égalité en droits | Réponse correcte : Déclaration des droits de l'homme et du citoyen de 1789. | DDHC de 1789, notamment art. 1 : https://www.legifrance.gouv.fr/contenu/menu/droit-national-en-vigueur/constitution/declaration-des-droits-de-l-homme-et-du-citoyen-de-1789 |
+| d2 | Âge de l'instruction obligatoire | Réponse correcte : trois ans ; l'obligation d'instruction court jusqu'à seize ans. | Code de l'éducation, art. L131-1 : https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006071191/ |
+| d3 | Danger immédiat | Réponse correcte comme principe général : alerter les secours appropriés. L'explication cite le 112 ; en France d'autres numéros spécialisés existent aussi. Exercice original, non officiel. | Service-Public — urgences : https://www.service-public.fr/particuliers/actualites/A15841 |
+| h1 | Fête nationale | Réponse correcte : 14 juillet. L'explication mentionne les repères historiques associés. | Loi du 6 juillet 1880 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000877021/ |
+| h2 | Capitale de la France | Réponse correcte : Paris. Les distracteurs proposés sont incorrects. | DGEF, Livret du citoyen, version juillet 2026 : https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html |
+| s1 | Déménagement et courrier | Réponse pratique raisonnable, mais ce n'est pas une règle générale d'assimilation et la formulation est plus proche d'un conseil de vie quotidienne. Exercice original, non officiel. | Service-Public — changement d'adresse : https://www.service-public.fr/particuliers/vosdroits/F14128 |
+| s2 | Numéro d'urgence européen | Réponse correcte : 112. | Commission européenne : https://digital-strategy.ec.europa.eu/en/policies/112 |
+
+**Limite de l'audit :** il s'agit d'une revue éditoriale initiale par une seule passe, pas d'une double validation indépendante. Avant d'étiqueter ces questions `reviewed` en production, tester les liens sources, contrôler leur version consolidée et faire relire le corrigé par une seconde personne. Les sujets p3, i3, d3 et s1 sont des mises en situation originales, jamais des questions officielles divulguées.
+
+## 7. Séparation des parcours
 
 Ne pas fusionner deux objectifs pédagogiques différents :
 
-- **Examen civique actuel** : QCM de 40 questions, règles d'examen et programme applicables depuis le 1er janvier 2026.
-- **Préparation à l'entretien d'assimilation / livret du citoyen** : réflexion sur le parcours, les motivations, la connaissance de la société française et les principes républicains. Le livret du citoyen sert à préparer l'évaluation de l'assimilation et ne doit pas être traité comme une simple banque de QCM.
+- **Examen civique actuel** : QCM de 40 questions, règles d'examen et programme applicables aux demandes concernées déposées à compter du 1er janvier 2026.
+- **Préparation à l'entretien d'assimilation** : réflexion sur le parcours, les motivations, la connaissance de la société française et les principes républicains. Le livret du citoyen sert à préparer l'évaluation de l'assimilation et ne doit pas être traité comme une simple banque de QCM.
 
-Les conditions applicables peuvent dépendre de la procédure et évoluer. Le jeu doit afficher la date de dernière vérification et renvoyer aux pages officielles.
+Le jeu doit demander la date de dépôt de la demande et orienter vers le parcours adapté sans se substituer à la préfecture.
 
-## 6. Conditions de publication
+
+## 8. Conditions de publication
 
 Ne déclarer la banque « validée » que si :
 1. les 40 questions de chaque session sont disponibles et uniques ;
