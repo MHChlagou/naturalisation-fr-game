@@ -18,7 +18,8 @@ Le site est une application HTML/CSS/JavaScript sans étape de compilation ni bu
 2. **Validation** : installe Node.js 22, vérifie la syntaxe de `app.js` et lance `node scripts/validate.mjs`.
 3. **Contrôles statiques** : la validation vérifie la structure HTML attendue, les fonctionnalités principales, les données des questions, les métadonnées de sources, les répartitions du plan d'examen, les ressources PWA et l'unicité des questions.
 4. **Publication** : pour un push ou un lancement manuel réussi, configure GitHub Pages, charge le contenu statique et déploie avec `actions/deploy-pages`. Le job de déploiement ne s'exécute pas pour les pull requests.
-5. **Smoke test après déploiement** : interroge l'URL publiée, vérifie que la page d'accueil contient les éléments essentiels et que les fichiers critiques répondent correctement. Ce test vérifie l'accessibilité HTTP et la présence des ressources, pas le rendu réel dans un navigateur.
+5. **Smoke test après déploiement** : interroge l'URL publiée, vérifie que la page d'accueil contient les éléments essentiels et que les fichiers critiques répondent correctement.
+6. **Tests navigateur Playwright** : installe Chromium et exécute `tests/e2e.spec.js` contre l'URL réellement publiée. Les tests interagissent avec l'interface comme un utilisateur et font échouer le workflow en cas d'erreur JavaScript non gérée ou de comportement attendu absent.
 
 Le déploiement dépend du succès du job de validation. Si une validation échoue, la nouvelle version n'est pas publiée.
 
@@ -28,7 +29,8 @@ Le déploiement dépend du succès du job de validation. Si une validation écho
 2. Choisir la dernière exécution **Validate and deploy Cap Citoyen** associée au commit voulu.
 3. Vérifier que **Validate static app** et **Deploy to GitHub Pages** sont au vert.
 4. Vérifier que l'étape **Smoke test published site** réussit.
-5. Ouvrir l'URL publiée en navigation privée ou après un rechargement forcé pour limiter l'effet du cache navigateur/service worker.
+5. Vérifier que **Run full browser tests against the published site** réussit et consulter le rapport Playwright dans les logs en cas d'échec.
+6. Ouvrir l'URL publiée en navigation privée ou après un rechargement forcé pour limiter l'effet du cache navigateur/service worker.
 
 L'étape smoke test doit contrôler :
 - réponse HTTP réussie de la page d'accueil ;
@@ -38,9 +40,9 @@ L'étape smoke test doit contrôler :
 
 ## Limites de vérification
 
-Les contrôles automatisés détectent les erreurs de syntaxe, de structure, de données et de publication les plus évidentes. Le smoke test ne simule pas un utilisateur et ne prouve pas à lui seul que chaque interaction fonctionne sur tous les appareils.
+Les contrôles statiques détectent les erreurs de syntaxe, de structure et de données. Le smoke test vérifie l'accessibilité HTTP. Playwright ajoute une vérification interactive de Chromium pour les parcours clés, mais ne remplace pas les essais sur Safari/iOS, Firefox, les appareils Android réels ni une revue d'accessibilité complète.
 
-Une vérification fonctionnelle manuelle reste nécessaire avant une version importante :
+Les scénarios Playwright couvrent les parcours principaux et les fonctionnalités suivantes. Une vérification manuelle reste nécessaire avant une version importante :
 - accueil et navigation entre les vues ;
 - entraînement, explications et navigation entre questions ;
 - examen blanc, compte à rebours, score et résultats ;
