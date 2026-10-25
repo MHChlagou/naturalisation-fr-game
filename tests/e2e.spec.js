@@ -168,5 +168,94 @@ test.describe("Cap Citoyen - parcours publics", () => {
     }));
     expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport + 2);
   });
-});
 
+  test("progression conservée après rechargement", async ({ page }) => {
+    await page.locator('aside.sidebar [data-view="themes"]').click();
+    await page.locator("#all-themes [data-theme]").first().click();
+    await page.locator("#answer-options button").first().click();
+    await page.locator("#submit-answer").click();
+    await expect(page.locator("#progress-answered")).toHaveText("1");
+    await page.reload({ waitUntil: "domcontentloaded" });
+    await page.locator('aside.sidebar [data-view="progress"]').click();
+    await expect(page.locator("#progress-answered")).toHaveText("1");
+    await expect(page.locator("#progress-sessions")).toHaveText("0");
+  });
+
+  test("import de sauvegarde valide et rejet d'un fichier invalide", async ({ page }) => {
+    await page.locator('aside.sidebar [data-view="themes"]').click();
+    await page.locator("#all-themes [data-theme]").first().click();
+    await page.locator("#answer-options button").first().click();
+    await page.locator("#submit-answer").click();
+    await page.locator('aside.sidebar [data-view="progress"]').click();
+    const downloadPromise = page.waitForEvent("download");
+    await page.locator("#export-data").click();
+    const download = await downloadPromise;
+    const downloadPath = await download.path();
+    expect(download.suggestedFilename()).toMatch(/\.json$/);
+    const saved = JSON.parse(require("node:fs").readFileSync(downloadPath, "utf8"));
+
+    page.on("dialog", dialog => dialog.accept());
+    await page.locator("#reset-data").click();
+    await expect(page.locator("#progress-answered")).toHaveText("0");
+    await page.locator("#import-data").setInputFiles({
+      name: "cap-citoyen-progression.json",
+      mimeType: "application/json",
+      buffer: Buffer.from(JSON.stringify(saved)),
+    });
+    await expect(page.locator("#progress-answered")).toHaveText("1");
+
+    const dialogs = [];
+    page.removeAllListeners("dialog");
+    page.on("dialog", async dialog => { dialogs.push(dialog.message()); await dialog.accept(); });
+    await page.locator("#import-data").setInputFiles({
+      name: "invalid.json",
+      mimeType: "application/json",
+      buffer: Buffer.from(JSON.stringify({ format: "cap-citoyen-progress", version: 1, state: { answers: "invalid", bookmarks: [], uncertain: [], sessions: [], themeSeen: [], history: [] } })),
+    });
+    await expect.poll(() => dialogs.some(message => message.includes("ne semble pas être une sauvegarde"))).toBe(true);
+    await expect(page.locator("#progress-answered")).toHaveText("1");
+  });
+
+  test("récupération après un stockage local corrompu", async ({ page }) => {
+    await page.evaluate(() => localStorage.setItem("cap-citoyen-progress-v1", "{not-json"));
+    await page.reload({ waitUntil: "domcontentloaded" });
+    await expect(page.locator("#progress-answered")).toHaveText("0");
+    await expect(page.locator("#progress-sessions")).toHaveText("0");
+  });
+
+  test("service worker et parcours de base hors ligne", async ({ page, context }) => {
+    await page.evaluate(async () => {
+      if (!("serviceWorker" in navigator)) throw new Error("Service workers unsupported");
+      await navigator.serviceWorker.ready;
+    });
+    await page.reload({ waitUntil: "domcontentloaded" });
+    await expect.poll(() => page.evaluate(() => Boolean(navigator.serviceWorker.controller))).toBe(true);
+    await context.setOffline(true);
+    await page.reload({ waitUntil: "domcontentloaded" });
+    await expect(page.locator("#view-home")).toBeVisible();
+    await expect(page.locator("#home-themes .theme-card")).toHaveCount(3);
+    await page.locator('aside.sidebar [data-view="themes"]').click();
+    await page.locator("#all-themes [data-theme]").first().click();
+    await expect(page.locator("#question-title")).not.toBeEmpty();
+    await context.setOffline(false);
+  });
+
+  test("expiration du chronomètre de l'examen et réponses manquantes", async ({ page }) => {
+    page.on("dialog", dialog => dialog.accept());
+    await page.clock.install();
+    await page.locator('aside.sidebar [data-view="exam"]').click();
+    await page.locator("#start-exam").click();
+    await expect(page.locator("#exam-timer")).toBeVisible();
+    await page.clock.fastForward(46 * 60 * 1000);
+    await expect(page.locator("#view-results")).toBeVisible();
+    await expect(page.locator("#result-score")).toHaveText("0/40");
+    await expect(page.locator("#result-description")).toContainText(/temps est écoulé/i);
+  });
+
+  test("date de dossier obligatoire avant l'orientation", async ({ page }) => {
+    await page.locator("#choose-procedure").click();
+    await expect(page.locator("#procedure-help")).toContainText(/Choisis d’abord la date/);
+    await expect(page.locator("#view-home")).toBeVisible();
+  });
+
+});
