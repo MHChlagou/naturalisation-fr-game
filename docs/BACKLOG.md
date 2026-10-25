@@ -77,3 +77,10 @@
 - Added a theme-priority overview, mobile styling, and an updated offline cache version.
 - Added automated validator assertions for the adaptive screen, start control, and navigation.
 - JavaScript syntax and UI structure checks are performed during the implementation; the full repository validator and browser interaction still need to be run in the repository environment.
+
+## Interview simulation
+
+- Added an interactive assimilation interview practice flow with one prompt at a time, a free-text answer field, a word counter, reflection checklist, and a session summary.
+- Feedback is intentionally heuristic and transparent. It suggests clarity and structure improvements without claiming to judge factual truth, eligibility, or likely administrative outcomes.
+- Answers remain in in-memory session state and are not persisted. Added responsive styles, a PWA cache version bump, and validator assertions.
+- Manual browser testing and editorial review of the question prompts remain open.
