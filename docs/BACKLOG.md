@@ -69,3 +69,11 @@
 - Expanded the validator to reject malformed prompts, non-string or duplicate choices, and missing question text metadata.
 - Checked the bank programmatically: 80 bank questions, no malformed records, no duplicate IDs, and no duplicate prompts against the extra question set.
 - Editorial review of the complete bank and validation of every source link remain open tasks.
+
+## Adaptive practice
+
+- Added a dedicated adaptive practice screen and fixed the navigation target that previously pointed to a missing view.
+- Adaptive sessions prioritize previously missed answers, uncertain questions, unattempted questions, and weaker themes while reducing the weight of recently seen questions.
+- Added a theme-priority overview, mobile styling, and an updated offline cache version.
+- Added automated validator assertions for the adaptive screen, start control, and navigation.
+- JavaScript syntax and UI structure checks are performed during the implementation; the full repository validator and browser interaction still need to be run in the repository environment.
