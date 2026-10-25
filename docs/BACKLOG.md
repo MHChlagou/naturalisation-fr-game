@@ -15,6 +15,7 @@
 ## Epic 1 - UX and design system
 - [x] Establish responsive design tokens, typography, colours, spacing and cards.
 - [x] Build the date-of-filing selector for the current civic-exam path vs. historical assimilation-interview path.
+- [x] Add tailored coaching tips and practice follow-up questions for all 10 assimilation-interview topics.
 - [x] Create the local SVG guide character with smiling and thinking expressions.
 - [x] Build the guide speech bubble, question view, explanations and source links.
 - [x] Add keyboard focus styles, semantic structure and reduced-motion support.
