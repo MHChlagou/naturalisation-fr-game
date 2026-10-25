@@ -12,7 +12,7 @@ assert.match(html, /id="main"/, "The page must have a main landmark.");
 assert.match(html, /id="answer-options"/, "The quiz answer container must exist.");
 assert.match(html, /id="answer-feedback"/, "The feedback container must exist.");
 assert.match(html, /manifest\.webmanifest/, "The PWA manifest must be linked.");
-assert.match(html, /\.\/sw\.js/, "The service worker must be registered by the app.");
+assert.match(app, /navigator\.serviceWorker\.register\("\.\/sw\.js"\)/, "The service worker must be registered by the app.");
 assert.ok(fs.existsSync(new URL("../assets/guide.svg", import.meta.url)), "Guide SVG must exist.");
 assert.ok(fs.existsSync(new URL("../manifest.webmanifest", import.meta.url)), "PWA manifest must exist.");
 assert.ok(fs.existsSync(new URL("../sw.js", import.meta.url)), "Service worker must exist.");
