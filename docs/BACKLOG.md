@@ -5,6 +5,7 @@
 - [x] Document the 1 January 2026 transition rule, official theme/subtheme allocations and the limits of the official public question list.
 - [x] Add a first-pass factual review and direct source links for the original 40-question exam blueprint.
 - [x] Expand the national practice bank to 80 original questions with per-question source, theme, subtheme and difficulty metadata.
+- [x] Add a second reviewed batch of 40 original questions, bringing the bank to 120.
 - [x] Add recent-question avoidance across sessions while preserving the 40-question exam theme allocation.
 - [x] Keep questions original rather than copying official question wording.
 - [x] Validate question count, source coverage, theme/subtheme counts and the non-official-content disclosure in the automated script.
