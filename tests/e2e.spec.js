@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 const baseURL = process.env.SITE_URL || "http://127.0.0.1:4173/";
-test.setTimeout(90_000);
+test.setTimeout(45_000);
 let pageErrors = [];
 
 test.describe("Cap Citoyen - parcours publics", () => {
