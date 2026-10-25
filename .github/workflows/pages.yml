@@ -79,3 +79,12 @@ jobs:
 
           retry_curl "$SITE_ROOT/manifest.webmanifest" -o /tmp/cap-citoyen-manifest.json
           node -e "const fs=require('node:fs'); const m=JSON.parse(fs.readFileSync('/tmp/cap-citoyen-manifest.json','utf8')); if (!m.name || !m.start_url || !m.scope) process.exit(1); console.log('PWA manifest is valid JSON')"
+
+      - name: Install Playwright and Chromium
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Run full browser tests against the published site
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: npm run test:e2e
