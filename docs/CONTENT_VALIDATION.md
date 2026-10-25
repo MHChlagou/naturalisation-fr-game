@@ -45,16 +45,11 @@ La répartition doit aussi respecter les sous-thèmes du référentiel, pas seul
 
 ## 3. Résultat de l'audit de la version actuelle
 
-La version examinée contient 13 questions de démonstration :
-- Principes et valeurs : 4 ;
-- Système institutionnel et politique : 3 ;
-- Droits et devoirs : 3 ;
-- Histoire, géographie et culture : 2 ;
-- Vivre dans la société : 1.
+La version initiale contenait **14 questions**, et non 13 (correction d'un décompte précédent) : Principes et valeurs : 4 ; Système institutionnel et politique : 3 ; Droits et devoirs : 3 ; Histoire, géographie et culture : 2 ; Vivre dans la société : 2.
 
-**Conclusion : elle n'est pas suffisante pour valider un examen blanc de 40 questions.** Elle ne respecte pas les allocations réglementaires, et certaines références sont trop générales pour permettre une vérification indépendante (par exemple « référence pédagogique » ou « exercice original » sans référence précise). Le statut « demo » ne constitue pas une validation factuelle.
+La branche de développement ajoute 26 exercices originaux, pour une banque de **40 questions pédagogiques** réparties selon les allocations de l'examen : 11 / 6 / 11 / 8 / 4. Les 12 mises en situation sont réparties en 6 dans « Principes et valeurs » et 6 dans « Droits et devoirs ». Le code vérifie ces nombres automatiquement.
 
-Les questions existantes ne doivent donc pas être présentées comme une banque officiellement validée. Les explications et réponses correctes doivent être vérifiées individuellement ; il ne suffit pas que le sujet apparaisse dans le livret.
+**Limite importante :** ces 40 questions forment un examen blanc d'entraînement, pas une banque officielle. La liste ministérielle publique fournit les intitulés de questions de connaissance, sans les propositions ni les réponses officielles ; les mises en situation officielles ne sont pas publiées. Les réponses du jeu sont donc des corrigés pédagogiques originaux. Les sources sont liées depuis les corrections, mais la relecture indépendante et le test automatisé en CI doivent encore être confirmés avant de qualifier le contenu de totalement validé.
 
 ## 4. Checklist obligatoire pour chaque question
 
