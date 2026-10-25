@@ -45,7 +45,7 @@ const SOURCE_URLS = {
  h1:"https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000877021/",
  h2:"https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html",
  s1:"https://www.service-public.fr/particuliers/vosdroits/F14128",
- s2:"https://digital-strategy.ec.europa.eu/en/policies/112"
+ s2:"https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049164413"
 };
 const CONTENT_REVIEW_DATE = "25 octobre 2026";
 Object.assign(SOURCE_URLS, Object.fromEntries(QUESTIONS.filter(q => q.sourceUrl).map(q => [q.id, q.sourceUrl])));
