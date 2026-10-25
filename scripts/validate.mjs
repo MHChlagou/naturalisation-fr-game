@@ -13,12 +13,15 @@ assert.match(html, /id="main"/, "The page must have a main landmark.");
 assert.match(html, /id="answer-options"/, "The quiz answer container must exist.");
 assert.match(html, /id="answer-feedback"/, "The feedback container must exist.");
 assert.match(html, /id="view-revisions"/, "The revision notebook view must exist.");
+assert.match(html, /id="view-lessons"/, "The mini-lessons view must exist.");
+assert.match(html, /data-view="lessons"/, "The sidebar must navigate to mini-lessons.");
 assert.match(html, /id="revision-uncertain-count"/, "The notebook must count uncertain questions.");
 assert.match(html, /data-review-start="uncertain"/, "The notebook must support uncertain-question review.");
 assert.match(html, /data-review-start="bookmarks"/, "The notebook must offer bookmark review.");
 assert.match(html, /data-review-start="errors"/, "The notebook must offer error review.");
 assert.match(app, /function renderReviewNotebook\(\)/, "The revision notebook must render saved questions.");
 assert.match(app, /function startReviewSet\(mode\)/, "The revision notebook must start filtered sessions.");
+assert.match(app, /function renderLessons\(\)/, "The mini-lessons view must render its content.");
 assert.match(app, /uncertain:\[\]/, "Progress storage must include uncertain-question state.");
 assert.match(html, /manifest\.webmanifest/, "The PWA manifest must be linked.");
 assert.match(app, /navigator\.serviceWorker\.register\("\.\/sw\.js"\)/, "The service worker must be registered by the app.");
@@ -48,6 +51,9 @@ function extractObject(name, nextMarker) {
 
 const themes = extractArray("THEMES", "const QUESTIONS =");
 const questions = extractArray("QUESTIONS", "QUESTIONS.push");
+const lessons = extractArray("LESSONS", "const STORAGE_KEY");
+assert.equal(lessons.length, 5, "There must be one mini-lesson per theme.");
+for (const lesson of lessons) assert.ok(lesson.title && lesson.summary && lesson.points.length >= 3 && lesson.sourceUrl.startsWith("https://"), `Lesson ${lesson.id} needs content and a source.`);
 const extraQuestions = vm.runInNewContext(extraSource.slice(extraSource.indexOf("["), extraSource.lastIndexOf(";")));
 questions.push(...extraQuestions);
 const questionSubthemes = extractObject("QUESTION_SUBTHEMES", "QUESTIONS.forEach");
