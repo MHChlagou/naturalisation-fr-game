@@ -56,3 +56,5 @@ The transition date for the new civic-exam requirement is **1 January 2026**, no
 - [Access to French nationality procedures](https://www.immigration.interieur.gouv.fr/devenir-francais/procedures-dacces-a-nationalite-francaise)
 - [Decree 2025-648 of 15 July 2025](https://www.legifrance.gouv.fr/eli/decret/2025/7/15/2025-648/jo/texte)
 - [Order of 10 October 2025 on the civic exam programme](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000052381620)
+- Adaptive practice mode prioritizes mistakes, uncertain questions, unattempted questions, and themes with lower recorded accuracy.
+- Adaptive practice includes a theme-priority overview and works with locally saved progress.
