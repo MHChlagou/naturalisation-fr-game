@@ -145,9 +145,9 @@ function finishSession(timeExpired=false){const s=currentSession;if(!s)return;cl
 function startReviewSet(mode){const ids=mode==="bookmarks"?state.bookmarks:mode==="uncertain"?state.uncertain:Object.entries(state.answers).filter(([,answer])=>!answer.correct).map(([id])=>id);const pool=QUESTIONS.filter(q=>ids.includes(q.id));if(!pool.length){alert(mode==="bookmarks"?"Tu n’as pas encore ajouté de favoris. Utilise « Garder pour réviser » pendant un quiz.":mode==="uncertain"?"Tu n’as pas encore marqué de question comme incertaine.":"Aucune erreur à revoir pour le moment. Continue à t’entraîner !");return}clearExamTimer();currentSession={questions:shuffle(pool),index:0,answers:[],themeId:null,exam:false,startedAt:Date.now(),duration:0,revisionType:mode};reviewMode=true;showView("quiz");el("quiz-mode").textContent=mode==="bookmarks"?"MES FAVORIS":mode==="uncertain"?"MES INCERTITUDES":"MES ERREURS";renderQuestion()}
 function renderReviewNotebook(){const host=el("revision-list");if(!host)return;const bookmarked=QUESTIONS.filter(q=>state.bookmarks.includes(q.id));const wrongIds=new Set(Object.entries(state.answers).filter(([,a])=>!a.correct).map(([id])=>id));const wrong=QUESTIONS.filter(q=>wrongIds.has(q.id));const uncertain=QUESTIONS.filter(q=>state.uncertain.includes(q.id));el("revision-bookmark-count").textContent=bookmarked.length;el("revision-error-count").textContent=wrong.length;el("revision-uncertain-count").textContent=uncertain.length;el("review-bookmarks-button").disabled=!bookmarked.length;el("review-errors-button").disabled=!wrong.length;el("review-uncertain-button").disabled=!uncertain.length;const rows=[...new Map([...bookmarked.map(q=>[q.id,{q,type:"Favori"}]),...wrong.map(q=>[q.id,{q,type:"À revoir"}]),...uncertain.map(q=>[q.id,{q,type:"Incertaine"}])]).values()];host.innerHTML=rows.length?rows.map(({q,type})=>{const theme=THEMES.find(t=>t.id===q.themeId);return '<article class="revision-item"><div class="revision-item-meta"><span>'+escapeHtml(theme?theme.short:q.themeId)+'</span><span>'+type+'</span></div><h3>'+escapeHtml(q.prompt)+'</h3><p>'+escapeHtml(q.takeaway)+'</p><button class="text-button" data-review-question="'+escapeHtml(q.id)+'">Réviser cette question →</button></article>'}).join(""):'<div class="revision-empty"><span>☆</span><h3>Ton carnet est encore vide</h3><p>Ajoute un favori, marque une question incertaine ou termine un quiz pour retrouver ici les notions à retravailler.</p><button class="button button-primary" data-go="themes">Commencer un quiz →</button></div>'}
 function startSingleReview(questionId){const q=QUESTIONS.find(item=>item.id===questionId);if(!q)return;clearExamTimer();currentSession={questions:[q],index:0,answers:[],themeId:q.themeId,exam:false,startedAt:Date.now(),duration:0,revisionType:"single"};reviewMode=true;showView("quiz");el("quiz-mode").textContent="RÉVISION CIBLÉE";renderQuestion()}
-let interviewState={index:0,answers:[],active:false};
+let interviewState={index:0,answers:[],active:false,evaluated:false};
 function startInterview(){
-  interviewState={index:0,answers:[],active:true};
+  interviewState={index:0,answers:[],active:true,evaluated:false};
   el("interview-feedback").classList.add("hidden");
   el("interview-completion").classList.add("hidden");
   el("interview-checklist").classList.add("hidden");
@@ -159,6 +159,7 @@ function startInterview(){
   renderInterviewQuestion();
 }
 function renderInterviewQuestion(){
+  interviewState.evaluated=false;
   const topic=LEGACY_TOPICS[interviewState.index];
   if(!topic)return finishInterview();
   el("interview-counter").textContent="Question "+(interviewState.index+1)+" sur "+LEGACY_TOPICS.length;
@@ -184,8 +185,16 @@ function evaluateInterviewAnswer(){
 }
 function nextInterviewQuestion(){
   if(!interviewState.active)return;
-  const result=evaluateInterviewAnswer();
-  interviewState.answers.push({topic:LEGACY_TOPICS[interviewState.index].title,words:result.words,checks:result.checks});
+  if(!interviewState.evaluated){
+    evaluateInterviewAnswer();
+    interviewState.evaluated=true;
+    el("interview-next").textContent=interviewState.index>=LEGACY_TOPICS.length-1?"Terminer la simulation →":"Question suivante →";
+    return;
+  }
+  const text=el("interview-answer").value.trim();
+  const words=text?text.split(/\s+/).filter(Boolean):[];
+  const checks=["interview-direct","interview-example","interview-explain"].filter(id=>el(id).checked).length;
+  interviewState.answers.push({topic:LEGACY_TOPICS[interviewState.index].title,words:words.length,checks});
   if(interviewState.index>=LEGACY_TOPICS.length-1){finishInterview();return;}
   interviewState.index++;
   renderInterviewQuestion();
