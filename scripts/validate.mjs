@@ -20,6 +20,9 @@ assert.match(html, /id="interview-answer"/, "The interview simulation answer fie
 assert.match(html, /id="interview-start"/, "The interview simulation start button must exist.");
 assert.match(app, /function startInterview\(\)/, "The interview simulation must be implemented.");
 assert.match(app, /function evaluateInterviewAnswer\(\)/, "The interview practice feedback must exist.");
+assert.equal((app.match(/followUp:/g) || []).length, 10, "Each interview topic must include a practice follow-up question.");
+assert.match(app, /interview-coaching-tip/, "Interview feedback must include question-specific coaching.");
+assert.match(app, /interview-follow-up/, "Interview feedback must include a follow-up prompt.");
 assert.match(app, /el\("interview-next"\)\.addEventListener\("click",nextInterviewQuestion\)/, "The interview next action must be wired.");
 assert.match(html, /id="start-adaptive"/, "The adaptive practice button must exist.");
 assert.match(app, /function startAdaptiveQuiz\(\)/, "Adaptive practice must prioritize user needs.");
