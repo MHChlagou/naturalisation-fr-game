@@ -67,7 +67,7 @@ function extractObject(name, nextMarker) {
   const objectStart = app.indexOf("{", start);
   const end = app.indexOf(nextMarker, objectStart);
   assert.ok(objectStart >= 0 && end > objectStart, `Could not locate ${name} object.`);
-  return vm.runInNewContext(app.slice(objectStart, app.lastIndexOf(";", end)));
+  return vm.runInNewContext("(" + app.slice(objectStart, app.lastIndexOf(";", end)) + ")");
 }
 
 const themes = extractArray("THEMES", "const QUESTIONS =");
