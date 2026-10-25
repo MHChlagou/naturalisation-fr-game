@@ -35,7 +35,7 @@ Serve the repository root with any local HTTP server, for example:
 Then open http://localhost:8080. Service worker/PWA functionality requires HTTP(S); opening index.html directly as a file will not enable it.
 
 ## GitHub Pages deployment
-The workflow is in [.github/workflows/pages.yml](.github/workflows/pages.yml). It runs JavaScript syntax checks and validates the app structure, question bank and PWA assets before deployment. After publishing, it performs an HTTP smoke test against the public site and checks that the key static assets and PWA manifest are reachable. See [deployment and smoke-test documentation](docs/DEPLOYMENT_AND_SMOKE_TESTS.md) for the workflow, verification scope and manual browser checklist.
+The workflow is in [.github/workflows/pages.yml](.github/workflows/pages.yml). It runs JavaScript syntax checks and validates the app structure, question bank and PWA assets before deployment. After publishing, it runs an HTTP smoke test and Playwright browser tests against the published GitHub Pages URL, covering navigation, procedure selection, quizzes, the full 40-question mock exam, interview simulation, local progress, export/reset and mobile layout. See [deployment and browser-test documentation](docs/DEPLOYMENT_AND_SMOKE_TESTS.md).
 
 To enable publishing for this repository:
 1. Open **Settings → Pages**.
