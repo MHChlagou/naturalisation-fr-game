@@ -11,12 +11,12 @@ A responsive, offline-first educational game for people preparing for French nat
 
 ## Current prototype
 - Responsive French interface with home, theme browser, quiz, results and progress views.
-- 80-question original national practice bank with direct source links, official theme/subtheme allocations for the 40-question exam blueprint, easy/intermediate/advanced filters and recent-question avoidance; content remains educational and needs an independent editorial review.
+- 120-question original national practice bank with direct source links, official theme/subtheme allocations for the 40-question exam blueprint, easy/intermediate/advanced filters and recent-question avoidance; content remains educational and needs an independent editorial review.
 - Local progress, bookmarks, uncertain-question review queue, mistake review, per-theme stats and JSON export/import/reset.
 - Local SVG guide illustration with question feedback and coaching messages.
 - PWA manifest and service worker for app-shell caching.
 - Date-based procedure selector and 10 assimilation-interview reflection topics with a non-prescriptive answer framework.
-- Automated static validation via node scripts/validate.mjs, including source metadata, 80-question uniqueness, exam blueprint theme/subtheme allocations and PWA cache checks.
+- Automated static validation via node scripts/validate.mjs, including source metadata, 120-question uniqueness, exam blueprint theme/subtheme allocations and PWA cache checks.
 - GitHub Actions workflow to validate pull requests and deploy the static app to GitHub Pages after a push to main.
 
 ## Run locally
@@ -42,7 +42,7 @@ GitHub Pages can take a few minutes to publish after a successful workflow run.
 The transition date for the new civic-exam requirement is **1 January 2026**, not July 2026. Under Article 11 of Decree No. 2025-648 of 15 July 2025, the relevant new provisions apply to naturalisation/reintegration applications filed from that date. Applicants with a file filed before 1 January 2026 should be directed to the assimilation-interview preparation path and advised to confirm the applicable rules with their prefecture. The July 2026 update is the new *Livret du citoyen*, not the exam transition date. See the [decree's official text](https://www.legifrance.gouv.fr/eli/decret/2025/7/15/2025-648/jo/texte).
 
 ## Important prototype limitations
-- The 80-question bank is an expanding educational practice set, not an official question bank. The official list publishes knowledge-question stems without answers; situational questions are not publicly disclosed.
+- The 120-question bank is an expanding educational practice set, not an official question bank. The official list publishes knowledge-question stems without answers; situational questions are not publicly disclosed.
 - The exam page runs a 40-question, 45-minute educational simulation using original practice questions. It is not an official question bank or attestation.
 - Results are educational and must not be interpreted as an official pass/fail result or certificate.
 - Every factual question must be reviewed against current official sources, and content reuse/licensing checked before public release.
