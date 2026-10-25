@@ -1,11 +1,19 @@
 import { test, expect } from "@playwright/test";
 
 const baseURL = process.env.SITE_URL || "http://127.0.0.1:4173/";
+test.setTimeout(90_000);
+let pageErrors = [];
 
 test.describe("Cap Citoyen - parcours publics", () => {
   test.beforeEach(async ({ page }) => {
+    pageErrors = [];
+    page.on("pageerror", error => pageErrors.push(error.message));
     await page.goto(baseURL, { waitUntil: "domcontentloaded" });
     await expect(page.locator("#view-home")).toBeVisible();
+  });
+
+  test.afterEach(async () => {
+    expect(pageErrors, "Unexpected JavaScript errors in the browser").toEqual([]);
   });
 
   test("accueil, ressources statiques et navigation principale", async ({ page }) => {
@@ -35,7 +43,8 @@ test.describe("Cap Citoyen - parcours publics", () => {
     await expect(page.locator("#view-legacy")).toBeVisible();
     await expect(page.locator("#interview-start")).toBeVisible();
 
-    await page.locator("#view-home").locator("#application-date").fill("2026-01-01");
+    await page.locator('[data-view="home"]').click();
+    await page.locator("#application-date").fill("2026-01-01");
     await page.locator("#choose-procedure").click();
     await expect(page.locator("#view-exam")).toBeVisible();
     await expect(page.locator("#start-exam")).toBeVisible();
