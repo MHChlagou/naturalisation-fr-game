@@ -145,11 +145,35 @@ function finishSession(timeExpired=false){const s=currentSession;if(!s)return;cl
 function startReviewSet(mode){const ids=mode==="bookmarks"?state.bookmarks:mode==="uncertain"?state.uncertain:Object.entries(state.answers).filter(([,answer])=>!answer.correct).map(([id])=>id);const pool=QUESTIONS.filter(q=>ids.includes(q.id));if(!pool.length){alert(mode==="bookmarks"?"Tu n’as pas encore ajouté de favoris. Utilise « Garder pour réviser » pendant un quiz.":mode==="uncertain"?"Tu n’as pas encore marqué de question comme incertaine.":"Aucune erreur à revoir pour le moment. Continue à t’entraîner !");return}clearExamTimer();currentSession={questions:shuffle(pool),index:0,answers:[],themeId:null,exam:false,startedAt:Date.now(),duration:0,revisionType:mode};reviewMode=true;showView("quiz");el("quiz-mode").textContent=mode==="bookmarks"?"MES FAVORIS":mode==="uncertain"?"MES INCERTITUDES":"MES ERREURS";renderQuestion()}
 function renderReviewNotebook(){const host=el("revision-list");if(!host)return;const bookmarked=QUESTIONS.filter(q=>state.bookmarks.includes(q.id));const wrongIds=new Set(Object.entries(state.answers).filter(([,a])=>!a.correct).map(([id])=>id));const wrong=QUESTIONS.filter(q=>wrongIds.has(q.id));const uncertain=QUESTIONS.filter(q=>state.uncertain.includes(q.id));el("revision-bookmark-count").textContent=bookmarked.length;el("revision-error-count").textContent=wrong.length;el("revision-uncertain-count").textContent=uncertain.length;el("review-bookmarks-button").disabled=!bookmarked.length;el("review-errors-button").disabled=!wrong.length;el("review-uncertain-button").disabled=!uncertain.length;const rows=[...new Map([...bookmarked.map(q=>[q.id,{q,type:"Favori"}]),...wrong.map(q=>[q.id,{q,type:"À revoir"}]),...uncertain.map(q=>[q.id,{q,type:"Incertaine"}])]).values()];host.innerHTML=rows.length?rows.map(({q,type})=>{const theme=THEMES.find(t=>t.id===q.themeId);return '<article class="revision-item"><div class="revision-item-meta"><span>'+escapeHtml(theme?theme.short:q.themeId)+'</span><span>'+type+'</span></div><h3>'+escapeHtml(q.prompt)+'</h3><p>'+escapeHtml(q.takeaway)+'</p><button class="text-button" data-review-question="'+escapeHtml(q.id)+'">Réviser cette question →</button></article>'}).join(""):'<div class="revision-empty"><span>☆</span><h3>Ton carnet est encore vide</h3><p>Ajoute un favori, marque une question incertaine ou termine un quiz pour retrouver ici les notions à retravailler.</p><button class="button button-primary" data-go="themes">Commencer un quiz →</button></div>'}
 function startSingleReview(questionId){const q=QUESTIONS.find(item=>item.id===questionId);if(!q)return;clearExamTimer();currentSession={questions:[q],index:0,answers:[],themeId:q.themeId,exam:false,startedAt:Date.now(),duration:0,revisionType:"single"};reviewMode=true;showView("quiz");el("quiz-mode").textContent="RÉVISION CIBLÉE";renderQuestion()}
-let interviewState={index:0,answers:[],active:false,evaluated:false};
+let interviewState={index:0,answers:[],active:false,evaluated:false,startedAt:0,deadline:0,questionStartedAt:0};
+let interviewTimerInterval=null;
+const INTERVIEW_DURATION_MS=15*60*1000;
+function clearInterviewTimer(){if(interviewTimerInterval!==null){clearInterval(interviewTimerInterval);interviewTimerInterval=null}}
+function updateInterviewTimer(){
+  if(!interviewState.active)return;
+  const remaining=Math.max(0,interviewState.deadline-Date.now());
+  const seconds=Math.ceil(remaining/1000);
+  el("interview-timer").textContent=String(Math.floor(seconds/60)).padStart(2,"0")+":"+String(seconds%60).padStart(2,"0");
+  el("interview-timer").classList.toggle("is-urgent",remaining<=2*60*1000);
+  if(remaining<=0){clearInterviewTimer();finishInterview(true)}
+}
+function updateInterviewProgress(){
+  const total=LEGACY_TOPICS.length;
+  const done=interviewState.answers.length;
+  const current=interviewState.active?Math.min(interviewState.index+1,total):done;
+  const pct=Math.round((interviewState.active?interviewState.index:done)/total*100);
+  el("interview-progress-label").textContent="Progression : "+(interviewState.active?interviewState.index:done)+" sur "+total;
+  el("interview-progress").setAttribute("aria-valuenow",String(interviewState.active?interviewState.index:done));
+  el("interview-progress-fill").style.width=pct+"%";
+  if(interviewState.active)el("interview-counter").textContent="Question "+current+" sur "+total;
+}
 function startInterview(){
-  interviewState={index:0,answers:[],active:true,evaluated:false};
+  clearInterviewTimer();
+  const now=Date.now();
+  interviewState={index:0,answers:[],active:true,evaluated:false,startedAt:now,deadline:now+INTERVIEW_DURATION_MS,questionStartedAt:now};
   el("interview-feedback").classList.add("hidden");
   el("interview-completion").classList.add("hidden");
+  el("interview-detailed-results").classList.add("hidden");
   el("interview-checklist").classList.add("hidden");
   el("interview-answer").disabled=false;
   el("interview-answer").value="";
@@ -157,12 +181,14 @@ function startInterview(){
   el("interview-next").classList.remove("hidden");
   el("interview-restart").classList.remove("hidden");
   renderInterviewQuestion();
+  updateInterviewTimer();
+  interviewTimerInterval=setInterval(updateInterviewTimer,1000);
 }
 function renderInterviewQuestion(){
   interviewState.evaluated=false;
   const topic=LEGACY_TOPICS[interviewState.index];
   if(!topic)return finishInterview();
-  el("interview-counter").textContent="Question "+(interviewState.index+1)+" sur "+LEGACY_TOPICS.length;
+  interviewState.questionStartedAt=Date.now();
   el("interview-question").textContent=topic.question;
   el("interview-prompt-help").textContent=topic.desc+" Prends quelques instants pour organiser tes idées.";
   el("interview-answer").value="";
@@ -171,6 +197,7 @@ function renderInterviewQuestion(){
   el("interview-checklist").classList.add("hidden");
   ["interview-direct","interview-example","interview-explain"].forEach(id=>el(id).checked=false);
   el("interview-next").textContent="Évaluer ma réponse et continuer →";
+  updateInterviewProgress();
   el("interview-answer").focus();
 }
 function evaluateInterviewAnswer(){
@@ -178,20 +205,19 @@ function evaluateInterviewAnswer(){
   const words=text?text.split(/\s+/).filter(Boolean):[];
   const topic=LEGACY_TOPICS[interviewState.index];
   let opening,advice;
-  if(words.length<5){
-    opening="Essaie de développer un peu.";
-    advice="Ta réponse est très courte. Formule une idée complète, puis ajoute une explication ou un exemple vrai si cela convient.";
-  }else if(words.length<25){
-    opening="Tu as une première base.";
-    advice="Vérifie que tu réponds directement à la question, puis développe une idée avec un exemple concret ou une explication personnelle.";
-  }else{
-    opening="Tu as matière à travailler.";
-    advice="Relis ta réponse : chaque phrase doit être utile, claire et personnelle. Une réponse longue n'est pas automatiquement meilleure.";
-  }
+  if(words.length<5){opening="Essaie de développer un peu.";advice="Ta réponse est très courte. Formule une idée complète, puis ajoute une explication ou un exemple vrai si cela convient."}
+  else if(words.length<25){opening="Tu as une première base.";advice="Vérifie que tu réponds directement à la question, puis développe une idée avec un exemple concret ou une explication personnelle."}
+  else{opening="Tu as matière à travailler.";advice="Relis ta réponse : chaque phrase doit être utile, claire et personnelle. Une réponse longue n'est pas automatiquement meilleure."}
   el("interview-feedback").innerHTML="<strong>"+opening+"</strong><p>"+advice+"</p><div class=\"interview-coaching-tip\"><strong>Piste pour cette question</strong><p>"+escapeHtml(topic.coach)+"</p></div><div class=\"interview-follow-up\"><strong>Question de relance pour t'entraîner</strong><p>"+escapeHtml(topic.followUp)+"</p></div>";
   el("interview-feedback").classList.remove("hidden");
   el("interview-checklist").classList.remove("hidden");
   return {text,words:words.length,checks:["interview-direct","interview-example","interview-explain"].filter(id=>el(id).checked).length};
+}
+function recordInterviewAnswer(){
+  if(interviewState.answers.some(answer=>answer.index===interviewState.index))return;
+  const evaluated=evaluateInterviewAnswer();
+  interviewState.answers.push({index:interviewState.index,topic:LEGACY_TOPICS[interviewState.index].title,question:LEGACY_TOPICS[interviewState.index].question,words:evaluated.words,checks:evaluated.checks,seconds:Math.max(0,Math.round((Date.now()-interviewState.questionStartedAt)/1000))});
+  updateInterviewProgress();
 }
 function nextInterviewQuestion(){
   if(!interviewState.active)return;
@@ -201,15 +227,14 @@ function nextInterviewQuestion(){
     el("interview-next").textContent=interviewState.index>=LEGACY_TOPICS.length-1?"Terminer la simulation →":"Question suivante →";
     return;
   }
-  const text=el("interview-answer").value.trim();
-  const words=text?text.split(/\s+/).filter(Boolean):[];
-  const checks=["interview-direct","interview-example","interview-explain"].filter(id=>el(id).checked).length;
-  interviewState.answers.push({topic:LEGACY_TOPICS[interviewState.index].title,words:words.length,checks});
-  if(interviewState.index>=LEGACY_TOPICS.length-1){finishInterview();return;}
+  recordInterviewAnswer();
+  if(interviewState.index>=LEGACY_TOPICS.length-1){finishInterview();return}
   interviewState.index++;
   renderInterviewQuestion();
 }
-function finishInterview(){
+function finishInterview(timeExpired=false){
+  if(interviewState.active&&!interviewState.answers.some(answer=>answer.index===interviewState.index))recordInterviewAnswer();
+  clearInterviewTimer();
   interviewState.active=false;
   el("interview-answer").disabled=true;
   el("interview-next").classList.add("hidden");
@@ -217,13 +242,31 @@ function finishInterview(){
   el("interview-start").textContent="Refaire une simulation →";
   el("interview-checklist").classList.add("hidden");
   el("interview-feedback").classList.add("hidden");
-  const answered=interviewState.answers.length;
-  const average=answered?Math.round(interviewState.answers.reduce((sum,a)=>sum+a.words,0)/answered):0;
-  el("interview-counter").textContent="Simulation terminée";
-  el("interview-question").textContent="Bravo, tu as terminé cette session.";
-  el("interview-prompt-help").textContent="Le bilan porte sur la pratique de la réponse, pas sur une note officielle ni sur la véracité de ton parcours.";
-  el("interview-completion").innerHTML="<strong>Bilan de pratique</strong><p>"+answered+" question(s) travaillée(s), avec une moyenne de "+average+" mots par réponse.</p><p>Pour progresser, privilégie des réponses sincères, structurées et illustrées par des exemples réels lorsque c'est pertinent. Ce bilan automatique ne juge ni la vérité de tes propos ni tes chances d'obtenir la nationalité.</p>";
+  const answers=interviewState.answers.slice().sort((a,b)=>a.index-b.index);
+  const answered=answers.length;
+  const average=answered?Math.round(answers.reduce((sum,a)=>sum+a.words,0)/answered):0;
+  const checks=answers.reduce((sum,a)=>sum+a.checks,0);
+  const maxChecks=answered*3;
+  const duration=interviewState.startedAt?Math.max(0,Math.round((Date.now()-interviewState.startedAt)/1000)):0;
+  const scorePct=maxChecks?Math.round(checks/maxChecks*100):0;
+  el("interview-counter").textContent=timeExpired?"Temps écoulé":"Simulation terminée";
+  el("interview-question").textContent=timeExpired?"Le temps de la simulation est écoulé.":"Bravo, tu as terminé cette session.";
+  el("interview-prompt-help").textContent="Bilan de pratique uniquement : ce résultat n'est ni une note officielle ni une prédiction de décision administrative.";
+  el("interview-timer").textContent=timeExpired?"00:00":formatInterviewDuration(duration);
+  el("interview-timer").classList.remove("is-urgent");
+  el("interview-progress-label").textContent="Progression : "+answered+" sur "+LEGACY_TOPICS.length;
+  el("interview-progress").setAttribute("aria-valuenow",String(answered));
+  el("interview-progress-fill").style.width=Math.round(answered/LEGACY_TOPICS.length*100)+"%";
+  el("interview-completion").innerHTML="<strong>Bilan détaillé de pratique</strong><p>"+answered+" question(s) traitée(s) sur "+LEGACY_TOPICS.length+(timeExpired?". Le temps est écoulé.":".")+"</p><p>Durée : "+formatInterviewDuration(duration)+" · Moyenne : "+average+" mots par réponse · Auto-évaluation : "+checks+"/"+maxChecks+" critères cochés ("+scorePct+" %).</p><p>Les critères reflètent uniquement ta propre auto-évaluation. Ils ne mesurent ni la qualité réelle du contenu ni tes chances d'obtenir la nationalité.</p>";
   el("interview-completion").classList.remove("hidden");
+  const details=answers.map(a=>'<article class="interview-result-row"><div class="interview-result-row-top"><strong>'+String(a.index+1).padStart(2,"0")+". "+escapeHtml(a.topic)+'</strong><span>'+a.checks+'/3 critères</span></div><p>'+escapeHtml(a.question)+'</p><div class="interview-result-metrics"><span>'+a.words+' mots</span><span>'+formatInterviewDuration(a.seconds)+'</span><span>'+(["À travailler","En progrès","Bien structuré","Tous les critères cochés"][a.checks])+'</span></div></article>').join("");
+  el("interview-detailed-results").innerHTML="<h4>Détail par question</h4>"+(details||"<p>Aucune réponse n'a été enregistrée dans cette session.</p>");
+  el("interview-detailed-results").classList.remove("hidden");
+  updateInterviewProgress();
+}
+function formatInterviewDuration(seconds){
+  const value=Math.max(0,Math.floor(seconds));
+  return String(Math.floor(value/60)).padStart(2,"0")+":"+String(value%60).padStart(2,"0");
 }
 
 function renderLegacy(){el("legacy-topics").innerHTML=LEGACY_TOPICS.map((t,i)=>'<article class="legacy-topic"><span class="topic-number">SUJET '+String(i+1).padStart(2,"0")+'</span><h3>'+escapeHtml(t.title)+'</h3><p>'+escapeHtml(t.desc)+'</p><div class="reflection"><strong>Question pour réfléchir</strong><br>'+escapeHtml(t.question)+'</div></article>').join("")}
