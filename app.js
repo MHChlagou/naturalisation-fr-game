@@ -175,7 +175,7 @@ function renderInterviewQuestion(){
 }
 function evaluateInterviewAnswer(){
   const text=el("interview-answer").value.trim();
-  const words=text?text.split(/\\s+/).filter(Boolean):[];
+  const words=text?text.split(/\s+/).filter(Boolean):[];
   const topic=LEGACY_TOPICS[interviewState.index];
   let opening,advice;
   if(words.length<5){
@@ -188,7 +188,7 @@ function evaluateInterviewAnswer(){
     opening="Tu as matière à travailler.";
     advice="Relis ta réponse : chaque phrase doit être utile, claire et personnelle. Une réponse longue n'est pas automatiquement meilleure.";
   }
-  el("interview-feedback").innerHTML="<strong>"+opening+"</strong><p>"+advice+"</p><div class=\\"interview-coaching-tip\\"><strong>Piste pour cette question</strong><p>"+escapeHtml(topic.coach)+"</p></div><div class=\\"interview-follow-up\\"><strong>Question de relance pour t'entraîner</strong><p>"+escapeHtml(topic.followUp)+"</p></div>";
+  el("interview-feedback").innerHTML="<strong>"+opening+"</strong><p>"+advice+"</p><div class=\"interview-coaching-tip\"><strong>Piste pour cette question</strong><p>"+escapeHtml(topic.coach)+"</p></div><div class=\"interview-follow-up\"><strong>Question de relance pour t'entraîner</strong><p>"+escapeHtml(topic.followUp)+"</p></div>";
   el("interview-feedback").classList.remove("hidden");
   el("interview-checklist").classList.remove("hidden");
   return {text,words:words.length,checks:["interview-direct","interview-example","interview-explain"].filter(id=>el(id).checked).length};
