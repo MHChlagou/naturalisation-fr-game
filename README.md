@@ -58,3 +58,4 @@ The transition date for the new civic-exam requirement is **1 January 2026**, no
 - [Order of 10 October 2025 on the civic exam programme](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000052381620)
 - Adaptive practice mode prioritizes mistakes, uncertain questions, unattempted questions, and themes with lower recorded accuracy.
 - Adaptive practice includes a theme-priority overview and works with locally saved progress.
+- Interactive assimilation interview practice with personal free-text answers, a reflection checklist, and transparent non-official feedback. Responses are not persisted.
