@@ -37,6 +37,10 @@ To enable publishing for this repository:
 
 GitHub Pages can take a few minutes to publish after a successful workflow run.
 
+## Transition rule to display to learners
+
+The transition date for the new civic-exam requirement is **1 January 2026**, not July 2026. Under Article 11 of Decree No. 2025-648 of 15 July 2025, the relevant new provisions apply to naturalisation/reintegration applications filed from that date. Applicants with a file filed before 1 January 2026 should be directed to the assimilation-interview preparation path and advised to confirm the applicable rules with their prefecture. The July 2026 update is the new *Livret du citoyen*, not the exam transition date. See the [decree's official text](https://www.legifrance.gouv.fr/eli/decret/2025/7/15/2025-648/jo/texte).
+
 ## Important prototype limitations
 - The question bank is a small demonstration set, not a complete or fully reviewed official content bank.
 - The exam page currently runs a short demo session; the full 40-question exam, official question allocation and 45-minute timer are not implemented yet.
