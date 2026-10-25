@@ -17,13 +17,15 @@ A responsive, offline-first educational game for people preparing for French nat
 - Local SVG guide illustration with question feedback and coaching messages.
 - PWA manifest and service worker for app-shell caching.
 - Date-based procedure selector and 10 assimilation-interview reflection topics with question-specific coaching, follow-up prompts, a 15-minute timed practice mode, progress tracking and a detailed self-assessment report.
-- Initial FastAPI backend scaffold in `backend/` for optional AI feedback, including Pydantic validation, bounded input, CORS allowlist, a basic process-local rate limiter, an OpenAI-compatible provider adapter, container setup and API tests. It is not deployed and returns HTTP 503 until provider settings are configured.
+- Initial FastAPI backend scaffold in `backend/` for optional AI feedback, including Pydantic validation, bounded input, CORS allowlist, a basic process-local rate limiter, an OpenAI-compatible provider adapter, container setup and API tests. It is not deployed or connected to the public frontend; the GitHub Pages app works without it.
 - Automated static validation via node scripts/validate.mjs, including source metadata, 120-question uniqueness, exam blueprint theme/subtheme allocations and PWA cache checks.
 - GitHub Actions workflow to validate pull requests and deploy the static app to GitHub Pages after a push to main.
 
-## Run the API locally
+## Backend status
 
-See [backend setup and security notes](backend/README.md). The API is separate from GitHub Pages and must be hosted on a trusted HTTPS service before the frontend can call it. Configure `LLM_API_KEY`, `LLM_MODEL` and `LLM_BASE_URL` only in the server environment. Do not add secrets to this repository. The initial in-memory rate limiter is not sufficient as the only production control for multiple replicas.
+The FastAPI code is an optional, undeployed scaffold for future experimentation only. The public application remains hosted exclusively on GitHub Pages and does not call this API. Do not deploy or connect the backend, and do not put API keys in the public frontend, unless the hosting decision is explicitly revisited.
+
+See [backend setup and security notes](backend/README.md) only if working on the separate scaffold locally. Configure `LLM_API_KEY`, `LLM_MODEL` and `LLM_BASE_URL` only in a trusted server environment. Do not add secrets to this repository. The initial in-memory rate limiter is not sufficient as the only production control for multiple replicas.
 
 ## Run the static app locally
 Serve the repository root with any local HTTP server, for example:
@@ -33,7 +35,7 @@ Serve the repository root with any local HTTP server, for example:
 Then open http://localhost:8080. Service worker/PWA functionality requires HTTP(S); opening index.html directly as a file will not enable it.
 
 ## GitHub Pages deployment
-The workflow is in [.github/workflows/pages.yml](.github/workflows/pages.yml). It runs JavaScript syntax checks and validates the question bank and PWA assets before deployment.
+The workflow is in [.github/workflows/pages.yml](.github/workflows/pages.yml). It runs JavaScript syntax checks and validates the app structure, question bank and PWA assets before deployment. After publishing, it performs an HTTP smoke test against the public site and checks that the key static assets and PWA manifest are reachable. See [deployment and smoke-test documentation](docs/DEPLOYMENT_AND_SMOKE_TESTS.md) for the workflow, verification scope and manual browser checklist.
 
 To enable publishing for this repository:
 1. Open **Settings → Pages**.
