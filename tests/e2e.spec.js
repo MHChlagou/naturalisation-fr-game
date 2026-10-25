@@ -19,7 +19,7 @@ test.describe("Cap Citoyen - parcours publics", () => {
   test("accueil, ressources statiques et navigation principale", async ({ page }) => {
     await expect(page).toHaveTitle(/Cap Citoyen/);
     await expect(page.getByRole("heading", { name: /Comprendre la France/ })).toBeVisible();
-    await expect(page.locator("#home-themes .theme-card, #home-themes [data-theme]")).toHaveCount(5);
+    await expect(page.locator("#home-themes .theme-card")).toHaveCount(3);
     await expect(page.locator('link[rel="manifest"]')).toHaveAttribute("href", "./manifest.webmanifest");
     await expect(page.locator("#offline-status")).toBeVisible();
 
@@ -31,7 +31,7 @@ test.describe("Cap Citoyen - parcours publics", () => {
       ["exam", /Le défi civique/],
       ["progress", /Ta progression/],
     ]) {
-      await page.locator(`[data-view="${view}"]`).click();
+      await page.locator(`aside.sidebar [data-view="${view}"]`).click();
       await expect(page.locator(`#view-${view}`)).toBeVisible();
       await expect(page.locator(`#view-${view}`).getByRole("heading", { name: heading })).toBeVisible();
     }
@@ -43,7 +43,7 @@ test.describe("Cap Citoyen - parcours publics", () => {
     await expect(page.locator("#view-legacy")).toBeVisible();
     await expect(page.locator("#interview-start")).toBeVisible();
 
-    await page.locator('[data-view="home"]').click();
+    await page.locator('aside.sidebar [data-view="home"]').click();
     await page.locator("#application-date").fill("2026-01-01");
     await page.locator("#choose-procedure").click();
     await expect(page.locator("#view-exam")).toBeVisible();
@@ -51,7 +51,7 @@ test.describe("Cap Citoyen - parcours publics", () => {
   });
 
   test("quiz, correction, favoris, incertitude et progression locale", async ({ page }) => {
-    await page.locator('[data-view="themes"]').click();
+    await page.locator('aside.sidebar [data-view="themes"]').click();
     await page.locator("#all-themes [data-theme]").first().click();
     await expect(page.locator("#view-quiz")).toBeVisible();
     await expect(page.locator("#question-title")).not.toBeEmpty();
@@ -70,18 +70,18 @@ test.describe("Cap Citoyen - parcours publics", () => {
 
     await page.locator("#next-question").click();
     await expect(page.locator("#quiz-counter")).toContainText("Question 2");
-    await page.locator('[data-view="revisions"]').click();
+    await page.locator('aside.sidebar [data-view="revisions"]').click();
     await expect(page.locator("#revision-bookmark-count")).toHaveText("1");
     await expect(page.locator("#revision-uncertain-count")).toHaveText("1");
-    await page.locator('[data-view="progress"]').click();
+    await page.locator('aside.sidebar [data-view="progress"]').click();
     await expect(page.locator("#progress-answered")).toHaveText("1");
   });
 
   test("mini-leçons et entraînement adaptatif", async ({ page }) => {
-    await page.locator('[data-view="lessons"]').click();
+    await page.locator('aside.sidebar [data-view="lessons"]').click();
     await expect(page.locator("#lesson-grid .lesson-card")).toHaveCount(5);
 
-    await page.locator('[data-view="practice"]').click();
+    await page.locator('aside.sidebar [data-view="practice"]').click();
     await page.locator("#start-adaptive").click();
     await expect(page.locator("#view-quiz")).toBeVisible();
     await expect(page.locator("#quiz-mode")).toContainText(/ENTRAÎNEMENT/);
@@ -92,7 +92,7 @@ test.describe("Cap Citoyen - parcours publics", () => {
 
   test("examen blanc complet de 40 questions et résultats", async ({ page }) => {
     page.on("dialog", dialog => dialog.accept());
-    await page.locator('[data-view="exam"]').click();
+    await page.locator('aside.sidebar [data-view="exam"]').click();
     await page.locator("#start-exam").click();
     await expect(page.locator("#view-quiz")).toBeVisible();
     await expect(page.locator("#quiz-mode")).toContainText("SIMULATION D'EXAMEN");
@@ -116,7 +116,7 @@ test.describe("Cap Citoyen - parcours publics", () => {
   });
 
   test("simulation d'entretien, minuteur, auto-évaluation et bilan détaillé", async ({ page }) => {
-    await page.locator('[data-go="legacy"]').click();
+    await page.locator('#view-home [data-go="legacy"]').click();
     await expect(page.locator("#view-legacy")).toBeVisible();
     await page.locator("#interview-start").click();
     await expect(page.locator("#interview-answer")).toBeEnabled();
@@ -141,11 +141,11 @@ test.describe("Cap Citoyen - parcours publics", () => {
   });
 
   test("export et réinitialisation des données locales", async ({ page }) => {
-    await page.locator('[data-view="themes"]').click();
+    await page.locator('aside.sidebar [data-view="themes"]').click();
     await page.locator("#all-themes [data-theme]").first().click();
     await page.locator("#answer-options button").first().click();
     await page.locator("#submit-answer").click();
-    await page.locator('[data-view="progress"]').click();
+    await page.locator('aside.sidebar [data-view="progress"]').click();
     await expect(page.locator("#progress-answered")).toHaveText("1");
     const downloadPromise = page.waitForEvent("download");
     await page.locator("#export-data").click();
