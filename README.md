@@ -1,8 +1,8 @@
-# Cap Citoyen — Naturalisation FR Game
+# Cap Citoyen - Naturalisation FR Game
 
 A responsive, offline-first educational game for people preparing for French naturalisation. It separates the current civic-exam learning path from a historical assimilation-interview reflection path.
 
-**Independent educational tool — not an official government service and not legal advice.**
+**Independent educational tool - not an official government service and not legal advice.**
 
 ## Product planning
 - [Product plan](docs/PRODUCT_PLAN.md)
@@ -48,9 +48,9 @@ The transition date for the new civic-exam requirement is **1 January 2026**, no
 - Every factual question must be reviewed against current official sources, and content reuse/licensing checked before public release.
 
 ## Official references
-- [Livret du citoyen — version de juillet 2026](https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html)
+- [Livret du citoyen - version de juillet 2026](https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html)
 - [Arrêté du 3 juillet 2026 approuvant le livret du citoyen](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000054426889)
-- [Service-Public — examen civique pour la naturalisation](https://www.service-public.gouv.fr/particuliers/vosdroits/F39426)
+- [Service-Public - examen civique pour la naturalisation](https://www.service-public.gouv.fr/particuliers/vosdroits/F39426)
 - [Civic exam for naturalisation/reintegration](https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/lexamen-civique-pour-demande-de-naturalisation-ou-de-reintegration-dans-nationalite-francaise.html)
 - [Official knowledge-question list](https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/questions-de-connaissance-pour-lexamen-civique-nationalite-francaise.html)
 - [Access to French nationality procedures](https://www.immigration.interieur.gouv.fr/devenir-francais/procedures-dacces-a-nationalite-francaise)
