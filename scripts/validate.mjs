@@ -35,14 +35,14 @@ function extractArray(name, nextMarker) {
 
 const themes = extractArray("THEMES", "const QUESTIONS =");
 const questions = extractArray("QUESTIONS", "QUESTIONS.push");
-const extraQuestions = vm.runInNewContext(extraSource.replace(/^window\\.EXTRA_QUESTIONS\\s*=\\s*/, "").replace(/;\\s*$/, ""));
+const extraQuestions = vm.runInNewContext(extraSource.slice(extraSource.indexOf("["), extraSource.lastIndexOf(";")));
 questions.push(...extraQuestions);
 assert.equal(themes.length, 5, "The prototype should include the five learning themes.");
 assert.equal(questions.length, 40, "The practice exam bank must contain 40 questions.");
 assert.match(app, /const SOURCE_URLS = \{/, "Each demo question must have a traceable source URL.");
 assert.match(html, /1er janvier 2026/, "The UI must explain the correct transition date.");
-assert.match(html, /questions-extra\\.js/, "The expanded question bank must be loaded before the app.");
-assert.match(app, /function startExamTimer\\(\\)/, "The timed exam must have a countdown.");
+assert.match(html, /questions-extra\.js/, "The expanded question bank must be loaded before the app.");
+assert.match(app, /function startExamTimer\(\)/, "The timed exam must have a countdown.");
 assert.match(html, /juillet 2026 n.est pas la date de bascule/, "The UI must distinguish the new booklet from the exam transition date.");
 
 const themeIds = new Set(themes.map((theme) => theme.id));
@@ -65,7 +65,10 @@ const situationalByTheme = Object.fromEntries(themes.map(theme => [theme.id, que
 assert.equal(situationalByTheme.principes, 6, "The principles theme must contain 6 original situation exercises.");
 assert.equal(situationalByTheme.droits, 6, "The rights and duties theme must contain 6 original situation exercises.");
 assert.equal(questions.filter(q => q.kind === "situation").length, 12, "There must be 12 situation exercises in total.");
-for (const question of questions) assert.match(question.sourceUrl || app, /https?:\\/\\//, `Question ${question.id} must include a source URL or source map entry.`);
+for (const question of questions) {
+  if (question.sourceUrl) assert.match(question.sourceUrl, /^https?:\\/\\//, `Question ${question.id} must include a source URL.`);
+  else assert.match(app, new RegExp(`${question.id}:\\s*\\"https?://`), `Question ${question.id} must include a source map entry.`);
+}
 
 const manifest = JSON.parse(read("../manifest.webmanifest"));
 assert.equal(manifest.lang, "fr-FR");
