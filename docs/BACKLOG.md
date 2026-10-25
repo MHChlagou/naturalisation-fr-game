@@ -32,7 +32,7 @@
 - [x] Implement a 45-minute countdown and treat unanswered questions as incorrect when time expires.
 - [x] Show score, percentage, the 32/40 reference threshold, elapsed time and per-theme breakdown.
 - [x] Label every result as educational, not an official result or attestation.
-- [ ] Add more targeted revision recommendations.
+- [x] Recommend the weakest theme at the end of each practice session.
 - [ ] Add browser-level functional tests for scoring, timer expiry and randomization.
 
 ## Epic 4 — Offline-first and local data
