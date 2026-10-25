@@ -3,9 +3,12 @@
 ## Epic 0 - Official content and accuracy
 - [x] Identify the current July 2026 Livret du citoyen, the July 2026 approval order and the official knowledge-question list.
 - [x] Document the 1 January 2026 transition rule, official theme/subtheme allocations and the limits of the official public question list.
-- [x] Add a first-pass factual review and direct source links for the 40 original practice questions.
+- [x] Add a first-pass factual review and direct source links for the original 40-question exam blueprint.
+- [x] Expand the national practice bank to 80 original questions with per-question source, theme, subtheme and difficulty metadata.
+- [x] Add recent-question avoidance across sessions while preserving the 40-question exam theme allocation.
 - [x] Keep questions original rather than copying official question wording.
 - [x] Validate question count, source coverage, theme/subtheme counts and the non-official-content disclosure in the automated script.
+- [ ] Expand the national bank toward 300-500 questions in reviewed batches.
 - [ ] Obtain an independent second editorial review and live-check all source URLs before describing the bank as fully verified.
 
 ## Epic 1 - UX and design system
