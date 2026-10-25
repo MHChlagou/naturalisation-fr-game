@@ -8,6 +8,7 @@ A responsive, offline-first educational game for people preparing for French nat
 - [Product plan](docs/PRODUCT_PLAN.md)
 - [Implementation backlog](docs/BACKLOG.md)
 - [Official content validation audit](docs/CONTENT_VALIDATION.md)
+- [Functional audit and Playwright results](docs/FUNCTIONAL_AUDIT.md)
 - [Secure AI coaching backend architecture](docs/AI_BACKEND_ARCHITECTURE.md)
 
 ## Current prototype
@@ -35,7 +36,7 @@ Serve the repository root with any local HTTP server, for example:
 Then open http://localhost:8080. Service worker/PWA functionality requires HTTP(S); opening index.html directly as a file will not enable it.
 
 ## GitHub Pages deployment
-The workflow is in [.github/workflows/pages.yml](.github/workflows/pages.yml). It runs JavaScript syntax checks and validates the app structure, question bank and PWA assets before deployment. After publishing, it runs an HTTP smoke test and Playwright browser tests against the published GitHub Pages URL, covering navigation, procedure selection, quizzes, the full 40-question mock exam, interview simulation, local progress, export/reset and mobile layout. See [deployment and browser-test documentation](docs/DEPLOYMENT_AND_SMOKE_TESTS.md).
+The workflow is in [.github/workflows/pages.yml](.github/workflows/pages.yml). It runs JavaScript syntax checks and validates the app structure, question bank and PWA assets before deployment. After publishing, it runs an HTTP smoke test and 14 Playwright browser tests against the published GitHub Pages URL, covering navigation, procedure selection, quizzes, the full 40-question mock exam, interview simulation, persistence, import/export, corrupt local storage, offline use, timer expiry and mobile layout. See the [functional audit report](docs/FUNCTIONAL_AUDIT.md) for the exact results and remaining limitations. See [deployment and browser-test documentation](docs/DEPLOYMENT_AND_SMOKE_TESTS.md).
 
 To enable publishing for this repository:
 1. Open **Settings → Pages**.
