@@ -23,7 +23,8 @@
 - [x] Show explanation, takeaway and a direct source link.
 - [x] Add bookmarks, theme selection, mistake notebook and targeted revision.
 - [ ] Add a separate bite-size lesson player.
-- [ ] Add an explicit uncertain/guessed-answer marker and difficulty filters.
+- [x] Add an explicit uncertain-answer marker and dedicated revision queue.
+- [ ] Add difficulty filters.
 
 ## Epic 3 — Mock exam
 - [x] Add a 40-question original practice session matching the five theme allocations and official subtheme counts.
