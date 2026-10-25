@@ -23,6 +23,13 @@ assert.match(app, /function evaluateInterviewAnswer\(\)/, "The interview practic
 assert.equal((app.match(/followUp:/g) || []).length, 10, "Each interview topic must include a practice follow-up question.");
 assert.match(app, /interview-coaching-tip/, "Interview feedback must include question-specific coaching.");
 assert.match(app, /interview-follow-up/, "Interview feedback must include a follow-up prompt.");
+assert.match(html, /id="interview-timer"/, "The interview simulation must show a countdown timer.");
+assert.match(html, /id="interview-progress-fill"/, "The interview simulation must show progress.");
+assert.match(html, /id="interview-detailed-results"/, "The interview simulation must show detailed results.");
+assert.match(app, /const INTERVIEW_DURATION_MS=15\*60\*1000/, "The interview simulation must use a 15-minute practice timer.");
+assert.match(app, /function recordInterviewAnswer\(\)/, "Interview answers must be recorded in session memory for the summary.");
+assert.match(app, /function updateInterviewTimer\(\)/, "The interview countdown must update during practice.");
+assert.match(app, /function formatInterviewDuration\(seconds\)/, "Interview duration must be formatted consistently.");
 assert.match(app, /el\("interview-next"\)\.addEventListener\("click",nextInterviewQuestion\)/, "The interview next action must be wired.");
 assert.match(html, /id="start-adaptive"/, "The adaptive practice button must exist.");
 assert.match(app, /function startAdaptiveQuiz\(\)/, "Adaptive practice must prioritize user needs.");
