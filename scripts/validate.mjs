@@ -92,9 +92,13 @@ for (const question of questions) {
   assert.ok(!questionIds.has(question.id), `Duplicate question ID: ${question.id}`);
   questionIds.add(question.id);
   assert.ok(themeIds.has(question.themeId), `Unknown theme on question ${question.id}`);
+  assert.ok(typeof question.prompt === "string" && question.prompt.trim().length >= 15, `Question ${question.id} needs a meaningful prompt string.`);
   assert.ok(Array.isArray(question.choices) && question.choices.length >= 2, `Question ${question.id} needs answer choices.`);
+  assert.ok(question.choices.every(choice => typeof choice === "string" && choice.trim().length > 0), `Question ${question.id} must have non-empty string choices.`);
+  const normalizedChoices = question.choices.map(choice => choice.trim().toLocaleLowerCase("fr").replace(/\\s+/g, " "));
+  assert.equal(new Set(normalizedChoices).size, normalizedChoices.length, `Question ${question.id} contains duplicate choices.`);
   assert.ok(Number.isInteger(question.correct) && question.correct >= 0 && question.correct < question.choices.length, `Invalid correct answer index on ${question.id}`);
-  assert.ok(question.explanation && question.takeaway && question.source, `Question ${question.id} needs explanation, takeaway and provenance.`);
+  assert.ok(typeof question.explanation === "string" && question.explanation.trim().length > 0 && typeof question.takeaway === "string" && question.takeaway.trim().length > 0 && typeof question.source === "string" && question.source.trim().length > 0, `Question ${question.id} needs explanation, takeaway and provenance.`);
   assert.ok(question.subthemeId, `Question ${question.id} needs an official-programme subtheme.`);
   if (question.sourceUrl) assert.ok(question.sourceUrl.startsWith("https://"), `Question ${question.id} needs a direct HTTPS source URL.`);
   else assert.ok(app.includes(`${question.id}:"https://`), `Question ${question.id} needs a direct source map entry.`);
