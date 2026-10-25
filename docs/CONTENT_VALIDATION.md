@@ -100,10 +100,10 @@ Vérification factuelle initiale effectuée le 25 octobre 2026. Cette vérificat
 | p1 | Devise républicaine | Réponse correcte : « Liberté, Égalité, Fraternité ». Distracteurs non corrects comme devise officielle. | Constitution, art. 2 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
 | p2 | Laïcité dans les services publics | Réponse correcte sur la liberté de conscience et la neutralité de l'État/service public. Formulation simplifiée : la laïcité n'interdit pas toute expression religieuse à toute personne en toute circonstance. | Constitution, art. 1 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ ; Loi du 9 décembre 1905 : https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006070169/ |
 | p3 | Refus de service en raison de la religion | Réponse correcte : égalité de traitement et neutralité de l'agent public. Exercice original, non officiel. | Code général de la fonction publique, art. L121-2 : https://www.legifrance.gouv.fr/codes/id/LEGITEXT000044416551/ |
-| p4 | Langue de la République | Réponse correcte : français ; les langues régionales appartiennent au patrimoine de la France. | Constitution, art. 2 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| p4 | Drapeau national | Réponse correcte : bleu, blanc, rouge. Avec p1 (devise) et p10 (hymne), cela couvre les trois questions symboles/devise attendues dans le référentiel. | Constitution, art. 2 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
 | i1 | Vote de la loi | Réponse correcte : le Parlement. La formulation de l'explication distingue correctement proposition de loi/projet de loi et vote. | Constitution, art. 24 et 39 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
 | i2 | Durée du mandat présidentiel | Réponse correcte : cinq ans. | Constitution, art. 6 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
-| i3 | Inscription électorale | Réponse attendue acceptable comme première orientation : la mairie. Attention : les conditions de droit de vote et l'inscription varient selon la nationalité, l'élection et la situation. Exercice original, non officiel. | Service-Public — vérifier l'inscription électorale : https://www.service-public.fr/particuliers/vosdroits/N47 |
+| i3 | Inscription électorale | Réponse attendue : la mairie est un interlocuteur local pour l'inscription électorale. Reformulé comme question de connaissance, pas comme mise en situation. | Service-Public — vérifier l'inscription électorale : https://www.service-public.fr/particuliers/vosdroits/N47 |
 | d1 | Égalité en droits | Réponse correcte : Déclaration des droits de l'homme et du citoyen de 1789. | DDHC de 1789, notamment art. 1 : https://www.legifrance.gouv.fr/contenu/menu/droit-national-en-vigueur/constitution/declaration-des-droits-de-l-homme-et-du-citoyen-de-1789 |
 | d2 | Âge de l'instruction obligatoire | Réponse correcte : trois ans ; l'obligation d'instruction court jusqu'à seize ans. | Code de l'éducation, art. L131-1 : https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006071191/ |
 | d3 | Danger immédiat | Réponse correcte comme principe général : alerter les secours appropriés. L'explication cite le 112 ; en France d'autres numéros spécialisés existent aussi. Exercice original, non officiel. | Service-Public — urgences : https://www.service-public.fr/particuliers/actualites/A15841 |
@@ -112,7 +112,38 @@ Vérification factuelle initiale effectuée le 25 octobre 2026. Cette vérificat
 | s1 | Déménagement et courrier | Réponse pratique raisonnable, mais ce n'est pas une règle générale d'assimilation et la formulation est plus proche d'un conseil de vie quotidienne. Exercice original, non officiel. | Service-Public — changement d'adresse : https://www.service-public.fr/particuliers/vosdroits/F14128 |
 | s2 | Numéro d'urgence européen | Réponse correcte : 112. | Commission européenne : https://digital-strategy.ec.europa.eu/en/policies/112 |
 
-**Limite de l'audit :** il s'agit d'une revue éditoriale initiale par une seule passe, pas d'une double validation indépendante. Avant d'étiqueter ces questions `reviewed` en production, tester les liens sources, contrôler leur version consolidée et faire relire le corrigé par une seconde personne. Les sujets p3, i3, d3 et s1 sont des mises en situation originales, jamais des questions officielles divulguées.
+### Questions ajoutées dans la banque de 40
+
+| ID | Sujet / fait vérifié dans le corrigé pédagogique | Source associée |
+|---|---|---|
+| p5 | Neutralité des agents publics ; pas de prosélytisme envers les usagers. | https://www.legifrance.gouv.fr/codes/id/LEGITEXT000044416551/ |
+| p6 | Liberté d'expression dans les limites de la loi. | https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| p7 | Liberté de conscience et de religion. | https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| p8 | Égalité femmes-hommes et non-discrimination ; qualification dépend des faits. | https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| p9 | Critique pacifique du gouvernement protégée dans le cadre de la liberté d'expression. | https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| p10 | Hymne national : La Marseillaise. | https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| p11 | Principe de laïcité et régime général de la loi de 1905, avec réserve des dispositions particulières. | https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006069165/ |
+| i4 | Âge de droit commun pour voter : 18 ans, sous réserve des autres conditions. | https://www.service-public.fr/particuliers/vosdroits/F1939 |
+| i5 | Élections municipales : élection des conseillers municipaux. | https://www.service-public.fr/particuliers/vosdroits/N47 |
+| i6 | Les citoyens élisent directement les députés du Parlement européen. | https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-parliament_fr |
+| d4 | Égalité devant la loi, sans distinctions injustifiées. | https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| d5 | Respect des lois en vigueur et usage des voies légales de contestation. | https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
+| d6 | Les impôts contribuent au financement des services publics et dépenses collectives. | https://www.economie.gouv.fr/particuliers/impots |
+| d7 | L'origine est un critère protégé contre les discriminations à l'embauche. | https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006072050/ |
+| d8 | Instruction obligatoire de 3 à 16 ans, avec modalités légales possibles hors établissement. | https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006071191/ |
+| d9 | Une décision administrative peut être contestée par les voies de recours applicables et dans les délais. | https://www.service-public.fr/particuliers/vosdroits/F2474 |
+| d10 | Le Défenseur des droits peut informer/orienter une personne estimant avoir subi une discrimination. | https://www.defenseurdesdroits.fr/ |
+| d11 | Une contestation fiscale doit suivre la procédure applicable ; elle n'annule pas automatiquement toutes les obligations de paiement. | https://www.impots.gouv.fr/particulier/questions/comment-faire-une-reclamation |
+| h3 | 1789 : Révolution française et Déclaration des droits de l'homme et du citoyen. | https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html |
+| h4 | La Constitution de la Ve République date de 1958. | https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur |
+| h5 | La mer Méditerranée borde le sud-est de la France métropolitaine. | https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html |
+| h6 | La Guadeloupe est un territoire français d'outre-mer ; les statuts ultramarins diffèrent selon les collectivités. | https://www.vie-publique.fr/fiches/19620-les-collectivites-territoriales |
+| h7 | Le Louvre est un musée national majeur et un lieu du patrimoine culturel. | https://www.louvre.fr/decouvrir/le-palais |
+| h8 | Le Mont-Saint-Michel est un site patrimonial remarquable en Normandie. | https://www.monuments-nationaux.fr/monuments/mont-saint-michel |
+| s3 | La CPAM est un interlocuteur pour de nombreuses démarches d'Assurance maladie du régime général. | https://www.ameli.fr/assure |
+| s4 | Le contrat de travail et les règles applicables encadrent la relation salariée. | https://www.service-public.fr/particuliers/vosdroits/N19871 |
+
+**Limite de l'audit :** la banque a fait l'objet d'une première revue éditoriale et les questions sont rattachées à des sources, mais les liens n'ont pas tous été testés automatiquement en direct et aucune double validation indépendante n'a encore été réalisée. Les questions de situation p3, p5-p9 et d3, d7-d11 sont des exercices originaux, jamais présentés comme des questions officielles divulguées.
 
 ## 7. Séparation des parcours
 
