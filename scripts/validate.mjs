@@ -16,6 +16,11 @@ assert.match(html, /id="answer-feedback"/, "The feedback container must exist.")
 assert.match(html, /id="view-revisions"/, "The revision notebook view must exist.");
 assert.match(html, /id="view-lessons"/, "The mini-lessons view must exist.");
 assert.match(html, /id="view-practice"/, "The adaptive practice view must exist.");
+assert.match(html, /id="interview-answer"/, "The interview simulation answer field must exist.");
+assert.match(html, /id="interview-start"/, "The interview simulation start button must exist.");
+assert.match(app, /function startInterview\(\)/, "The interview simulation must be implemented.");
+assert.match(app, /function evaluateInterviewAnswer\(\)/, "The interview practice feedback must exist.");
+assert.match(app, /el\("interview-next"\)\.addEventListener\("click",nextInterviewQuestion\)/, "The interview next action must be wired.");
 assert.match(html, /id="start-adaptive"/, "The adaptive practice button must exist.");
 assert.match(app, /function startAdaptiveQuiz\(\)/, "Adaptive practice must prioritize user needs.");
 assert.match(app, /function renderAdaptiveOverview\(\)/, "Adaptive practice must show theme priorities.");
