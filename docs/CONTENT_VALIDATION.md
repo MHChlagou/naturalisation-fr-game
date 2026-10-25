@@ -1,4 +1,4 @@
-# Audit de validation du contenu — Cap Citoyen
+# Audit de validation du contenu - Cap Citoyen
 
 Dernière vérification documentaire : 25 octobre 2026  
 Statut : **audit initial réalisé ; banque actuelle non validée pour une préparation exhaustive**.
@@ -7,14 +7,14 @@ Statut : **audit initial réalisé ; banque actuelle non validée pour une prép
 
 Les contenus doivent être relus à partir des documents officiels les plus récents, dans cet ordre :
 
-1. **Livret du citoyen — version PDF de juillet 2026**, publié par la Direction générale des étrangers en France (DGEF). C'est le livret courant identifié lors de l'audit. La page officielle a été mise à jour le 16 juillet 2026.  
+1. **Livret du citoyen - version PDF de juillet 2026**, publié par la Direction générale des étrangers en France (DGEF). C'est le livret courant identifié lors de l'audit. La page officielle a été mise à jour le 16 juillet 2026.  
    Page officielle : https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html  
    PDF : https://www.immigration.interieur.gouv.fr/sites/dgef/files/medias/documents/2026-07/LIVRET%20DU%20CITOYEN%202026_0.pdf
 2. **Arrêté du 3 juillet 2026 portant approbation du livret du citoyen**, en vigueur depuis le 17 juillet 2026. Il abroge l'arrêté du 4 février 2022 :  
    https://www.legifrance.gouv.fr/loda/id/JORFTEXT000054426889/
 3. **Arrêté du 10 octobre 2025 sur le programme et les modalités de l'examen civique** :  
    https://www.legifrance.gouv.fr/loda/id/JORFTEXT000052381620/
-4. **Liste officielle des questions de connaissance — mention naturalisation**, publiée par le ministère le 12 janvier 2026 :  
+4. **Liste officielle des questions de connaissance - mention naturalisation**, publiée par le ministère le 12 janvier 2026 :  
    https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/questions-de-connaissance-pour-lexamen-civique-nationalite-francaise.html
 5. **Page Service-Public sur l'examen civique pour la naturalisation**, à utiliser pour contrôler les modalités pratiques :  
    https://www.service-public.gouv.fr/particuliers/vosdroits/F39426
@@ -103,13 +103,13 @@ Vérification factuelle initiale effectuée le 25 octobre 2026. Cette vérificat
 | p4 | Drapeau national | Réponse correcte : bleu, blanc, rouge. Avec p1 (devise) et p10 (hymne), cela couvre les trois questions symboles/devise attendues dans le référentiel. | Constitution, art. 2 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
 | i1 | Vote de la loi | Réponse correcte : le Parlement. La formulation de l'explication distingue correctement proposition de loi/projet de loi et vote. | Constitution, art. 24 et 39 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
 | i2 | Durée du mandat présidentiel | Réponse correcte : cinq ans. | Constitution, art. 6 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000571356/ |
-| i3 | Inscription électorale | Réponse attendue : la mairie est un interlocuteur local pour l'inscription électorale. Reformulé comme question de connaissance, pas comme mise en situation. | Service-Public — vérifier l'inscription électorale : https://www.service-public.fr/particuliers/vosdroits/N47 |
+| i3 | Inscription électorale | Réponse attendue : la mairie est un interlocuteur local pour l'inscription électorale. Reformulé comme question de connaissance, pas comme mise en situation. | Service-Public - vérifier l'inscription électorale : https://www.service-public.fr/particuliers/vosdroits/N47 |
 | d1 | Égalité en droits | Réponse correcte : Déclaration des droits de l'homme et du citoyen de 1789. | DDHC de 1789, notamment art. 1 : https://www.legifrance.gouv.fr/contenu/menu/droit-national-en-vigueur/constitution/declaration-des-droits-de-l-homme-et-du-citoyen-de-1789 |
 | d2 | Âge de l'instruction obligatoire | Réponse correcte : trois ans ; l'obligation d'instruction court jusqu'à seize ans. | Code de l'éducation, art. L131-1 : https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006071191/ |
-| d3 | Danger immédiat | Réponse correcte comme principe général : alerter les secours appropriés. L'explication cite le 112 ; en France d'autres numéros spécialisés existent aussi. Exercice original, non officiel. | Service-Public — urgences : https://www.service-public.fr/particuliers/actualites/A15841 |
+| d3 | Danger immédiat | Réponse correcte comme principe général : alerter les secours appropriés. L'explication cite le 112 ; en France d'autres numéros spécialisés existent aussi. Exercice original, non officiel. | Service-Public - urgences : https://www.service-public.fr/particuliers/actualites/A15841 |
 | h1 | Fête nationale | Réponse correcte : 14 juillet. L'explication mentionne les repères historiques associés. | Loi du 6 juillet 1880 : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000877021/ |
 | h2 | Capitale de la France | Réponse correcte : Paris. Les distracteurs proposés sont incorrects. | DGEF, Livret du citoyen, version juillet 2026 : https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html |
-| s1 | Déménagement et courrier | Réponse pratique raisonnable, mais ce n'est pas une règle générale d'assimilation et la formulation est plus proche d'un conseil de vie quotidienne. Exercice original, non officiel. | Service-Public — changement d'adresse : https://www.service-public.fr/particuliers/vosdroits/F14128 |
+| s1 | Déménagement et courrier | Réponse pratique raisonnable, mais ce n'est pas une règle générale d'assimilation et la formulation est plus proche d'un conseil de vie quotidienne. Exercice original, non officiel. | Service-Public - changement d'adresse : https://www.service-public.fr/particuliers/vosdroits/F14128 |
 | s2 | Autorité parentale | Réponse générale : l'autorité parentale est en principe exercée par les parents, dans le cadre légal et sous réserve des situations particulières. | Code civil, art. 371-1 : https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049164413 |
 
 ### Questions ajoutées dans la banque de 40
