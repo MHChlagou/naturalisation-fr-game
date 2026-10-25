@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#152b49">
+  <meta name="description" content="Un jeu pédagogique pour réviser l'examen civique et s'entraîner à l'entretien d'assimilation.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/guide.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Cap Citoyen — Apprendre, comprendre, réussir</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Cap Citoyen, accueil">
+      <span class="brand-mark">CC</span><span>cap<span class="brand-accent">citoyen</span><small>LA FRANCE, PAS À PAS</small></span>
+    </a>
+    <div class="top-actions"><span id="offline-status" class="status-pill"><i></i> Prêt à apprendre</span><button id="install-button" class="button button-quiet hidden" type="button">Installer</button></div>
+  </header>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navigation principale">
+      <p class="nav-label">TON ESPACE</p>
+      <button class="nav-item active" data-view="home"><span>⌂</span> Accueil</button>
+      <button class="nav-item" data-view="themes"><span>▦</span> Les thèmes</button>
+      <button class="nav-item" data-view="practice"><span>✳</span> Entraînement</button>
+      <button class="nav-item" data-view="exam"><span>◷</span> Examen blanc</button>
+      <button class="nav-item" data-view="progress"><span>↗</span> Ma progression</button>
+      <div class="sidebar-note"><span class="note-icon">✦</span><strong>Un petit pas chaque jour.</strong><p>Tu avances à ton rythme. Chaque réponse t'apprend quelque chose.</p></div>
+      <div class="sidebar-footer">100 % local · Sans compte</div>
+    </aside>
+    <main id="main" class="main-content" tabindex="-1">
+      <section id="view-home" class="view">
+        <div class="hero">
+          <div class="hero-copy"><span class="eyebrow"><span class="eyebrow-dot"></span> TON PARCOURS COMMENCE ICI</span>
+            <h1>Comprendre la France.<br><em>Avancer avec confiance.</em></h1>
+            <p>Apprends à ton rythme avec des questions, des explications simples et un guide qui t'accompagne.</p>
+            <button id="start-learning" class="button button-primary">Commencer à apprendre <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="hero-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><img src="./assets/guide.svg" alt="Camille, ton guide pédagogique" class="guide-hero"><div class="speech-card"><span class="speech-spark">✦</span><span>Salut ! On apprend ensemble ?</span></div><span class="float-star star-a">✳</span><span class="float-star star-b">✦</span></div>
+        </div>
+        <div class="notice"><span class="notice-icon">i</span><div><strong>Deux parcours, deux objectifs</strong><p>L'examen civique en vigueur depuis 2026 est distinct de l'entretien d'assimilation. Choisis le parcours adapté à ta démarche.</p></div></div>
+        <div class="section-heading"><div><span class="eyebrow">TON TABLEAU DE BORD</span><h2>Ta progression, en un coup d'œil</h2></div><button class="text-button" data-go="progress">Voir le bilan <span>→</span></button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><span class="stat-icon icon-blue">✓</span><span class="stat-label">Questions répondues</span><strong id="stat-answered">0</strong><span class="stat-foot">Chaque essai compte</span></article>
+          <article class="stat-card"><span class="stat-icon icon-coral">◎</span><span class="stat-label">Bonnes réponses</span><strong id="stat-accuracy">—</strong><span class="stat-foot">Ton taux de réussite</span></article>
+          <article class="stat-card"><span class="stat-icon icon-gold">✦</span><span class="stat-label">Thèmes explorés</span><strong id="stat-themes">0<span class="stat-total"> / 5</span></strong><span class="stat-foot">À découvrir à ton rythme</span></article>
+        </div>
+        <div class="section-heading theme-heading"><div><span class="eyebrow">APPRENDRE PAR THÈME</span><h2>Explore les essentiels</h2></div><button class="text-button" data-go="themes">Tous les thèmes <span>→</span></button></div>
+        <div id="home-themes" class="theme-grid"></div>
+        <div class="pathway-row">
+          <article class="pathway-card pathway-current"><div class="pathway-symbol">⚑</div><div class="pathway-copy"><span class="pathway-tag">PARCOURS PRINCIPAL</span><h3>Examen civique · 2026</h3><p>Les cinq thèmes, des quiz guidés et un examen blanc chronométré.</p><button class="text-button" data-go="themes">Découvrir le parcours <span>→</span></button></div></article>
+          <article class="pathway-card pathway-legacy"><div class="pathway-symbol">☷</div><div class="pathway-copy"><span class="pathway-tag">PARCOURS HISTORIQUE</span><h3>Entretien d'assimilation</h3><p>Des sujets de réflexion pour préparer tes réponses personnelles.</p><button class="text-button" data-go="legacy">Explorer les sujets <span>→</span></button></div></article>
+        </div>
+        <p class="disclaimer">Cap Citoyen est un outil pédagogique indépendant, non affilié à l'administration française. Vérifie toujours les règles applicables à ta situation auprès des sources officielles.</p>
+      </section>
+      <section id="view-themes" class="view hidden">
+        <div class="page-intro"><span class="eyebrow">APPRENDRE PAS À PAS</span><h1>Les thèmes à connaître<span class="title-period">.</span></h1><p>Choisis un thème, réponds aux questions et découvre les explications de Camille.</p></div>
+        <div class="mode-banner"><span class="mode-icon">⚑</span><div><strong>Examen civique — dispositif 2026</strong><p>40 questions · 45 minutes maximum · seuil indicatif de réussite : 32/40</p></div><span class="mode-badge">PARCOURS ACTUEL</span></div>
+        <div id="all-themes" class="theme-grid theme-grid-large"></div>
+        <div class="legacy-banner"><div><span class="eyebrow">AUTRE PARCOURS</span><h2>Préparer l'entretien d'assimilation</h2><p>Explore des sujets de réflexion et entraîne-toi à structurer des réponses personnelles. Ce parcours historique ne remplace pas les exigences actuelles.</p></div><button class="button button-secondary" data-go="legacy">Voir les sujets →</button></div>
+      </section>
+      <section id="view-quiz" class="view hidden">
+        <div class="quiz-topline"><button id="exit-quiz" class="back-button">← Quitter la session</button><span id="quiz-mode" class="mode-badge">ENTRAÎNEMENT</span></div>
+        <div class="quiz-progress-row"><span id="quiz-counter">Question 1 sur 5</span><span id="quiz-percent">20 %</span></div><div class="progress-track"><div id="quiz-progress-bar" class="progress-fill"></div></div>
+        <div class="quiz-layout">
+          <div class="quiz-main"><div class="question-meta"><span id="question-theme" class="theme-chip">Principes et valeurs</span><span id="question-kind" class="question-kind">QUESTION DE CONNAISSANCE</span></div>
+            <h1 id="question-title">Chargement de la question…</h1><p id="question-subtitle" class="question-subtitle">Prends ton temps et choisis la réponse qui te semble juste.</p>
+            <div id="answer-options" class="answer-options"></div>
+            <div id="answer-feedback" class="answer-feedback hidden" aria-live="polite"></div>
+            <div class="quiz-controls"><button id="bookmark-question" class="button button-secondary">☆ Garder pour réviser</button><button id="submit-answer" class="button button-primary" disabled>Valider ma réponse →</button><button id="next-question" class="button button-primary hidden">Continuer →</button></div>
+          </div>
+          <aside class="guide-panel"><div class="guide-panel-top"><span class="guide-live"><i></i> TON GUIDE</span><span class="guide-stars">✦ ✧</span></div><img id="guide-quiz" src="./assets/guide.svg" alt="Camille, ton guide" class="guide-quiz"><div class="guide-bubble"><span id="guide-label">CAMILLE TE DIT</span><p id="guide-message">Lis bien la question. Tu peux le faire !</p></div><div class="guide-tip"><span>✦</span><p><strong>Le savais-tu ?</strong><br>Comprendre pourquoi une réponse est juste aide à mieux la retenir.</p></div></aside>
+        </div>
+      </section>
+      <section id="view-exam" class="view hidden">
+        <div class="page-intro"><span class="eyebrow">ENTRAÎNEMENT EN CONDITIONS SIMULÉES</span><h1>Le défi civique<span class="title-period">.</span></h1><p>Teste tes connaissances avec une simulation. Le résultat n'est pas une attestation officielle.</p></div>
+        <div class="exam-card"><div class="exam-illustration"><img src="./assets/guide.svg" alt="" class="guide-exam"></div><div class="exam-details"><span class="mode-badge">SIMULATION 2026</span><h2>Prêt à relever le défi ?</h2><p>Réponds à 40 questions issues du corpus de démonstration. À la fin, tu verras tes résultats et les thèmes à revoir.</p><div class="exam-facts"><span><strong>40</strong> questions</span><span><strong>45 min</strong> maximum</span><span><strong>32/40</strong> seuil indicatif</span></div><button id="start-exam" class="button button-primary">Démarrer l'examen blanc →</button></div></div>
+        <div class="notice notice-warm"><span class="notice-icon">!</span><div><strong>À savoir</strong><p>Cette première version contient un petit jeu de démonstration. Elle ne représente pas encore une banque complète de 40 questions officiellement validées.</p></div></div>
+      </section>
+      <section id="view-results" class="view hidden">
+        <div class="results-header"><span class="eyebrow">SESSION TERMINÉE</span><h1 id="result-title">Bien joué, tu as terminé !</h1><p id="result-description">Voici ton bilan détaillé.</p></div>
+        <div class="result-score-card"><div class="score-ring" id="score-ring"><div><strong id="result-score">0/0</strong><span>bonnes réponses</span></div></div><div class="score-copy"><span class="eyebrow">TON RÉSULTAT</span><h2 id="result-verdict">Chaque essai te fait progresser.</h2><p id="result-advice">Revois les explications et retente une session.</p><button id="review-errors" class="button button-primary">Revoir mes réponses →</button></div></div>
+        <div class="section-heading"><div><span class="eyebrow">POUR PROGRESSER</span><h2>Ton bilan par thème</h2></div></div><div id="result-breakdown" class="breakdown-list"></div>
+        <div id="review-list" class="review-list hidden"></div><button class="button button-secondary" data-go="themes">Choisir un autre thème</button>
+      </section>
+      <section id="view-progress" class="view hidden">
+        <div class="page-intro"><span class="eyebrow">TON CHEMIN PARCOURU</span><h1>Ta progression<span class="title-period">.</span></h1><p>Pas de pression : l'important est de comprendre un peu mieux à chaque session.</p></div>
+        <div class="stats-grid"><article class="stat-card"><span class="stat-label">Questions répondues</span><strong id="progress-answered">0</strong></article><article class="stat-card"><span class="stat-label">Taux de réussite</span><strong id="progress-accuracy">—</strong></article><article class="stat-card"><span class="stat-label">Sessions terminées</span><strong id="progress-sessions">0</strong></article></div>
+        <div class="section-heading"><div><span class="eyebrow">TES POINTS FORTS ET TES DÉFIS</span><h2>Maîtrise par thème</h2></div></div><div id="progress-breakdown" class="breakdown-list"></div>
+        <div class="data-actions"><div><h3>Tes données restent sur ton appareil</h3><p>Exporte ta progression pour la sauvegarder ou réimporte un fichier JSON.</p></div><div class="data-buttons"><button id="export-data" class="button button-secondary">Exporter mes données</button><label class="button button-secondary file-button">Importer<input id="import-data" type="file" accept="application/json" hidden></label><button id="reset-data" class="button button-danger">Réinitialiser</button></div></div>
+      </section>
+      <section id="view-legacy" class="view hidden">
+        <div class="page-intro"><span class="eyebrow">PARCOURS HISTORIQUE ET PÉDAGOGIQUE</span><h1>Préparer son entretien<span class="title-period">.</span></h1><p>Réfléchis à ton parcours, à tes motivations et à ta compréhension de la vie en France.</p></div>
+        <div class="notice notice-warm"><span class="notice-icon">!</span><div><strong>Important : parcours historique</strong><p>L'entretien d'assimilation et l'examen civique sont deux évaluations distinctes. Ce parcours sert à réfléchir et à s'entraîner ; il ne remplace pas les conditions applicables à ton dossier.</p></div></div>
+        <div id="legacy-topics" class="legacy-topic-grid"></div>
+      </section>
+      <footer class="mobile-footer"><span>Cap Citoyen</span><span>Apprendre · Comprendre · Avancer</span></footer>
+    </main>
+  </div>
+  <nav class="mobile-nav" aria-label="Navigation mobile"><button class="active" data-view="home"><span>⌂</span>Accueil</button><button data-view="themes"><span>▦</span>Thèmes</button><button data-view="exam"><span>◷</span>Examen</button><button data-view="progress"><span>↗</span>Bilan</button></nav>
+  <script src="./app.js" defer></script>
+</body>
+</html>
