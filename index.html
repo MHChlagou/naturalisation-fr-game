@@ -24,7 +24,7 @@
       <button class="nav-item active" data-view="home"><span>⌂</span> Accueil</button>
       <button class="nav-item" data-view="themes"><span>▦</span> Les thèmes</button>
       <button class="nav-item" data-view="lessons"><span>▤</span> Mini-leçons</button>
-      <button class="nav-item" data-view="practice"><span>✳</span> Entraînement</button>
+      <button class="nav-item" data-view="practice"><span>✳</span> Entraînement ciblé</button>
       <button class="nav-item" data-view="revisions"><span>☆</span> Mes révisions</button>
       <button class="nav-item" data-view="exam"><span>◷</span> Examen blanc</button>
       <button class="nav-item" data-view="progress"><span>↗</span> Ma progression</button>
@@ -73,6 +73,19 @@
         <div class="lesson-guide"><img src="./assets/guide-thinking.svg" alt="" /><p><strong>Camille te conseille :</strong> lis une leçon, reformule l'idée avec tes propres mots, puis lance un quiz sur le thème.</p></div>
         <div id="lesson-grid" class="lesson-grid"></div>
       </section>
+      <section id="view-practice" class="view hidden">
+        <div class="page-intro"><span class="eyebrow">APPRENTISSAGE ADAPTATIF</span><h1>Entraînement ciblé<span class="title-period">.</span></h1><p>Camille choisit les questions à retravailler selon tes erreurs, les notions encore inconnues et les thèmes où tu as le moins de repères.</p></div>
+        <div class="adaptive-card">
+          <div class="adaptive-art"><img src="./assets/guide-thinking.svg" alt="Camille réfléchit" /></div>
+          <div class="adaptive-copy"><span class="mode-badge">PARCOURS PERSONNALISÉ</span><h2>Chaque session s'adapte à toi</h2><p>La session donne la priorité aux questions ratées, aux questions que tu as marquées comme incertaines et aux notions que tu n'as pas encore travaillées. Ton historique reste sur ton appareil.</p>
+            <ul><li>Jusqu'à 20 questions par session</li><li>Priorité aux thèmes à renforcer</li><li>Explications après chaque réponse</li></ul>
+            <button id="start-adaptive" class="button button-primary">Lancer mon entraînement ciblé →</button>
+            <p id="adaptive-summary" class="adaptive-summary">Réponds à quelques questions pour personnaliser tes prochaines sessions.</p>
+          </div>
+        </div>
+        <div class="section-heading"><div><span class="eyebrow">TES PRIORITÉS</span><h2>Thèmes à renforcer</h2></div></div>
+        <div id="adaptive-breakdown" class="breakdown-list"></div>
+      </section>
       <section id="view-quiz" class="view hidden">
         <div class="quiz-topline"><button id="exit-quiz" class="back-button">← Quitter la session</button><span id="quiz-mode" class="mode-badge">ENTRAÎNEMENT</span><span id="exam-timer" class="mode-badge hidden" role="timer" aria-live="off">45:00</span></div>
         <div class="quiz-progress-row"><span id="quiz-counter">Question 1 sur 5</span><span id="quiz-percent">20 %</span></div><div class="progress-track"><div id="quiz-progress-bar" class="progress-fill"></div></div>
@@ -119,7 +132,7 @@
       <footer class="mobile-footer"><span>Cap Citoyen</span><span>Apprendre · Comprendre · Avancer</span></footer>
     </main>
   </div>
-  <nav class="mobile-nav" aria-label="Navigation mobile"><button class="active" data-view="home"><span>⌂</span>Accueil</button><button data-view="themes"><span>▦</span>Thèmes</button><button data-view="revisions"><span>☆</span>Réviser</button><button data-view="exam"><span>◷</span>Examen</button><button data-view="progress"><span>↗</span>Bilan</button></nav>
+  <nav class="mobile-nav" aria-label="Navigation mobile"><button class="active" data-view="home"><span>⌂</span>Accueil</button><button data-view="practice"><span>✳</span>Ciblé</button><button data-view="revisions"><span>☆</span>Réviser</button><button data-view="exam"><span>◷</span>Examen</button><button data-view="progress"><span>↗</span>Bilan</button></nav>
   <script src="./questions-extra.js" defer></script>
   <script src="./questions-bank.js" defer></script>
   <script src="./app.js" defer></script>
