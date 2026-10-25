@@ -11,7 +11,7 @@ A responsive, offline-first educational game for people preparing for French nat
 
 ## Current prototype
 - Responsive French interface with home, theme browser, quiz, results and progress views.
-- Small demonstration question bank with explanations and provenance labels; content is not yet fully reviewed.
+- 40-question original practice bank with explanations, direct source links and theme allocations matching the exam structure; content remains educational and needs an independent editorial review.
 - Local progress, bookmarks, per-theme stats, JSON export/import/reset.
 - Local SVG guide illustration.
 - PWA manifest and service worker for app-shell caching.
@@ -42,9 +42,9 @@ GitHub Pages can take a few minutes to publish after a successful workflow run.
 The transition date for the new civic-exam requirement is **1 January 2026**, not July 2026. Under Article 11 of Decree No. 2025-648 of 15 July 2025, the relevant new provisions apply to naturalisation/reintegration applications filed from that date. Applicants with a file filed before 1 January 2026 should be directed to the assimilation-interview preparation path and advised to confirm the applicable rules with their prefecture. The July 2026 update is the new *Livret du citoyen*, not the exam transition date. See the [decree's official text](https://www.legifrance.gouv.fr/eli/decret/2025/7/15/2025-648/jo/texte).
 
 ## Important prototype limitations
-- The question bank is a small demonstration set, not a complete or fully reviewed official content bank.
-- The exam page currently runs a short demo session; the full 40-question exam, official question allocation and 45-minute timer are not implemented yet.
-- Demo results must not be interpreted as an official pass/fail result.
+- The 40-question bank is a complete-sized educational practice set, not an official question bank. The official list publishes knowledge-question stems without answers; situational questions are not publicly disclosed.
+- The exam page runs a 40-question, 45-minute educational simulation using original practice questions. It is not an official question bank or attestation.
+- Results are educational and must not be interpreted as an official pass/fail result or certificate.
 - Every factual question must be reviewed against current official sources, and content reuse/licensing checked before public release.
 
 ## Official references
