@@ -64,6 +64,7 @@
       <section id="view-themes" class="view hidden">
         <div class="page-intro"><span class="eyebrow">APPRENDRE PAS À PAS</span><h1>Les thèmes à connaître<span class="title-period">.</span></h1><p>Choisis un thème, réponds aux questions et découvre les explications de Camille.</p><button class="button button-secondary" data-go="lessons">Lire les mini-leçons →</button></div>
         <div class="mode-banner"><span class="mode-icon">⚑</span><div><strong>Examen civique — dispositif 2026</strong><p>40 questions · 45 minutes maximum · seuil de réussite : 32/40</p></div><span class="mode-badge">PARCOURS ACTUEL</span></div>
+        <div class="practice-filters"><label for="difficulty-filter">Niveau d'entraînement</label><select id="difficulty-filter"><option value="all">Tous les niveaux</option><option value="facile">Facile</option><option value="intermediaire">Intermédiaire</option><option value="avance">Avancé</option></select><p>Le filtre s'applique aux quiz par thème. L'examen blanc conserve les 40 questions et la répartition complète.</p></div>
         <div id="all-themes" class="theme-grid theme-grid-large"></div>
         <div class="legacy-banner"><div><span class="eyebrow">AUTRE PARCOURS</span><h2>Préparer l'entretien d'assimilation</h2><p>Recommandé en particulier pour les demandes déposées avant le 1er janvier 2026 : prépare ton entretien d'assimilation avec des sujets de réflexion et des réponses personnelles. Vérifie toujours les exigences de ton dossier auprès de la préfecture.</p></div><button class="button button-secondary" data-go="legacy">Voir les sujets →</button></div>
       </section>
@@ -76,7 +77,7 @@
         <div class="quiz-topline"><button id="exit-quiz" class="back-button">← Quitter la session</button><span id="quiz-mode" class="mode-badge">ENTRAÎNEMENT</span><span id="exam-timer" class="mode-badge hidden" role="timer" aria-live="off">45:00</span></div>
         <div class="quiz-progress-row"><span id="quiz-counter">Question 1 sur 5</span><span id="quiz-percent">20 %</span></div><div class="progress-track"><div id="quiz-progress-bar" class="progress-fill"></div></div>
         <div class="quiz-layout">
-          <div class="quiz-main"><div class="question-meta"><span id="question-theme" class="theme-chip">Principes et valeurs</span><span id="question-kind" class="question-kind">QUESTION DE CONNAISSANCE</span></div>
+          <div class="quiz-main"><div class="question-meta"><span id="question-theme" class="theme-chip">Principes et valeurs</span><span id="question-kind" class="question-kind">QUESTION DE CONNAISSANCE</span><span id="question-difficulty" class="question-kind">NIVEAU</span></div>
             <h1 id="question-title">Chargement de la question…</h1><p id="question-subtitle" class="question-subtitle">Prends ton temps et choisis la réponse qui te semble juste.</p>
             <div id="answer-options" class="answer-options"></div>
             <div id="answer-feedback" class="answer-feedback hidden" aria-live="polite"></div>
