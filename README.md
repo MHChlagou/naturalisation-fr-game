@@ -13,10 +13,10 @@ A responsive, offline-first educational game for people preparing for French nat
 - Responsive French interface with home, theme browser, quiz, results and progress views.
 - 40-question original practice bank with explanations, direct source links and theme allocations matching the exam structure; content remains educational and needs an independent editorial review.
 - Local progress, bookmarks, per-theme stats, JSON export/import/reset.
-- Local SVG guide illustration.
+- Local SVG guide illustration with question feedback and coaching messages.
 - PWA manifest and service worker for app-shell caching.
-- Historical interview reflection prompts.
-- Automated static validation via node scripts/validate.mjs.
+- Date-based procedure selector and 10 assimilation-interview reflection topics with a non-prescriptive answer framework.
+- Automated static validation via node scripts/validate.mjs, including source metadata, 40-question uniqueness, theme/subtheme allocations and PWA cache checks.
 - GitHub Actions workflow to validate pull requests and deploy the static app to GitHub Pages after a push to main.
 
 ## Run locally
@@ -32,7 +32,7 @@ The workflow is in [.github/workflows/pages.yml](.github/workflows/pages.yml). I
 To enable publishing for this repository:
 1. Open **Settings → Pages**.
 2. Under **Build and deployment → Source**, select **GitHub Actions**.
-3. Merge the feature pull request into main. The workflow will validate and deploy automatically.
+3. Push changes to `main`. The workflow validates the app and deploys automatically after successful validation.
 4. Open the deployment job under **Actions** and use the published URL shown in the github-pages environment.
 
 GitHub Pages can take a few minutes to publish after a successful workflow run.
