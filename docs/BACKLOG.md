@@ -1,11 +1,13 @@
 # Backlog — Naturalisation FR Game
 
 ## Epic 0 — Official content and accuracy
-- [ ] Download and inspect the current Ministry of the Interior civic-exam information booklet.
-- [ ] Download and inspect the official public knowledge-question list.
-- [ ] Register source URL, publisher, retrieval date, licence/reuse note, version and review owner.
-- [ ] Define content schema and source/provenance labels.
-- [ ] Establish review checklist and content release gate.
+- [x] Identify the current July 2026 Livret du citoyen and the July 2026 approval order; document sources and requirements in [CONTENT_VALIDATION.md](CONTENT_VALIDATION.md).
+- [x] Inspect the official public knowledge-question list and document its scope and limits.
+- [x] Record official sources, retrieval date, theme allocation and review checklist.
+- [ ] Read and cross-check every question and answer against the current booklet and primary sources.
+- [ ] Add precise per-question source metadata and independent review status.
+- [ ] Check licensing/reuse before reproducing official wording.
+- [ ] Enforce content release gate in automated validation; draft questions must not be presented as validated.
 - [ ] Draft the legacy interview pathway with a historical/contextual notice.
 
 ## Epic 1 — UX and design system
