@@ -10,11 +10,37 @@ test.describe("Cap Citoyen - parcours publics", () => {
     pageErrors = [];
     page.on("pageerror", error => pageErrors.push(error.message));
     await page.goto(baseURL, { waitUntil: "domcontentloaded" });
+    if (await page.locator("#profile-modal").isVisible()) {
+      await page.locator("#profile-name").fill("Camille");
+      await page.locator("#profile-save").click();
+    }
     await expect(page.locator("#view-home")).toBeVisible();
   });
 
   test.afterEach(async () => {
     expect(pageErrors, "Unexpected JavaScript errors in the browser").toEqual([]);
+  });
+
+  test("première visite : demande le prénom, personnalise l’accueil et conserve le profil", async ({ page }) => {
+    await page.evaluate(() => localStorage.removeItem("cap-citoyen-profile-v1"));
+    await page.reload({ waitUntil: "domcontentloaded" });
+    await expect(page.locator("#profile-modal")).toBeVisible();
+    await expect(page.getByRole("dialog")).toContainText("Faisons connaissance");
+    await page.locator("#profile-name").fill("Samira Ben Ali");
+    await page.locator("#profile-save").click();
+    await expect(page.locator("#profile-modal")).toBeHidden();
+    await expect(page.locator("#home-greeting")).toContainText("Bonjour, Samira Ben Ali.");
+    await expect(page.locator("#speech-welcome")).toContainText("Salut Samira Ben Ali");
+    await expect(page.locator("#profile-name-label")).toHaveText("Samira Ben Ali");
+    await page.reload({ waitUntil: "domcontentloaded" });
+    await expect(page.locator("#profile-modal")).toBeHidden();
+    await expect(page.locator("#home-greeting")).toContainText("Bonjour, Samira Ben Ali.");
+    await page.locator("#sidebar-profile").click();
+    await expect(page.locator("#profile-modal")).toBeVisible();
+    await expect(page.locator("#profile-name")).toHaveValue("Samira Ben Ali");
+    await page.locator("#profile-name").fill("Samira");
+    await page.locator("#profile-save").click();
+    await expect(page.locator("#home-greeting")).toContainText("Bonjour, Samira.");
   });
 
   test("accueil, ressources statiques et navigation principale", async ({ page }) => {
