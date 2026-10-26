@@ -75,6 +75,8 @@ jobs:
 
           retry_curl "$SITE_URL" -o /tmp/cap-citoyen-index.html
           grep -q "Cap Citoyen - Apprendre, comprendre, réussir" /tmp/cap-citoyen-index.html
+          grep -q 'id="profile-modal"' /tmp/cap-citoyen-index.html
+          grep -q 'id="home-greeting"' /tmp/cap-citoyen-index.html
           grep -q 'styles.css' /tmp/cap-citoyen-index.html
           grep -q 'app.js' /tmp/cap-citoyen-index.html
           grep -q 'manifest.webmanifest' /tmp/cap-citoyen-index.html
