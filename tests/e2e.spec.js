@@ -45,7 +45,8 @@ test.describe("Cap Citoyen - parcours publics", () => {
 
   test("accueil, ressources statiques et navigation principale", async ({ page }) => {
     await expect(page).toHaveTitle(/Cap Citoyen/);
-    await expect(page.getByRole("heading", { name: /Comprendre la France/ })).toBeVisible();
+    await expect(page.locator("#home-greeting")).toBeVisible();
+    await expect(page.locator("#home-greeting")).toContainText(/Bonjour, Camille|Comprendre la France/);
     await expect(page.locator("#home-themes .theme-card")).toHaveCount(3);
     await expect(page.locator('link[rel="manifest"]')).toHaveAttribute("href", "./manifest.webmanifest");
     await expect(page.locator("#offline-status")).toBeVisible();

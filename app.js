@@ -77,9 +77,6 @@ const LESSONS = [
  {id:"societe",themeId:"societe",title:"Vivre dans la société française",summary:"Des repères pratiques sur la vie quotidienne, la santé, le travail et la famille.",points:["Après un déménagement, mets à jour ton adresse auprès des organismes concernés.","La CPAM est un interlocuteur pour de nombreuses démarches d'Assurance maladie du régime général.","Le contrat de travail, la loi et la convention collective applicable encadrent la relation salariée ; l'autorité parentale s'exerce dans l'intérêt de l'enfant."],sourceTitle:"Livret du citoyen et services publics",sourceUrl:"https://www.immigration.interieur.gouv.fr/documentation/guides-textes-et-brochures/livret-du-citoyen.html"}
 ];
 const STORAGE_KEY="cap-citoyen-progress-v1";
-const PROFILE_KEY="cap-citoyen-profile-v1";
-function loadProfile(){try{const raw=JSON.parse(localStorage.getItem(PROFILE_KEY)||"{}");return {name:typeof raw.name==="string"?raw.name.trim().slice(0,40):""}}catch{return {name:""}}}
-let profile=loadProfile();
 const defaultState=()=>({answers:{},bookmarks:[],uncertain:[],sessions:[],themeSeen:[],history:[]});
 const validQuestionIds=new Set(QUESTIONS.map(question=>question.id));
 const validThemeIds=new Set(THEMES.map(theme=>theme.id));
@@ -106,31 +103,6 @@ let state=loadState(), currentSession=null, selectedChoice=null, deferredInstall
 function loadState(){try{return sanitizeState(JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}"))}catch{return defaultState()}}
 function saveState(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}catch{} updateDashboard()}
 function el(id){return document.getElementById(id)}
-function renderProfile(){
-  const name=profile.name;
-  el("profile-button-label").textContent=name||"Mon profil";
-  el("profile-name-label").textContent=name||"Ton profil";
-  el("profile-avatar").textContent=name?name.charAt(0).toLocaleUpperCase("fr-FR"):"☺";
-  el("home-greeting").innerHTML=name?"Bonjour, "+escapeHtml(name)+".<br><em>Avançons avec confiance.</em>":"Comprendre la France.<br><em>Avancer avec confiance.</em>";
-  el("speech-welcome").textContent=name?"Salut "+name+" ! On apprend ensemble ?":"Salut ! On apprend ensemble ?";
-}
-function openProfileModal(){
-  el("profile-name").value=profile.name;
-  el("profile-error").classList.add("hidden");
-  el("profile-modal").classList.remove("hidden");
-  el("profile-name").focus();
-}
-function closeProfileModal(){el("profile-modal").classList.add("hidden")}
-function saveProfile(event){
-  event.preventDefault();
-  const name=el("profile-name").value.trim().replace(/\s+/g," ").slice(0,40);
-  if(!name){el("profile-error").classList.remove("hidden");el("profile-name").focus();return}
-  profile={name};
-  try{localStorage.setItem(PROFILE_KEY,JSON.stringify(profile))}catch{}
-  renderProfile();
-  closeProfileModal();
-  el("profile-button").focus();
-}
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function accuracy(){const a=Object.values(state.answers);return a.length?Math.round(a.filter(x=>x.correct).length/a.length*100):null}
 function themeStats(id){const rows=Object.values(state.answers).filter(a=>a.themeId===id);return {total:rows.length,correct:rows.filter(a=>a.correct).length,pct:rows.length?Math.round(rows.filter(a=>a.correct).length/rows.length*100):0}}
@@ -324,8 +296,7 @@ function exportData(){const blob=new Blob([JSON.stringify({format:"cap-citoyen-p
 function importData(file){const reader=new FileReader();reader.onload=()=>{try{const data=JSON.parse(reader.result);if(data.format!=="cap-citoyen-progress"||data.version!==1||!isValidProgressState(data.state))throw Error("format");if(!confirm("Remplacer ta progression actuelle par le fichier importé ?"))return;state=sanitizeState(data.state);saveState();alert("Progression importée avec succès.")}catch{alert("Ce fichier ne semble pas être une sauvegarde Cap Citoyen valide.")}};reader.readAsText(file)}
 document.addEventListener("click",e=>{const reviewStart=e.target.closest("[data-review-start]");if(reviewStart){startReviewSet(reviewStart.dataset.reviewStart);return}const reviewQuestion=e.target.closest("[data-review-question]");if(reviewQuestion){startSingleReview(reviewQuestion.dataset.reviewQuestion);return}const nav=e.target.closest("[data-view]");if(nav){showView(nav.dataset.view);if(nav.dataset.view==="revisions")renderReviewNotebook();if(nav.dataset.view==="lessons")renderLessons();return}const go=e.target.closest("[data-go]");if(go){showView(go.dataset.go);if(go.dataset.go==="legacy")renderLegacy();if(go.dataset.go==="revisions")renderReviewNotebook();if(go.dataset.go==="lessons")renderLessons();return}const theme=e.target.closest("[data-theme]");if(theme){startQuiz(theme.dataset.theme);return}});
 el("interview-start").addEventListener("click",startInterview);el("interview-next").addEventListener("click",nextInterviewQuestion);el("interview-answer").addEventListener("input",()=>{const count=el("interview-answer").value.trim().split(/\s+/).filter(Boolean).length;el("interview-word-count").textContent=count+" mot"+(count>1?"s":"")});el("interview-restart").addEventListener("click",startInterview);el("start-learning").addEventListener("click",()=>showView("themes"));el("choose-procedure").addEventListener("click",()=>{const date=el("application-date").value;const help=el("procedure-help");if(!date){help.textContent="Choisis d’abord la date de dépôt de ta demande.";el("application-date").focus();return}if(date<"2026-01-01"){help.textContent="Dossier déposé avant le 1er janvier 2026 : commence par la préparation à l’entretien d’assimilation. Confirme les règles applicables à ton dossier auprès de ta préfecture.";showView("legacy")}else{help.textContent="Dossier déposé à compter du 1er janvier 2026 : prépare l’examen civique et les autres étapes de ta procédure. Vérifie les éventuelles dispenses et exigences individuelles auprès de la préfecture.";showView("exam")}});el("start-adaptive").addEventListener("click",startAdaptiveQuiz);el("submit-answer").addEventListener("click",submitAnswer);el("next-question").addEventListener("click",nextQuestion);el("exit-quiz").addEventListener("click",()=>{if(confirm("Quitter cette session ? Les réponses déjà données resteront enregistrées.")){clearExamTimer();currentSession=null;showView("themes")}});el("start-exam").addEventListener("click",()=>{if(confirm("Démarrer la simulation ? Le chronomètre sera lancé. Les résultats sont indicatifs."))startQuiz(null,true)});el("bookmark-question").addEventListener("click",()=>{if(!activeQuestion)return;const id=activeQuestion.id;if(state.bookmarks.includes(id))state.bookmarks=state.bookmarks.filter(x=>x!==id);else state.bookmarks.push(id);el("bookmark-question").textContent=state.bookmarks.includes(id)?"★ Dans mes révisions":"☆ Garder pour réviser";saveState()});el("uncertain-question").addEventListener("click",()=>{if(!activeQuestion)return;const id=activeQuestion.id;if(state.uncertain.includes(id))state.uncertain=state.uncertain.filter(x=>x!==id);else state.uncertain.push(id);el("uncertain-question").textContent=state.uncertain.includes(id)?"✓ Incertitude enregistrée":"? Marquer incertaine";el("uncertain-question").setAttribute("aria-pressed",String(state.uncertain.includes(id)));saveState()});el("review-errors").addEventListener("click",()=>{el("review-list").classList.toggle("hidden");el("review-errors").textContent=el("review-list").classList.contains("hidden")?"Revoir mes réponses →":"Masquer les corrections"});el("export-data").addEventListener("click",exportData);el("import-data").addEventListener("change",e=>{if(e.target.files[0])importData(e.target.files[0]);e.target.value=""});el("reset-data").addEventListener("click",()=>{if(confirm("Effacer toutes les réponses, sessions et sauvegardes locales ? Cette action est irréversible.")){state=defaultState();saveState();alert("Les données locales ont été réinitialisées.")}});
-el("profile-button").addEventListener("click",openProfileModal);el("sidebar-profile").addEventListener("click",openProfileModal);el("profile-form").addEventListener("submit",saveProfile);el("profile-skip").addEventListener("click",closeProfileModal);el("profile-modal").addEventListener("click",event=>{if(event.target===el("profile-modal"))closeProfileModal()});document.addEventListener("keydown",event=>{if(event.key==="Escape"&&!el("profile-modal").classList.contains("hidden"))closeProfileModal()});
 window.addEventListener("online",()=>{el("offline-status").innerHTML="<i></i> En ligne"});window.addEventListener("offline",()=>{el("offline-status").innerHTML="<i></i> Hors ligne - prêt"});
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredInstall=e;el("install-button").classList.remove("hidden")});el("install-button").addEventListener("click",async()=>{if(!deferredInstall)return;deferredInstall.prompt();await deferredInstall.userChoice;deferredInstall=null;el("install-button").classList.add("hidden")});
 if("serviceWorker" in navigator && location.protocol!=="file:")window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
-renderLegacy();renderLessons();renderProfile();updateDashboard();if(!profile.name)openProfileModal();if(!navigator.onLine)el("offline-status").innerHTML="<i></i> Hors ligne - prêt";
+renderLegacy();renderLessons();updateDashboard();if(!navigator.onLine)el("offline-status").innerHTML="<i></i> Hors ligne - prêt";

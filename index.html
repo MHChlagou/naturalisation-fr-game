@@ -16,7 +16,7 @@
     <a class="brand" href="./" aria-label="Cap Citoyen, accueil">
       <span class="brand-mark">CC</span><span>cap<span class="brand-accent">citoyen</span><small>LA FRANCE, PAS À PAS</small></span>
     </a>
-    <div class="top-actions"><span id="offline-status" class="status-pill"><i></i> Prêt à apprendre</span><button id="profile-button" class="button button-quiet profile-button" type="button" aria-haspopup="dialog"><span aria-hidden="true">☺</span> <span id="profile-button-label">Mon profil</span></button><button id="install-button" class="button button-quiet hidden" type="button">Installer</button></div>
+    <div class="top-actions"><span id="offline-status" class="status-pill"><i></i> Prêt à apprendre</span><button id="install-button" class="button button-quiet hidden" type="button">Installer</button></div>
   </header>
   <div class="app-shell">
     <aside class="sidebar" aria-label="Navigation principale">
@@ -29,18 +29,17 @@
       <button class="nav-item" data-view="exam"><span>◷</span> Examen blanc</button>
       <button class="nav-item" data-view="progress"><span>↗</span> Ma progression</button>
       <div class="sidebar-note"><span class="note-icon">✦</span><strong>Un petit pas chaque jour.</strong><p>Tu avances à ton rythme. Chaque réponse t'apprend quelque chose.</p></div>
-      <button id="sidebar-profile" class="sidebar-profile" type="button" aria-haspopup="dialog"><span id="profile-avatar" class="profile-avatar" aria-hidden="true">☺</span><span class="sidebar-profile-copy"><strong id="profile-name-label">Ton profil</strong><small>Personnaliser mon accueil</small></span><span class="profile-edit-icon" aria-hidden="true">✎</span></button>
       <div class="sidebar-footer">100 % local · Sans compte</div>
     </aside>
     <main id="main" class="main-content" tabindex="-1">
       <section id="view-home" class="view">
         <div class="hero">
           <div class="hero-copy"><span class="eyebrow"><span class="eyebrow-dot"></span> TON PARCOURS COMMENCE ICI</span>
-            <h1 id="home-greeting">Comprendre la France.<br><em>Avancer avec confiance.</em></h1>
+            <h1>Comprendre la France.<br><em>Avancer avec confiance.</em></h1>
             <p>Apprends à ton rythme avec des questions, des explications simples et un guide qui t'accompagne.</p>
             <button id="start-learning" class="button button-primary">Commencer à apprendre <span aria-hidden="true">→</span></button>
           </div>
-          <div class="hero-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><img src="./assets/guide.svg" alt="Camille, ton guide pédagogique" class="guide-hero"><div class="speech-card"><span class="speech-spark">✦</span><span id="speech-welcome">Salut ! On apprend ensemble ?</span></div><span class="float-star star-a">✳</span><span class="float-star star-b">✦</span></div>
+          <div class="hero-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><img src="./assets/guide.svg" alt="Camille, ton guide pédagogique" class="guide-hero"><div class="speech-card"><span class="speech-spark">✦</span><span>Salut ! On apprend ensemble ?</span></div><span class="float-star star-a">✳</span><span class="float-star star-b">✦</span></div>
         </div>
         <div class="notice"><span class="notice-icon">i</span><div><strong>Choisis selon la date de dépôt de ton dossier</strong><p>Pour les demandes de naturalisation déposées à compter du 1er janvier 2026, l'examen civique est exigé. Pour un dossier déposé avant cette date, commence par le parcours d'entretien d'assimilation et vérifie les règles applicables auprès de ta préfecture. La mise à jour du Livret du citoyen en juillet 2026 n'est pas la date de bascule de l'examen. <a href="https://www.legifrance.gouv.fr/eli/decret/2025/7/15/2025-648/jo/texte" target="_blank" rel="noopener noreferrer">Lire le décret officiel</a>.</p></div></div>
         <div class="procedure-picker">
@@ -151,21 +150,6 @@
     </main>
   </div>
   <nav class="mobile-nav" aria-label="Navigation mobile"><button class="active" data-view="home"><span>⌂</span>Accueil</button><button data-view="themes"><span>▦</span>Thèmes</button><button data-view="practice"><span>✳</span>Ciblé</button><button data-view="revisions"><span>☆</span>Réviser</button><button data-view="exam"><span>◷</span>Examen</button><button data-view="progress"><span>↗</span>Bilan</button></nav>
-  <div id="profile-modal" class="profile-modal hidden">
-    <section class="profile-dialog" role="dialog" aria-modal="true" aria-labelledby="profile-title" aria-describedby="profile-description">
-      <div class="profile-dialog-art"><img src="./assets/guide.svg" alt="" /></div>
-      <span class="eyebrow">TON ESPACE PERSONNEL</span>
-      <h2 id="profile-title">Faisons connaissance !</h2>
-      <p id="profile-description">Comment souhaites-tu qu’on t’appelle ? Nous utiliserons ton prénom pour personnaliser ton accueil et rendre ton parcours plus chaleureux.</p>
-      <form id="profile-form">
-        <label for="profile-name">Ton prénom ou nom d’usage</label>
-        <input id="profile-name" name="profile-name" type="text" maxlength="40" autocomplete="given-name" placeholder="Ex. : Samira" required />
-        <p id="profile-error" class="profile-error hidden" role="alert">Indique un prénom ou un nom d’usage pour continuer.</p>
-        <p class="profile-privacy"><span aria-hidden="true">🔒</span> Ton prénom reste enregistré sur cet appareil. Aucun compte n’est créé et aucune donnée n’est envoyée à un serveur.</p>
-        <div class="profile-dialog-actions"><button id="profile-save" class="button button-primary" type="submit">Personnaliser mon espace <span aria-hidden="true">→</span></button><button id="profile-skip" class="text-button" type="button">Je le ferai plus tard</button></div>
-      </form>
-    </section>
-  </div>
   <script src="./questions-extra.js" defer></script>
   <script src="./questions-bank.js" defer></script>
   <script src="./app.js" defer></script>
